@@ -10,9 +10,9 @@ let json = parse[random]
   conn.reply(m.chat, `Selamat Anda Mendapatkan\n*+${json.exp} XP!*`, m)
    global.DATABASE._data.users[m.sender].exp += json.exp * 1
 }
-handler.help = ['mining [premium]']
+handler.help = ['miningxp [premium]']
 handler.tags = ['xp']
-handler.command = /^mining/i
+handler.command = /^miningxp/i
 handler.owner = false
 handler.mods = false
 handler.premium = true
