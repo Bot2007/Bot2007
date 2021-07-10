@@ -21,7 +21,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
       }, timeout)
     ]
   }
-  handler.help = ['caklontong2']
+  handler.help = ['caklontong2 (Tanpa apikey)']
   handler.tags = ['game']
   handler.command = ['caklontong2']
   
