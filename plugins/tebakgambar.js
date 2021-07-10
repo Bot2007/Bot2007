@@ -12,7 +12,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
     let res = await fetch(global.API('xteam', '/game/tebakgambar', {}, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
-    if (!json.status) throw json
+    if (!json.status) throw 'Maap, Limit Apikey Taufik abis.\nSilahkan tunggu keesokannya ya.\nSementara mau nunggu, main aja versi free apikey dengan mengetik ${usedPrefix}tebakgambar2'
     let caption = `
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}hint untuk hint
