@@ -26,7 +26,7 @@ Bonus: ${poin} XP
       }, timeout)
     ]
   }
-  handler.help = ['tebakgambar2']
+  handler.help = ['tebakgambar2 (Tanpa Apikey)']
   handler.tags = ['game']
   handler.command = ['tebakgambar2']
   
