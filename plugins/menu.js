@@ -48,32 +48,8 @@ Sebentar, Taufik sedang meloading menu
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.DATABASE._data.users).length
     let tags = {
-  'main': 'Main',
-  'premium': 'Premium',
-  'rpg': 'Game RPG',
-  'game': 'Game',
-  'audio': 'Pengedit Musik',
-  'random': 'Random Picture',
-  'xp': 'Exp & Limit',
+  'jenismenu': 'Jenis Menu',
   'topup': 'Topup/Beli Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
   '': 'No Category',
     }
     for (let plugin of Object.values(global.plugins))
