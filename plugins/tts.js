@@ -26,7 +26,7 @@ ${usedPrefix}tts id Taufik hensem terlajak
   try { res = await tts(text, lang) }
   catch (e) {
   m.reply('Kode bahasa anda salah. Ketik .kodebahasa untuk melihat kode bahasa yang support. Jadi kami terpaksa menggunakan bahasa Indonesia.')
-  res = await tts(text
+  res = await tts(text)
   } finally { 
     m.reply('Sedang merekam')
   conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
