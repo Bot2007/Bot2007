@@ -29,7 +29,7 @@ Bonus: ${poin} XP
         }, timeout)
     ]
 }
-handler.help = ['siapakahaku2']
+handler.help = ['siapakahaku2 (Tanpa Apikey)']
 handler.tags = ['game']
 handler.command = ['siapakahaku2']
 
