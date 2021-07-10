@@ -19,16 +19,16 @@
     "whatsapp",
     "js-whatsapp"
   ],
-  "homepage": "https://github.com/taufik1357924680/Taufik1357924680",
+  "homepage": "https://github.com/Bot2007/Bot2007",
   "author": {
     "name": "Taufik"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taufik1357924680/taufik1357924680.git"
+    "url": "git+https://github.com/Bot2007/Bot2007.git"
   },
   "bugs": {
-    "url": "https://github.com/taufik1357924680/taufik1357924680/issues"
+    "url": "https://github.com/Bot2007/Bot2007/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
