@@ -1,13 +1,14 @@
 let fetch = require('node-fetch')
-let handler = async (m, { args }) => {
-  if (!args) return m.reply('Mau cari apa?')
-  let res = await fetch(`https://zahirr-web.herokuapp.com/api/wikipedia?search=${args[0]}&apikey=zahirgans`)
+let handler = async (m, { text }) => {
+  let res = await fetch(global.API('zeks', '/api/wiki', { q: text }, 'apikey'))
+  if (!res.ok) throw await res.text()
   let json = await res.json()
-  if (json.result.status_code) m.reply(json.result.message + '!!')
-  else m.reply('Menurut wikipedia *' + json.result.result + '*')
+  if (!json.result.result) throw 'Error!'
+  if (json.result.status) m.reply(`${json.result.result}\n\n@Fatur`)
+  else throw json
 }
-handler.help = ['wikipedia']
+handler.help = ['wikipedia'].map(v => v + ' <apa>')
 handler.tags = ['internet']
-handler.command = /^(wiki(pedia)?)$/i
-
+handler.command = /^(wiki|wikipedia)$/i
+//belajar ngocok
 module.exports = handler
