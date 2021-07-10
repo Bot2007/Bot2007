@@ -4,11 +4,10 @@ let handler = async (m, { text }) => {
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.result.result) throw 'Error!'
-  if (json.result.status) m.reply(`Menurut wikipedia\n\n${json.result.result}\n\n@taufikmusa07`)
+  if (json.result.status) m.reply(`Menurut wikipedia,\n\n${json.result.result}\n\n@taufikmusa07`)
   else throw json
 }
 handler.help = ['wikipedia'].map(v => v + ' <apa>')
 handler.tags = ['internet']
 handler.command = /^(wiki|wikipedia)$/i
-//belajar ngocok
 module.exports = handler
