@@ -48,7 +48,7 @@ Sebentar, Taufik sedang meloading menu
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.DATABASE._data.users).length
     let tags = {
-  'Kerang': 'Kerang Menu',
+  'fun': 'Fun Menu',
     }
     for (let plugin of Object.values(global.plugins))
       if (plugin && 'tags' in plugin)
