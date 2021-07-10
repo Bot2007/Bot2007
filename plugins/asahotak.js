@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let res = await fetch(global.API('xteam', '/game/asahotak', {}, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
-    if (!json.status) throw json
+    if (!json.status) throw 'Maap ya, Limit Apikey Taufik abis, Silahkan Coba keesokannya ya'
     let caption = `
 ${json.result.soal}
 
