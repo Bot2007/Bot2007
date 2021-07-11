@@ -113,7 +113,10 @@ Sebentar, Taufik sedang meloading menu
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
 ┗━━━━━━━━━━━━━━━━
-
+┏━━°❀❬ Information ❭❀°━━┓
+┣➥ Ketik %pinv untuk melihat
+┣   keseluruhan isi dompet anda
+┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Hari ini ❭❀°━━┓
 ┣➥ Hari : *%week*
 ┣➥ Weton : *%weton*
@@ -125,16 +128,10 @@ Sebentar, Taufik sedang meloading menu
 ┣➥ Total User : *%totalreg Nomor*
 ┣➥ Prefix yang anda gunakan : *%p*
 ┗━━━━━━━━━━━━━━━━
-
 ┏━━°❀❬ Sosial Media ❭❀°━━┓
 ┣➥ YouTube : *${sosmed}*
 ┣➥ Instagram : *@taufikmusa07*
 ┣➥ FaceBook : *${sosmed}*
-┣➥ Nomor Bot :
-┣   ${nomor}
-┗━━━━━━━━━━━━━━━━
-┏━━°❀❬ *Jadwal Aktif* ❭❀°━━┓
-┣➥ ${jadwal}
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Changelog ❭❀°━━┓
 ┣➥ Add Fitur
