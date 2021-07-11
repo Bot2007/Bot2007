@@ -49,7 +49,7 @@ let handler = async (m, { conn, text }) => {
 	let cd1 = Math.ceil(01 - cdm)
 	let cd2 = Math.ceil(60 - cds)
 
-	let area_monsters = monsters.filter(monster => { return monster.area === player.area })
+	let area_monsters = monsters.filter(monster => { return monsters.area === player.area })
 	let monster = area_monsters[Math.floor(Math.random() * area_monsters.length)]
 	let monsterName = monster.name.toUpperCase()
 
