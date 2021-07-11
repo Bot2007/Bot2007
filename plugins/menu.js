@@ -162,7 +162,7 @@ Sebentar, Taufik sedang meloading menu
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-  m.reply(text.trim(), null, {contextInfo: { forwardingScore: 508, isForwarded: true }, quoted: ftoko})
+  TaufikComel.sendFile(m.chat, './src/TaufikBot.png', 'TaufikBot.jpg', text.trim(), m, null, {contextInfo: { forwardingScore: 508, isForwarded: true }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
