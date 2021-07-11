@@ -29,6 +29,7 @@ module.exports = {
           if (!isNumber(user.healt)) user.healt = 0
             if (!isNumber(user.level)) user.level = 0
             if (!isNumber(user.exp)) user.exp = 0
+            if (!isNumber(user.wang)) user.wang = 5
             if (!isNumber(user.limit)) user.limit = 10
             if (!user.rank) user.rank = 'Beginner'
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -101,6 +102,7 @@ module.exports = {
             healt: 100,
             level: 0,
             exp: 0,
+            wang: 5,
             limit: 10,
             rank: 'Beginner',
             lastclaim: 0,
