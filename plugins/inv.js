@@ -1,6 +1,7 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix }) => {
     let healt = global.DATABASE._data.users[m.sender].healt
+    let wang = global.DATABASE._data.users[m.sender].wang
     let armor = global.DATABASE._data.users[m.sender].armor 
     let warn = global.DATABASE._data.users[m.sender].warn
     let pet = global.DATABASE._data.users[m.sender].pet
@@ -47,6 +48,7 @@ Health: *${healt}*
 Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*\n
 Money: *${money}*
 Level: *${level}*
+Wang: *RM${wang}* 
 Exp: *${exp}*\n
 *Inventory*
 Diamond: *${diamond}*
@@ -88,6 +90,8 @@ Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || k
 7.Top Mythic *${usersmythic.indexOf(m.sender) + 1}* dari *${usersmythic.length}*
 8.Top Legendary *${userslegendary.indexOf(m.sender) + 1}* dari *${userslegendary.length}*
 9.Top Sampah *${userssampah.indexOf(m.sender) + 1}* dari *${userssampah.length}*
+10.Top Wang *${userswang.indexOf(m.sender) + 1}* dari *${userswang.length}*
+
 \n${readMore}\n
 Warn: *${warn}*
 Banned: *No*
