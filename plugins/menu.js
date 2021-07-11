@@ -21,6 +21,7 @@ Sebentar, Taufik sedang meloading menu
     let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'))) 
     let exp = global.DATABASE.data.users[m.sender].exp
     let level = global.DATABASE.data.users[m.sender].level
+    let wang = global.DATABASE.data.users[m.sender].wang 
     let limit = global.DATABASE.data.users[m.sender].limit
     let rank = global.DATABASE.data.users[m.sender].rank
     let name = TaufikComel.getName(m.sender)
@@ -110,6 +111,7 @@ Sebentar, Taufik sedang meloading menu
 ┣➥ Exp : *%exp XP*
 ┣➥ Limit :  *%limit Limit*
 ┣➥ Rank : *%rank*
+┣➥ Wang : *RM%wang*
 ┗━━━━━━━━━━━━━━━━
 
 ┏━━°❀❬ Hari ini ❭❀°━━┓
@@ -121,7 +123,7 @@ Sebentar, Taufik sedang meloading menu
 ┣➥ Waktu : *%time*
 ┣➥ Online : *%uptime*
 ┣➥ Total User : *%totalreg Nomor*
-┣➥ Prefix : *%p*
+┣➥ Prefix yang anda gunakan : *%p*
 ┗━━━━━━━━━━━━━━━━
 
 ┏━━°❀❬ Sosial Media ❭❀°━━┓
@@ -129,7 +131,7 @@ Sebentar, Taufik sedang meloading menu
 ┣➥ Instagram : *@taufikmusa07*
 ┣➥ FaceBook : *${sosmed}*
 ┣➥ Nomor Bot :
-┣${nomor}
+┣   ${nomor}
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ *Jadwal Aktif* ❭❀°━━┓
 ┣➥ ${jadwal}
@@ -160,7 +162,7 @@ Sebentar, Taufik sedang meloading menu
       npmdesc: package.description,
       version: package.version,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      exp, level, limit, rank, name, dateIslamic, weton, week, date, time, totalreg,
+      exp, level, limit, wang, rank, name, dateIslamic, weton, week, date, time, totalreg,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
