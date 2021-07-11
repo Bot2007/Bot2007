@@ -6,8 +6,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [nama1, nama2] = text.split(/[&|.]/i)
     if (!nama1 || !nama2) throw `contoh:\n${usedPrefix + command} ariffb|dinda annisa`
 
-    let res = await fetch(global.API('zeks', '/api/primbonjodoh', { nama1, nama2 }, 'APIKEY'))
-    if (res.status != 200) throw await res.text()
+    let res = await fetch(global.API('zeks', '/api/primbonjodoh', { nama1, nama2 }, 'apikey'))
+    if (res.status != 200) throw await `${res.status} ${res.statusText}`
     let json = await res.json()
     if (json.status) {
         let { nama1, nama2, thumb, positif, negatif } = json.result
@@ -16,13 +16,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         m.reply(`
 *Nama kamu:* ${nama1}
 *Nama doi:* ${nama2}
-
 *Positif:*
 ${positif}
-
 *Negatif:*
 ${negatif}
-
 *© stikerin*
 `.trim())
     }
