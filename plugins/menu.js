@@ -10,8 +10,7 @@ let TaufikComel = conn
   await m.reply(`
 Sebentar, Taufik sedang meloading menu
 `.trim(), null, {contextInfo: {
-    mentionedJid: m.sender }, quoted: delay})
-  let TaufikBot = './src/TaufikBot.png'
+    mentionedJid: m.sender, forwardingScore: 508, isForwarded: true }, quoted: delay})
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let nomor = 'wa.me/601173093564'
   let sosmed = 'TaufikYT'
@@ -163,7 +162,7 @@ Sebentar, Taufik sedang meloading menu
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-  TaufikComel.sendFile(m.chat, TaufikBot, 'TaufikBot.jpg', text.trim(), m, null, {contextInfo: {
+  TaufikComel.sendMessage(m.chat, text.trim(), m, null, {contextInfo: {
     forwardingScore: 508, isForwarded: true }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
