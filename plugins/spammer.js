@@ -7,7 +7,7 @@ let [number, pesan] = text.split `|`
     var nomor = m.sender
     let logs = `[!] Berhasil mengirim spam wa ke nomor ${number} 10 kali
  Dengan mesej
- ${spam}`
+ ${pesan}`
     m.reply(logs.trim())
     m.reply('${number}@s.whatsapp.net', '${pesan}', m)
 }
