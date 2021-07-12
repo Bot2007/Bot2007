@@ -5,8 +5,4 @@ let handler = async (m, { text }) => {
   })
 }
 handler.command = ['tagme']
-
-handler.owner = true
-handler.group = true
-
 module.exports = handler
