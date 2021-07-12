@@ -1,4 +1,4 @@
-let handler = async(m, { conn, text }) => {
+let handler = async (m, { conn, text }) => {
 let [number, pesan] = text.split `|`
 
     if (!number) return m.reply('Silahkan masukan nomor yang akan dispam')
@@ -7,7 +7,6 @@ let [number, pesan] = text.split `|`
     var nomor = m.sender
     let spam = `*「 WA SPAMMER 」*\n\nDari : wa.me/${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}\n\nTaufik`.trim()
 
-    conn.sendMessage(''${number}@s.whatsapp.net', spam, m)
     conn.sendMessage('${number}@s.whatsapp.net', spam, m)
     conn.sendMessage('${number}@s.whatsapp.net', spam, m)
     conn.sendMessage('${number}@s.whatsapp.net', spam, m)
@@ -17,7 +16,8 @@ let [number, pesan] = text.split `|`
     conn.sendMessage('${number}@s.whatsapp.net', spam, m)
     conn.sendMessage('${number}@s.whatsapp.net', spam, m)
     conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    let logs = `[!] Berhasil mengirim spam wa ke nomor ${korban} 10 kali`
+    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
+    let logs = `[!] Berhasil mengirim spam wa ke nomor ${number} 10 kali`
     m.reply(logs.trim())
 }
 handler.help = ['spam <nomor|pesan>', 'spamwa <nomor|pesan>']
