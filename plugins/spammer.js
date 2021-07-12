@@ -7,17 +7,11 @@ let [number, pesan] = text.split `|`
     var nomor = m.sender
     let spam = `*「 WA SPAMMER 」*\n\nDari : wa.me/${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}\n\nTaufik`.trim()
 
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    conn.sendMessage('${number}@s.whatsapp.net', spam, m)
-    let logs = `[!] Berhasil mengirim spam wa ke nomor ${number} 10 kali`
+    m.reply('${number}@s.whatsapp.net', spam, null, { contextInfo: { mentionedJid: [m.sender] } })
+    
+    let logs = `[!] Berhasil mengirim spam wa ke nomor ${number} 10 kali
+ Dengan mesej
+ ${spam}`
     m.reply(logs.trim())
 }
 handler.help = ['spam <nomor|pesan>', 'spamwa <nomor|pesan>']
