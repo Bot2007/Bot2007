@@ -1,6 +1,4 @@
-let { MessageType } = require('@adiwajshing/baileys')
-
-let handler = async (m, { conn, text, participants }) => {
+let handler = async (m, { text, participants }) => {
   const getGroupAdmins = (participants) => {
         admins = []
         for (let i of participants) {
