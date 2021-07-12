@@ -5,15 +5,14 @@ let [number, pesan] = text.split `|`
     if (!pesan) return m.reply('Silahkan masukan pesannya')
     if (text > 500) return m.reply('Teks Kepanjangan!')
     var nomor = m.sender
-    let spam = `*「 WA SPAMMER 」*\n\nDari : wa.me/${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}\n\nTaufik`.trim()
     let logs = `[!] Berhasil mengirim spam wa ke nomor ${number} 10 kali
  Dengan mesej
  ${spam}`
     m.reply(logs.trim())
-    m.reply('${number}@s.whatsapp.net', spam, m)
+    m.reply('${number}@s.whatsapp.net', '${pesan}', m)
 }
 handler.help = ['spam <nomor|pesan>', 'spamwa <nomor|pesan>']
-handler.tags = ['spammer']
+handler.tags = ['tools']
 handler.command = /^(spam|spamwa)$/i
 handler.owner = false
 handler.mods = false
