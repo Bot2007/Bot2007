@@ -5,5 +5,5 @@ let handler = async (m, { text }) => {
     contextInfo: { mentionedJid }
   })
 }
-handler.command = ['tagme', 'tag']
+handler.command = ['tagme', 'me']
 module.exports = handler
