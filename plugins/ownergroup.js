@@ -5,5 +5,7 @@ let handler = async (m, { text }) => {
     contextInfo: { mentionedJid }
   })
 }
+
 handler.command = ['ownergroup']
+handler.group = true
 module.exports = handler
