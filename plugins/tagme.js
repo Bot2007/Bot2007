@@ -1,6 +1,6 @@
 let handler = async (m, { text }) => {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  m.reply(text + '\n' + '@${who.replace(/@.+/, '')}', null, {
+  m.reply(text + '\n' + `@${who.replace(/@.+/, '')}`.trim(), null, {
     contextInfo: { mentionedJid: m.sender }
   })
 }
