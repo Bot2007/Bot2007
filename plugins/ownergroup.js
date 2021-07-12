@@ -11,7 +11,7 @@ let handler = async (m, { text, participants }) => {
   let who = m.chat.split`-`[0]
   ownernya = [`${m.chat.split`-`[0]}@s.whatsapp.net`]
         let mentionedJid = groupAdmins.concat(ownernya)
-  m.reply(text + `@${who.replace(/@.+/, '')}`.trim(), null, {
+  m.reply(text + '\n' + `@${who.replace(/@.+/, '')}`.trim(), null, {
     contextInfo: { mentionedJid }
   })
 }
