@@ -1,26 +1,22 @@
-const { MessageType } = require('@adiwajshing/baileys')
-
 let handler = async(m, { conn, text }) => {
 let [number, pesan] = text.split `|`
 
-    if (!number) return conn.reply(m.chat, 'Silahkan masukan nomor yang akan dispam', m)
-    if (!pesan) return conn.reply(m.chat, 'Silahkan masukan pesannya', m)
+    if (!number) return m.reply(m.chat, 'Silahkan masukan nomor yang akan dispam', m)
+    if (!pesan) return m.reply(m.chat, 'Silahkan masukan pesannya', m)
     if (text > 500) return conn.reply(m.chat, 'Teks Kepanjangan!', m)
-    let korban = ${number}
     var nomor = m.sender
     let spam = `*「 WA SPAMMER 」*\n\nDari : wa.me/${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}\n\n~BOT_STYLE`
 
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-    conn.sendMessage(korban + '@s.whatsapp.net', spam, MessageType.text)
-
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
+    conn.sendMessage(${number}@s.whatsapp.net, spam, m)
     let logs = `[!] Berhasil mengirim spam wa ke nomor ${korban} 10 kali`
     conn.reply(m.chat, logs, m)
 }
