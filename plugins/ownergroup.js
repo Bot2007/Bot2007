@@ -8,5 +8,5 @@ let handler = async (m, { text }) => {
 }
 
 handler.command = ['ownergroup']
-handler.group = true
+handler.group = false
 module.exports = handler
