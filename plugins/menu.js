@@ -157,7 +157,7 @@ let TaufikComel = conn
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-  TaufikComel.sendFile(m.chat, './src/TaufikBot.png', 'TaufikBot.jpg', text.trim(), m, null, {contextInfo: { forwardingScore: 508, isForwarded: true, "expiration": 10, "externalAdReply": {
+  TaufikComel.reply(text.trim(), null, {contextInfo: { forwardingScore: 508, isForwarded: true, "expiration": 10, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
