@@ -4,13 +4,8 @@ let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-const delay = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "*BY TAUFIK (+601173093564)*", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('./src/TaufikBot.png')}}}
 const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
-  await m.reply(`
-Sebentar, Taufik sedang meloading menu
-`.trim(), null, {contextInfo: {
-    mentionedJid: m.sender, forwardingScore: 1, isForwarded: true, "expiration": 3600 }, quoted: delay})
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let nomor = 'wa.me/601173093564'
   let sosmed = 'TaufikYT'
@@ -162,7 +157,14 @@ Sebentar, Taufik sedang meloading menu
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-  TaufikComel.sendFile(m.chat, './src/TaufikBot.png', 'TaufikBot.jpg', text.trim(), m, null, {contextInfo: { forwardingScore: 508, isForwarded: true, "expiration": 604800 }, quoted: ftoko})
+  TaufikComel.sendFile(m.chat, './src/TaufikBot.png', 'TaufikBot.jpg', text.trim(), m, null, {contextInfo: { forwardingScore: 508, isForwarded: true, "expiration": 10, "externalAdReply": {
+                  "title": "Taufik Bot",
+                  "body": "MENU TAUFIK BOT",
+                  "mediaType": "VIDEO",
+                  "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
+                  "mediaUrl": "https://youtu.be/dQw4w9WgXcQ",
+                  "thumbnail": ""
+                } }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
