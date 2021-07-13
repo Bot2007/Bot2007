@@ -162,7 +162,7 @@ let TaufikComel = conn
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
                   "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
-                  "mediaUrl": "https://youtu.be/dQw4w9WgXcQ",
+                  "mediaUrl": "https://instagram.com/taufikmusa07",
                   "thumbnail": ""
                 } }, quoted: ftoko})
 } catch (e) {
