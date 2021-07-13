@@ -128,7 +128,7 @@ let TaufikComel = conn
 ┣➥ FaceBook : *${sosmed}*
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Changelog ❭❀°━━┓
-┣➥ Add Fitur
+┣➥ Add Fitur (350+)
 ┗━━━━━━━━━━━━━━━━
 %readmore`
     let header = conn.menu.header || '┏━━°❀❬ %category ❭❀°━━┓'
