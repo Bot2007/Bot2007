@@ -4,6 +4,20 @@ let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
 let handler  = async (m, { conn, usedPrefix: _p }) => {
+const jam = moment.tz('Asia/Jakarta').format('HH')
+ var ucapanWaktu = 'Selamat Pagi 🌄'
+
+				if (jam >= '03' && jam <= '10') {
+				ucapanWaktu = 'Selamat Pagi 🌄'
+				} else if (jam >= '10' && jam <= '13') {
+				ucapanWaktu = 'Selamat Siang ☀️'
+				} else if (jam >= '13' && jam <= '18') {
+				ucapanWaktu = 'Selamat Sore 🌅'
+				} else if (jam >= '18' && jam <= '23') {
+				ucapanWaktu = 'Selamat Malam 🌙'
+				} else {
+				ucapanWaktu = 'Selamat Malam 🌙'
+				}
 const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -97,8 +111,7 @@ let TaufikComel = conn
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 °❀❬ ${conn.getName(conn.user.jid)} ❭❀°
-
-
+     ${ucapanWaktu}
 ┏━━°❀❬ Biodata User ❭❀°━━┓
 ┣➥ Nama : *%name*
 ┣➥ Level : *%level*
@@ -106,6 +119,7 @@ let TaufikComel = conn
 ┣➥ Limit :  *%limit Limit*
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
+┣➥ (conn.user.jid == global.conn.user.jid ? '' : `Ketua bot :\nwa.me/${global.conn.user.jid.split`@`[0]}`)
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Information ❭❀°━━┓
 ┣➥ Ketik %pinv untuk melihat
@@ -134,7 +148,7 @@ let TaufikComel = conn
     let header = conn.menu.header || '┏━━°❀❬ %category ❭❀°━━┓'
     let body   = conn.menu.body   || '┣➥ %cmd%islimit'
     let footer = conn.menu.footer || '┗━━━━━━━━━━━━━━━━\n'
-    let after  = conn.menu.after  || (conn.user.jid == global.conn.user.jid ? '' : `Bot Asli :\nwa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
+    let after  = conn.menu.after  || `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
