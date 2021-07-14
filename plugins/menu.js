@@ -119,7 +119,7 @@ let TaufikComel = conn
 ┣➥ Limit :  *%limit Limit*
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
-┣➥ (conn.user.jid == global.conn.user.jid ? '' : `Ketua bot :\nwa.me/${global.conn.user.jid.split`@`[0]}`)
+┣➥ Ketua bot : wa.me/${global.conn.user.jid.split`@`[0]}
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Information ❭❀°━━┓
 ┣➥ Ketik %pinv untuk melihat
