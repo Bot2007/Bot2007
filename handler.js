@@ -33,6 +33,7 @@ module.exports = {
             if (!isNumber(user.limit)) user.limit = 10
             if (!user.rank) user.rank = 'Beginner'
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
+            if (!isNumber(user.lastdaily)) user.lastdaily = 0
             if (!isNumber(user.money)) user.money = 0
             
             if (!isNumber(user.diamond)) user.diamond = 0
@@ -106,6 +107,7 @@ module.exports = {
             limit: 10,
             rank: 'Beginner',
             lastclaim: 0,
+            lastdaily: 0,
             money: 0,
             diamond: 0,
             iron: 0,
