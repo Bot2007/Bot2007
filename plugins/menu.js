@@ -3,21 +3,7 @@ let ftype = require('file-type');
 let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
-let handler  = async (m, { conn, usedPrefix: _p, moment, tz }) => {
-const jam = moment.tz('Asia/Jakarta').format('HH')
- var ucapanWaktu = 'Selamat Pagi 🌄'
-
-				if (jam >= '03' && jam <= '10') {
-				ucapanWaktu = 'Selamat Pagi 🌄'
-				} else if (jam >= '10' && jam <= '13') {
-				ucapanWaktu = 'Selamat Siang ☀️'
-				} else if (jam >= '13' && jam <= '18') {
-				ucapanWaktu = 'Selamat Sore 🌅'
-				} else if (jam >= '18' && jam <= '23') {
-				ucapanWaktu = 'Selamat Malam 🌙'
-				} else {
-				ucapanWaktu = 'Selamat Malam 🌙'
-				}
+let handler  = async (m, { conn, usedPrefix: _p }) => {
 const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -111,7 +97,8 @@ let TaufikComel = conn
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 °❀❬ ${conn.getName(conn.user.jid)} ❭❀°
-     ${ucapanWaktu}
+
+
 ┏━━°❀❬ Biodata User ❭❀°━━┓
 ┣➥ Nama : *%name*
 ┣➥ Level : *%level*
