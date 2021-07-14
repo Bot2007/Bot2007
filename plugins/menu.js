@@ -3,7 +3,7 @@ let ftype = require('file-type');
 let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
-let handler  = async (m, { conn, usedPrefix: _p }) => {
+let handler  = async (m, { conn, usedPrefix: _p, moment }) => {
 const jam = moment.tz('Asia/Jakarta').format('HH')
  var ucapanWaktu = 'Selamat Pagi 🌄'
 
