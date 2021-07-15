@@ -174,7 +174,7 @@ Sampah:     ${Ssampah}\n\n
             default:
                 return conn.reply(m.chat, Kchat, m)
             }
-        } else if (/beli|buy/i.test(command)) {
+        } else if (/beli/i.test(command)) {
             const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
             switch (type) {
                 case 'potion':
@@ -311,5 +311,5 @@ Sampah:     ${Ssampah}\n\n
 handler.help = ['shop <sell|buy> <args>', 'toko <sell|buy> <args>']
 handler.tags = ['rpg']
     
-handler.command = /^(shop|toko|buy|beli|sell|jual)$/i
+handler.command = /^(shop|toko|beli|sell|jual)$/i
 module.exports = handler
