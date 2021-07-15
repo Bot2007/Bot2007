@@ -13,7 +13,7 @@ Simple WhatsApp Bot
 ```bash
 pkg update && pkg upgrade
 pkg install git -y
-git clone https://github.com/taufikmusa07/Taufikbot
+git clone https://github.com/Bot2007/Bot2007
 cd Taufikbot
 bash install.sh
 ```
