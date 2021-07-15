@@ -1,6 +1,6 @@
 # Selamat Datang ke Github Taufikbot <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="54px">
-<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Developer.gif" width="76px">
 <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Developer.gif" width="200px">
+<img src="https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg" width="200px">
 
 ## Ada Bug, Error, atau mau Request? <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/happy.gif" width="30px">
 [`Chat Admin`](https://wa.me/601173093564)
