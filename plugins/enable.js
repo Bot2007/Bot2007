@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
-  let chat = global.DATABASE._data.chats[m.chat]
-  let user = global.DATABASE._data.users[m.sender]
+  let chat = global.db.data.chats[m.chat]
+  let user = global.db.data.users[m.sender]
   let type = (args[0] || '').toLowerCase()
   let isAll = false
   let isUser = false
@@ -32,7 +32,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     case 'delete':
       if (m.isGroup) {
-        if (!isAdmin || !isOwner) {
+        if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
@@ -41,28 +41,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     case 'antidelete':
       if (m.isGroup) {
-        if (!isAdmin || !isOwner) {
+        if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
       chat.delete = !isEnable
       break
-    case 'antivirtext':
-      if (!m.isGroup) {
-        if (!isOwner) {
-          global.dfail('group', m, conn)
-          throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.antiVirtext = isEnable
-      break
     case 'autodelvn':
       if (m.isGroup) {
-        if (!isAdmin || !isOwner) {
+        if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
@@ -82,21 +70,12 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     case 'antilink':
       if (m.isGroup) {
-        if (!isAdmin || !isOwner) {
+        if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
       chat.antiLink = isEnable
-      break
-    case 'antitoxic':
-      if (m.isGroup) {
-        if (!isAdmin || !isOwner) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiToxic = isEnable
       break
     case 'autolevelup':
       isUser = true
@@ -114,9 +93,61 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       conn.callWhitelistMode = isEnable
       break
+    case 'restrict':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['restrict'] = isEnable
+      break
+    case 'nyimak':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['nyimak'] = isEnable
+      break
+    case 'autoread':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['autoread'] = isEnable
+      break
+    case 'pconly':
+    case 'privateonly':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['pconly'] = isEnable
+      break
+    case 'gconly':
+    case 'grouponly':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['gconly'] = isEnable
+      break
+    case 'swonly':
+    case 'statusonly':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['swonly'] = isEnable
+      break
     default:
       if (!/[01]/.test(command)) throw `
-List option: welcome | delete | public | antilink | autolevelup | detect | document | whitelistmycontacts
+List option: welcome | delete | public | antilink | autolevelup | detect | document | whitelistmycontacts | restrict | nyimak | autoread | pconly | gconly | swonly
+
 Contoh:
 ${usedPrefix}enable welcome
 ${usedPrefix}disable welcome
