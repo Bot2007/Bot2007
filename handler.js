@@ -23,7 +23,7 @@ module.exports = {
       m.exp = 0
       m.limit = false
       try {
-        let user = global.DATABASE.data.users[m.sender]
+        let user = global.DATABASE._data.users[m.sender]
         if (typeof user !== 'object') global.DATABASE.data.users[m.sender] = {}
         if (user) {
           if (!isNumber(user.healt)) user.healt = 0
