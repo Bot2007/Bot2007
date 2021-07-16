@@ -23,8 +23,8 @@ module.exports = {
       m.exp = 0
       m.limit = false
       try {
-        let user = global.DATABASE._data.users[m.sender]
-        if (typeof user !== 'object') global.DATABASE._data.users[m.sender] = {}
+        let user = global.DATABASE.data.users[m.sender]
+        if (typeof user !== 'object') global.DATABASE.data.users[m.sender] = {}
         if (user) {
           if (!isNumber(user.healt)) user.healt = 0
             if (!isNumber(user.level)) user.level = 0
@@ -163,8 +163,8 @@ module.exports = {
             autolevelup: false,
         }
 
-        let chat = global.DATABASE._data.chats[m.chat]
-        if (typeof chat !== 'object') global.DATABASE._data.chats[m.chat] = {}
+        let chat = global.DATABASE.data.chats[m.chat]
+        if (typeof chat !== 'object') global.DATABASE.data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
           if (!('welcome' in chat)) chat.welcome = false
@@ -175,7 +175,7 @@ module.exports = {
           if (!('sDemote' in chat)) chat.sDemote = ''
           if (!('delete' in chat)) chat.delete = true
           if (!('antiLink' in chat)) chat.antiLink = false
-        } else global.DATABASE._data.chats[m.chat] = {
+        } else global.DATABASE.data.chats[m.chat] = {
           isBanned: false,
           welcome: false,
           detect: false,
@@ -191,9 +191,6 @@ module.exports = {
       }
       if (opts['nyimak']) return
       if (!m.fromMe && opts['self']) return
-      if (opts['pconly'] && m.chat.endsWith('g.us')) return
-      if (opts['gconly'] && !m.chat.endsWith('g.us')) return
-      if (opts['swonly'] && m.chat !== 'status@broadcast') return
       if (typeof m.text !== 'string') m.text = ''
       for (let name in global.plugins) {
         let plugin = global.plugins[name]
@@ -280,9 +277,9 @@ module.exports = {
 
           if (!isAccept) continue
           m.plugin = name
-          if (m.chat in global.DATABASE._data.chats || m.sender in global.DATABASE._data.users) {
-            let chat = global.DATABASE._data.chats[m.chat]
-            let user = global.DATABASE._data.users[m.sender]
+          if (m.chat in global.DATABASE.data.chats || m.sender in global.DATABASE.data.users) {
+            let chat = global.DATABASE.data.chats[m.chat]
+            let user = global.DATABASE.data.users[m.sender]
             if (name != 'unbanchat.js' && chat && chat.isBanned) return // Except this
             if (name != 'unbanuser.js' && user && user.banned) return
           }
@@ -329,7 +326,7 @@ module.exports = {
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
-          if (!isPrems && plugin.limit && global.DATABASE._data.users[m.sender].limit < plugin.limit * 1) {
+          if (!isPrems && plugin.limit && global.DATABASE.data.users[m.sender].limit < plugin.limit * 1) {
             this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
             continue // Limit habis
           }
@@ -381,10 +378,10 @@ module.exports = {
         }
       }
     } finally {
-      //console.log(global.DATABASE._data.users[m.sender])
-      let user, stats = global.DATABASE._data.stats
+      //console.log(global.DATABASE.data.users[m.sender])
+      let user, stats = global.DATABASE.data.stats
       if (m) {
-        if (m.sender && (user = global.DATABASE._data.users[m.sender])) {
+        if (m.sender && (user = global.DATABASE.data.users[m.sender])) {
           user.exp += m.exp
           user.limit -= m.limit * 1
         }
@@ -418,10 +415,11 @@ module.exports = {
       } catch (e) {
         console.log(m, m.quoted, e)
       }
+      if (opts['autoread']) await this.chatRead(m.chat).catch(() => {})
     }
   },
   async participantsUpdate({ jid, participants, action }) {
-    let chat = global.DATABASE._data.chats[jid] || {}
+    let chat = global.DATABASE.data.chats[jid] || {}
     let text = ''
     switch (action) {
       case 'add':
@@ -460,7 +458,7 @@ module.exports = {
   },
   async delete(m) {
     if (m.key.fromMe) return
-    let chat = global.DATABASE._data.chats[m.key.remoteJid]
+    let chat = global.DATABASE.data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.reply(m.key.remoteJid, `
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
@@ -491,14 +489,14 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Perintah ini hanya dapat digunakan oleh _*Taufik Bot*_',
+    rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
     owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
     mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
     premium: 'Perintah ini hanya untuk member _*Premium*_ !',
     group: 'Perintah ini hanya dapat digunakan di grup!',
     private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
     admin: 'Perintah ini hanya untuk *Admin* grup!',
-    botAdmin: 'Jadikan Taufik Bot sebagai *Admin* untuk menggunakan perintah ini!',
+    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
     unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
   }[type]
   if (msg) return m.reply(msg)
