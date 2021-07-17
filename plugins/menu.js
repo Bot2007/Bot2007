@@ -106,11 +106,12 @@ let TaufikComel = conn
 ┣➥ Limit :  *%limit Limit*
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
-┣➥ Ketua bot : wa.me/${global.conn.user.jid.split`@`[0]}
+┣➥ Nomor owner bot : wa.me/${global.conn.user.jid.split`@`[0]}
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Information ❭❀°━━┓
 ┣➥ Ketik %pinv untuk melihat
 ┣   keseluruhan isi dompet anda
+┣   seperti crate, Armor dan pet
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Hari ini ❭❀°━━┓
 ┣➥ Hari : *%week*
@@ -121,7 +122,7 @@ let TaufikComel = conn
 ┣➥ Waktu : *%time*
 ┣➥ Online : *%uptime*
 ┣➥ Total User : *%totalreg Nomor*
-┣➥ Prefix yang anda gunakan : *%p*
+┣➥ Prefix yang anda gunakan : *'%p'*
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Sosial Media ❭❀°━━┓
 ┣➥ YouTube : *${sosmed}*
@@ -129,7 +130,7 @@ let TaufikComel = conn
 ┣➥ FaceBook : *${sosmed}*
 ┗━━━━━━━━━━━━━━━━
 ┏━━°❀❬ Changelog ❭❀°━━┓
-┣➥ Add Fitur (350+)
+┣➥ Add Fitur (360+)
 ┗━━━━━━━━━━━━━━━━
 %readmore`
     let header = conn.menu.header || '┏━━°❀❬ %category ❭❀°━━┓'
