@@ -77,6 +77,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
+    case 'stiker':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.stiker = isEnable
+      break
     case 'autolevelup':
       isUser = true
       user.autolevelup = isEnable
@@ -143,6 +152,13 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         throw false
       }
       global.opts['swonly'] = isEnable
+      break
+    case 'nsfw':
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      setting.nsfw = isEnable
       break
     default:
       if (!/[01]/.test(command)) throw `
