@@ -5,20 +5,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (chat.stiker && !chat.isBanned) {
     let stiker = false
   try {
-    let q = m.quoted ? m.quoted : m
+    let q = m
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
       let img = await q.download()
-      if (!img) throw `balas gambar dengan caption *${usedPrefix + command}*`
+      if (!img) throw false
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (/video/.test(mime)) {
       if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
       let img = await q.download()
-      if (!img) throw `balas video/gif dengan caption *${usedPrefix + command}*`
+      if (!img) throw false 
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (/webp/.test(mime)) {
       let img = await q.download()
-      if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
+      if (!img) throw false
       stiker = await sticker(img, false, global.packname, global.author)
     }
   } finally {
