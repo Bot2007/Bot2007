@@ -27,4 +27,5 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     })}
     return true
 }
+}
 module.exports = handler
