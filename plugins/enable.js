@@ -153,16 +153,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['swonly'] = isEnable
       break
-    case 'nsfw':
-      if (!isOwner) {
-        global.dfail('owner', m, conn)
-        throw false
-      }
-      setting.nsfw = isEnable
-      break
     default:
       if (!/[01]/.test(command)) throw `
-List option: welcome | delete | public | antilink | autolevelup | detect | document | whitelistmycontacts | restrict | nyimak | autoread | pconly | gconly | swonly | nsfw | autosticker
+List option: welcome | delete | public | antilink | autolevelup | detect | document | whitelistmycontacts | restrict | nyimak | autoread | pconly | gconly | swonly | autosticker
 
 Contoh:
 ${usedPrefix}enable welcome
