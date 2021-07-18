@@ -4,4 +4,3 @@ pkg install imagemagick -y
 npm install
 npm update
 npm i -s nekos.life
-npm i canvacord
