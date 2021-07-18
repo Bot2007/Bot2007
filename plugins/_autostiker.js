@@ -1,11 +1,10 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
-let handler = m => m
-
-handler.before = async function (m) {
+let handler = async (m, { conn, args, usedPrefix, command }) => {
     let chat = global.DATABASE.data.chats[m.chat]
     if (chat.stiker && !chat.isBanned) {
-        // try {
+    let stiker = false
+  try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
@@ -17,13 +16,15 @@ handler.before = async function (m) {
       let img = await q.download()
       if (!img) throw `balas video/gif dengan caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
-     await this.sendMessage(m.chat, stiker, MessageType.sticker, { quoted: m })
-        }
-        // } finally {
-        //     if (stiker) {
-        //     }
-        // }
+    } else if (/webp/.test(mime)) {
+      let img = await q.download()
+      if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
+      stiker = await sticker(img, false, global.packname, global.author)
     }
+  } finally {
+    if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+      quoted: m
+    })}
     return true
 }
 module.exports = handler
