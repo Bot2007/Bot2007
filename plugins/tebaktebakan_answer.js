@@ -9,7 +9,7 @@ handler.before = async function (m) {
     // m.reply(JSON.stringify(json, null, '\t'))
     if (m.text.toLowerCase() == json.result.jawaban.toLowerCase()) {
       global.DATABASE._data.users[m.sender].uang += conn.tebaktebakan[id][2]
-      m.reply(`*Benar!*\n+Rp${conn.tebaktebakan[id][2]}`)
+      m.reply(`*Benar!*\n${conn.tebaktebakan[id][2]} XP`)
       clearTimeout(conn.tebaktebakan[id][3])
       delete conn.tebaktebakan[id]
     } else if (m.text.toLowerCase().endsWith(json.result.jawaban.split` `[1])) m.reply(`*Dikit Lagi!*`)
