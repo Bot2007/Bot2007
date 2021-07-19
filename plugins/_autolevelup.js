@@ -2,10 +2,10 @@ let handler = m => m
 
 let levelling = require('../lib/levelling')
 handler.before = m => {
-	let user = global.DATABASE.data.users[m.sender]
+	let user = global.DATABASE._data.users[m.sender]
 	if (!user.autolevelup) return !0
 	let before = user.level * 1
-	while (levelling.canLevelUp(user.level, user.exp, user.rank, global.multiplier)) user.level++
+	while (levelling.canLevelUp(user.level, user.exp, global.multiplier)) user.level++
         let rank = ((user.level >= 1) && (user.level <= 10)) ? 'Beginner'
           : ((user.level >= 10) && (user.level <= 20)) ? 'Kittel Town'
           : ((user.level >= 20) && (user.level <= 30)) ? 'Black Woods'
