@@ -3,9 +3,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     var jumlahHari = 86400000 * text
     var now = new Date() * 1
-    if (now < global.db.data.chats[m.chat].expired) global.db.data.chats[m.chat].expired += jumlahHari
-    else global.db.data.chats[m.chat].expired = now + jumlahHari
-    m.reply(`Berhasil menetapkan hari kadaluarsa untuk ${conn.getName(m.chat)} selama ${text} hari.\n\nHitung Mundur : ${msToDate(global.db.data.chats[m.chat].expired - now)}`)
+    if (now < global.DATABASE.data.chats[m.chat].expired) global.db.data.chats[m.chat].expired += jumlahHari
+    else global.DATABASE.data.chats[m.chat].expired = now + jumlahHari
+    m.reply(`Berhasil menetapkan hari kadaluarsa untuk ${conn.getName(m.chat)} selama ${text} hari.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
 }
 handler.help = ['expired <hari>']
 handler.tags = ['owner']
