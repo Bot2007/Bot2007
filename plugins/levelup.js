@@ -1,8 +1,8 @@
 let levelling = require('../lib/levelling')
 
 let handler = m => {
-  let user = global.DATABASE.data.users[m.sender]
-  if (!levelling.canLevelUp(user.level, user.exp, user.rank, global.multiplier)) {
+  let user = global.DATABASE._data.users[m.sender]
+  if (!levelling.canLevelUp(user.level, user.exp, global.multiplier)) {
     let { min, xp, max } = levelling.xpRange(user.level, global.multiplier)
     throw `
 Level *${user.level} (${user.exp - min}/${xp})*
@@ -10,7 +10,7 @@ Kurang *${max - user.exp}* lagi!
 `.trim()
   }
   let before = user.level * 1
-	while (levelling.canLevelUp(user.level, user.exp, user.rank, global.multiplier)) user.level++
+	while (levelling.canLevelUp(user.level, user.exp, global.multiplier)) user.level++
         let rank = ((user.level >= 1) && (user.level <= 10)) ? 'Beginner'
           : ((user.level >= 10) && (user.level <= 20)) ? 'Kittel Town'
           : ((user.level >= 20) && (user.level <= 30)) ? 'Black Woods'
@@ -26,7 +26,6 @@ Kurang *${max - user.exp}* lagi!
 Selamat, anda telah naik level!
 *${before}* -> *${user.level}*
 gunakan *.profile* untuk mengecek
-Your rank: ${user.rank}
 	`.trim())
             user.rank = rank
         }
