@@ -1,4 +1,4 @@
-let handler = async (m, {conn} => {
+let handler = async (m, {conn}) => {
 if (global.DATABASE.data.chats[m.chat].expired >= 1) throw`${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date() *1)}`.trim()
 if (global.DATABASE.data.chats[m.chat].expired = 0) throw `Maap, owner tidak menetapkan expired untuk grup ini`.trim()
 }
