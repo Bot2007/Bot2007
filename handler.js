@@ -175,7 +175,7 @@ module.exports = {
           if (!('sDemote' in chat)) chat.sDemote = ''
           if (!('delete' in chat)) chat.delete = true
           if (!isNumber(chat.expired)) chat.expired = 0
-          if (!('stiker' in chat)) chat.stiker = false
+          if (!('autosticker' in chat)) chat.stiker = false
           if (!('antiLink' in chat)) chat.antiLink = false
         } else global.DATABASE.data.chats[m.chat] = {
           isBanned: false,
