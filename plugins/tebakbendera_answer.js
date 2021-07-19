@@ -1,7 +1,7 @@
 let handler = m => m
 handler.before = async function (m) {
   let id = m.chat
-  if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/「 Tebak Bendera 」/i.test(m.quoted.text)) return !0
+  if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*who/i.test(m.quoted.text)) return !0
   conn.tebakbendera = conn.tebakbendera ? conn.tebakbendera : {}
   if (!(id in conn.tebakbendera)) return m.reply('Soal itu telah berakhir')
   if (m.quoted.id == conn.tebakbendera[id][0].id) {
@@ -15,6 +15,7 @@ handler.before = async function (m) {
     } else if (m.text.toLowerCase().endsWith(json.jawaban.split` `[1])) m.reply(`*Dikit Lagi!*`)
     else m.reply(`*Salah!*`)
   }
+  return !0
 }
 handler.exp = 0
 
