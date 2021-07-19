@@ -14,7 +14,10 @@ let handler = async (m, { conn, usedPrefix }) => {
     let json = await res.json()
     if (!json.status) throw 'Maap, Limit Apikey Taufik abis.\nSilahkan tunggu keesokannya ya.'
     conn.tebakbendera[id] = [
-        await conn.reply(m.chat, 'Bendera: *${json.bendera}*\nTimeout: *${(timeout / 1000).toFixed(2)} detik*\nKetik *${usedPrefix}tbhint* untuk hint\nBonus: ${poin} XP', m),
+        await conn.reply(m.chat, `Bendera: *${json.bendera}*
+Timeout: *${(timeout / 1000).toFixed(2)} detik*
+Ketik *${usedPrefix}tbhint* untuk hint
+Bonus: ${poin} XP`.trim(), m),
         json, poin,
         setTimeout(() => {
             if (conn.tebakbendera[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, tebakbendera[id][0])
