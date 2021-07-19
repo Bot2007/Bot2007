@@ -3,7 +3,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     var jumlahHari = 86400000 * text
     var now = new Date() * 1
-    if (now < global.DATABASE.data.chats[m.chat].expired) global.db.data.chats[m.chat].expired += jumlahHari
+    if (now < global.DATABASE.data.chats[m.chat].expired) global.DATABASE.data.chats[m.chat].expired += jumlahHari
     else global.DATABASE.data.chats[m.chat].expired = now + jumlahHari
     m.reply(`Berhasil menetapkan hari kadaluarsa untuk ${conn.getName(m.chat)} selama ${text} hari.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
 }
