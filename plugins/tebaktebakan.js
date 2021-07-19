@@ -19,7 +19,7 @@ ${json.result.level}
 Soal: "${json.result.soal}"
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik *${usedPrefix}tthint* untuk bantuan
-Bonus: Rp${poin}
+Bonus: ${poin} XP
     `.trim()
     conn.tebaktebakan[id] = [
       await conn.reply(m.chat, caption, m),
