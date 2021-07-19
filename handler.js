@@ -174,9 +174,9 @@ module.exports = {
           if (!('sPromote' in chat)) chat.sPromote = ''
           if (!('sDemote' in chat)) chat.sDemote = ''
           if (!('delete' in chat)) chat.delete = true
-          if (!isNumber(chat.expired)) chat.expired = 0
           if (!('autosticker' in chat)) chat.stiker = false
           if (!('antiLink' in chat)) chat.antiLink = false
+          if (!isNumber(chat.expired)) chat.expired = 0
         } else global.DATABASE.data.chats[v.jid] = {
           isBanned: false,
           welcome: false,
@@ -186,9 +186,9 @@ module.exports = {
           sPromote: '',
           sDemote: '',
           delete: true,
-          expired: 0,
           autosticker: false,
           antiLink: false,
+          expired: 0,
         }
       } catch (e) {
         console.error(e)
