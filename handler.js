@@ -177,7 +177,7 @@ module.exports = {
           if (!isNumber(chat.expired)) chat.expired = 0
           if (!('autosticker' in chat)) chat.stiker = false
           if (!('antiLink' in chat)) chat.antiLink = false
-        } else global.DATABASE.data.chats[m.chat] = {
+        } else global.DATABASE.data.chats[v.jid] = {
           isBanned: false,
           welcome: false,
           detect: false,
