@@ -21,7 +21,6 @@ handler.before = m => {
 Selamat, anda telah naik level!
 *${before}* -> *${user.level}*
 gunakan *.profile* untuk mengecek
-Your rank: ${user.rank}
 	`.trim())
             user.rank = rank
         }
