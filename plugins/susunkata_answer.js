@@ -8,8 +8,8 @@ handler.before = async function (m) {
     let json = JSON.parse(JSON.stringify(conn.susunkata[id][1]))
     // m.reply(JSON.stringify(json, null, '\t'))
     if (' '+m.text.toUpperCase() == json.result.jawaban.toUpperCase()) {
-      global.DATABASE._data.users[m.sender].uang += conn.susunkata[id][2]
-      m.reply(`*Benar!*\n+Rp${conn.susunkata[id][2]}`)
+      global.DATABASE._data.users[m.sender].exp += conn.susunkata[id][2]
+      m.reply(`*Benar!*\n+${conn.susunkata[id][2]} XP`)
       clearTimeout(conn.susunkata[id][3])
       delete conn.susunkata[id]
     } else if (m.text.toUpperCase().endsWith(json.result.jawaban.split` `[1])) m.reply(`*Dikit Lagi!*`)
