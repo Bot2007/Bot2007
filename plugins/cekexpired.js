@@ -1,3 +1,10 @@
+let handler = async m => m.reply('${msToDate(global.DATABASE.data.chats[v.jid].expired - new Date() *1)}')
+handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
+handler.tags = ['main']
+handler.command = /^(cekluput|cekexpired|kapanexpired|kapanluput)$/i
+
+module.exports = handler
+
 function msToDate(ms) {
   temp = ms
   days = Math.floor(ms / (24 * 60 * 60 * 1000));
