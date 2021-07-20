@@ -1,6 +1,6 @@
 let axios = require('axios')
-let handler = async (m, { conn, command, usedPrefix, args }) => {
-  if (!args[0]) return conn.reply(m.chat, 'Tidak ada url\nContoh penggunaan: ${usedPrefix + command} https://youtube.com', m)
+let handler = async (m, { conn, usedPrefix, args }) => {
+  if (!args[0]) return conn.reply(m.chat, 'Tidak ada url\nContoh penggunaan: ${usedPrefix}tinyurl https://youtube.com', m)
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
   axios.get(`https://tinyurl.com/api-create.php?url=${url}`).then ((res) => {
   let hasil = `
