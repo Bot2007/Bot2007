@@ -1,5 +1,5 @@
 let handler = async m => 
-m.reply(`Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`.trim()) 
+m.reply(`Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`.trim()) 
 handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
 handler.tags = ['main']
 handler.command = /^(cekluput|cekexpired|kapanexpired|kapanluput)$/i
