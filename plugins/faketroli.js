@@ -1,5 +1,4 @@
 const { MessageType } = require("@adiwajshing/baileys")
-let axios = require("axios");
 let fs = require("fs");
 let handler = async(m, { conn, args, text, usedPrefix: _p }) => {
 //if(args.length == 0) return m.reply(`Cara Penggunaan: Reply Foto, Ketik *${_p}faketroli* <TextMessage> | <OrderMessage> | <OrderTitle>\nContoh: *${_p}faketroli* Hai Wibu | SGDC-BOT | 10k Bang?`) 
