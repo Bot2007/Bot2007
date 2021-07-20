@@ -19,7 +19,7 @@ let handler = async (m, { conn, text }) => {
    m.reply('Conversion Failed')
   }
 }
-handler.help = ['trigger']
+handler.help = ['trigger (caption|reply media)']
 handler.tags = ['sticker']
 handler.command = /^trigger$/i
 handler.owner = false
