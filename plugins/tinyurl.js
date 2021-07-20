@@ -1,5 +1,5 @@
 let axios = require('axios')
-let handler = async (m, { conn, usedPrefix, args }) => {
+let handler = async (m, { usedPrefix, args }) => {
   if (!args[0]) throw `
 Tidak ada url
 Contoh penggunaan: 
