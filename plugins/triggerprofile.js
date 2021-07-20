@@ -1,5 +1,3 @@
-//kok cewe gw jadi cuek yahh? daritadi pagi gw chat ga dibales cuman di read doang
-
 const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn }) => {
@@ -8,16 +6,14 @@ let handler = async (m, { conn }) => {
     avatar: await conn.getProfilePicture(who).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
   })
   let stiker = await sticker(null, marah, global.packname, global.author)
- if (stiker) return conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-    quoted: m
-  })
+ if (stiker) return conn.sendMessage(m.chat, stiker, m, { asSticker: true })
   throw stiker.toString()
 }
 
 
-handler.help = ['trigger']
+handler.help = ['triggerprofile']
 handler.tags = ['maker']
 
-handler.command = /^(trigger)$/i
+handler.command = /^(triggerprofile)$/i
 
 module.exports = handler
