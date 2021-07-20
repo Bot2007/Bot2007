@@ -4,9 +4,9 @@ let handler  = async (m) => {
   let json = await res.json()
   m.reply(pickRandom(json))
 }
-handler.help = ['truth']
+handler.help = ['truth2']
 handler.tags = ['quotes']
-handler.command = /^(truth)$/i
+handler.command = ['truth2']
 
 module.exports = handler
 
