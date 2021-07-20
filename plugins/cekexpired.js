@@ -1,5 +1,4 @@
 let handler = async m => {
-if (global.DATABASE.data.chats[m.chat].expired = 0) throw `Maap, owner tidak menetapkan expired untuk grup ini`.trim()
 m.reply(m.chat, `${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date() *1)}`.trim(), m)
 }
 handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
