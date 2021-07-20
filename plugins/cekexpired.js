@@ -1,5 +1,8 @@
-let handler = async m =>
-m.reply(m.chat, `${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date() *1)}`.trim(), m)
+let handler = async m => m.reply(`
+╭─「 Donasi 」
+│ • Saweria = https://bit.ly/35L1whO
+╰────
+`.trim()) 
 handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
 handler.tags = ['main']
 handler.command = /^(cekluput|cekexpired|kapanexpired|kapanluput)$/i
