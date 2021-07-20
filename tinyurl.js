@@ -3,7 +3,8 @@ let handler = async (m, { conn, command, args }) => {
   let full = /f$/i.test(command)
   if (!args[0]) return conn.reply(m.chat, 'Tidak ada url', m)
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  axios.get(`https://tinyurl.com/api-create.php?url=${url}`)
+  axios.get(`https://tinyurl.com/api-create.php?url=${url}`).then ((res) => {
+	 	let hasil = `nih URL anda ${res.data}`
 
 }
 handler.help = ['tinyurl'].map(v => v + ' <url>')
