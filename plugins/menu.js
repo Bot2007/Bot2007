@@ -9,24 +9,24 @@ const jamID = moment.tz('Asia/Jakarta').format('HH')
 const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
  var ucapanWaktuID = 'Selamat Pagi 🌄'
  var ucapanWaktuMY = 'Selamat Pagi 🌄'
-				if (jamID >= '03' && jam <= '10') {
+				if (jamID >= '03' && jamID <= '10') {
 				ucapanWaktuID = 'Selamat Pagi 🌄'
-				} else if (jamID >= '10' && jam <= '13') {
+				} else if (jamID >= '10' && jamID <= '13') {
 				ucapanWaktuID = 'Selamat Siang ☀️'
-				} else if (jamID >= '13' && jam <= '18') {
+				} else if (jamID >= '13' && jamID <= '18') {
 				ucapanWaktuID = 'Selamat Sore 🌅'
-				} else if (jamID >= '18' && jam <= '23') {
+				} else if (jamID >= '18' && jamID <= '23') {
 				ucapanWaktuID = 'Selamat Malam 🌙'
 				} else {
 				ucapanWaktuID = 'Selamat Malam 🌙'
 				}
-                                if (jamMY >= '03' && jam <= '10') {
+                                if (jamMY >= '03' && jamMY <= '10') {
 				ucapanWaktuMY = 'Selamat Pagi 🌄'
-				} else if (jamMY >= '10' && jam <= '13') {
+				} else if (jamMY >= '10' && jamMY <= '13') {
 				ucapanWaktuID = 'Selamat Tengahari ☀️'
-				} else if (jamMY >= '13' && jam <= '18') {
+				} else if (jamMY >= '13' && jamMY <= '18') {
 				ucapanWaktuID = 'Selamat Petang 🌅'
-				} else if (jamMY >= '18' && jam <= '23') {
+				} else if (jamMY >= '18' && jamMY <= '23') {
 				ucapanWaktuMY = 'Selamat Malam 🌙'
 				} else {
 				ucapanWaktuMY = 'Selamat Malam 🌙'
