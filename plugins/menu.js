@@ -132,7 +132,7 @@ let TaufikComel = conn
 ╰─━━━━━━━━━━━━━━━━─╯
 ╭─━•❈«❬ Fitur ❭»❈•━─╮
 ┣➥ 365+
-╰─━━━━━━━━━━━─╯
+╰─━━━━━━━━━━━━─╯
 
 %readmore`
     let header = conn.menu.header || '╭─━•❈«❬ %category ❭»❈•━─╮'
