@@ -106,13 +106,14 @@ let TaufikComel = conn
 ┣➥ Limit :  *%limit Limit*
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
-┣➥ Nomor owner bot : wa.me/${global.conn.user.jid.split`@`[0]}
-╰─━━━━━━━━━━━━━━━━━━━━─╯
+┣➥ Nomor owner bot : 
+┣➥ wa.me/${global.conn.user.jid.split`@`[0]}
+╰─━━━━━━━━━━━━━━━━─╯
 ╭─━•❈«❬ Information ❭»❈•━─╮
 ┣➥ Ketik %pinv untuk melihat
 ┣   keseluruhan isi dompet anda
 ┣   seperti crate, armor dan pet
-╰─━━━━━━━━━━━━━━━━━━━─╯
+╰─━━━━━━━━━━━━━━━━─╯
 ╭─━•❈«❬ Hari ini ❭»❈•━─╮
 ┣➥ Hari : *%week*
 ┣➥ Weton : *%weton*
@@ -123,15 +124,15 @@ let TaufikComel = conn
 ┣➥ Online : *%uptime*
 ┣➥ Total User : *%totalreg Nomor*
 ┣➥ Prefix yang anda gunakan : *'%p'*
-╰─━━━━━━━━━━━━━━━━─╯
+╰─━━━━━━━━━━━━━─╯
 ╭─━•❈«❬ Sosial media ❭»❈•━─╮
 ┣➥ YouTube : *${sosmed}*
 ┣➥ Instagram : *@taufikmusa07*
 ┣➥ FaceBook : *${sosmed}*
-╰─━━━━━━━━━━━━━━━━━━━━─╯
+╰─━━━━━━━━━━━━━━━━─╯
 ╭─━•❈«❬ Fitur ❭»❈•━─╮
 ┣➥ 365+
-╰─━━━━━━━━━━━━━━─╯
+╰─━━━━━━━━━━━─╯
 
 %readmore`
     let header = conn.menu.header || '╭─━•❈«❬ %category ❭»❈•━─╮'
