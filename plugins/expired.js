@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     var jumlahDetik = 1000 * detik
     var now = new Date() * 1
     if (now < global.DATABASE.data.chats[m.chat].expired) global.DATABASE.data.chats[m.chat].expired += jumlahHari
-    else global.DATABASE.data.chats[m.chat].expired = now + jumlahHari + jumlahJam + JumlahMenit + JumlahDetik
+    else global.DATABASE.data.chats[m.chat].expired = now + jumlahHari + jumlahJam + jumlahMenit + jumlahDetik
     m.reply(`Berhasil menetapkan hari kadaluarsa untuk ${conn.getName(m.chat)} selama ${text} hari.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
 }
 handler.help = ['expired hari|jam|menit|detik']
