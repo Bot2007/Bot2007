@@ -137,7 +137,7 @@ let TaufikComel = conn
 %readmore`
     let header = conn.menu.header || '╭─━•❈«❬ %category ❭»❈•━─╮'
     let body   = conn.menu.body   || '┣ %cmd%islimit'
-    let footer = conn.menu.footer || '╰─━━━━━━━━━━━━━━━━─╯\n'
+    let footer = conn.menu.footer || '╰─━━━━━━━━━━━━\n'
     let after  = conn.menu.after  || `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
