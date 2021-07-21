@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
    let [ hari, jam, menit, detik ] = text.split`|`
-   if (!hari && !jam && !menit && !detik || isNaN(hari && jam && menit && detik)) throw `Masukkan angka mewakili jumlah hari, jam, menit, detik (hari|jam|meniti|detik)!\n*Misal : ${usedPrefix + command} 1|2|3|4*`
+   if (!hari && !jam && !menit && !detik || isNaN(hari && jam && menit && detik)) throw `Masukkan angka mewakili jumlah hari, jumlah jam, jumlah menit dan jumlah detik (hari|jam|meniti|detik)!\n*Misal : ${usedPrefix + command} 1|2|3|4*`
     var jumlahHari = 86400000 * hari
     var jumlahJam = 3600000 * jam
     var jumlahMenit = 60000 * menit
@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     var now = new Date() * 1
     if (now < global.DATABASE.data.chats[m.chat].expired) global.DATABASE.data.chats[m.chat].expired += jumlahHari
     else global.DATABASE.data.chats[m.chat].expired = now + jumlahHari + jumlahJam + jumlahMenit + jumlahDetik
-    m.reply(`Berhasil menetapkan hari kadaluarsa untuk ${conn.getName(m.chat)} selama ${text} hari.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
+    m.reply(`Berhasil menetapkan hari kadaluarsa untuk ${conn.getName(m.chat)} selama ${hari} hari ${jam} jam ${menit} menit ${detik} detik.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
 }
 handler.help = ['expired hari|jam|menit|detik']
 handler.tags = ['owner']
