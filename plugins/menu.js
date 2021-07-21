@@ -131,7 +131,7 @@ let TaufikComel = conn
 ╰─━━━━━━━━━━━━━━━━━━━━─╯
 ╭─━•❈«❬ Fitur ❭»❈•━─╮
 ┣➥ 365+
-╰─━━━━━━━━━━━━━━━━━━━━─╯
+╰─━━━━━━━━━━━━━━─╯
 
 %readmore`
     let header = conn.menu.header || '╭─━•❈«❬ %category ❭»❈•━─╮'
@@ -186,9 +186,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 5
-handler.register = false
-
 module.exports = handler
 
 const more = String.fromCharCode(8206)
