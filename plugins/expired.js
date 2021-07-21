@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
    let [ hari, jam, menit, detik ] = text.split`|`
-   if (![ hari, jam, menit, detik ] || isNaN([ hari, jam, menit, detik ])) throw `Masukkan angka mewakili jumlah hari, jam, menit, detik (hari|jam|meniti|detik)!\n*Misal : ${usedPrefix + command} 1|2|3|4*`
+   if (!hari && !jam && !menit && !detik || isNaN([hari && jam && menit && detik)) throw `Masukkan angka mewakili jumlah hari, jam, menit, detik (hari|jam|meniti|detik)!\n*Misal : ${usedPrefix + command} 1|2|3|4*`
     var jumlahHari = 86400000 * hari
     var jumlahJam = 3600000 * jam
     var jumlahMenit = 60000 * menit
