@@ -3,7 +3,34 @@ let ftype = require('file-type');
 let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
+const moment = require('moment-timezone')
 let handler  = async (m, { conn, usedPrefix: _p }) => {
+const jamID = moment.tz('Asia/Jakarta').format('HH')
+const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
+ var ucapanWaktuID = 'Selamat Pagi 🌄'
+ var ucapanWaktuMY = 'Selamat Pagi 🌄'
+				if (jamID >= '03' && jam <= '10') {
+				ucapanWaktuID = 'Selamat Pagi 🌄'
+				} else if (jamID >= '10' && jam <= '13') {
+				ucapanWaktuID = 'Selamat Siang ☀️'
+				} else if (jamID >= '13' && jam <= '18') {
+				ucapanWaktuID = 'Selamat Sore 🌅'
+				} else if (jamID >= '18' && jam <= '23') {
+				ucapanWaktuID = 'Selamat Malam 🌙'
+				} else {
+				ucapanWaktuID = 'Selamat Malam 🌙'
+				}
+                                if (jamMY >= '03' && jam <= '10') {
+				ucapanWaktuMY = 'Selamat Pagi 🌄'
+				} else if (jamMY >= '10' && jam <= '13') {
+				ucapanWaktuID = 'Selamat Tengahari ☀️'
+				} else if (jamMY >= '13' && jam <= '18') {
+				ucapanWaktuID = 'Selamat Petang 🌅'
+				} else if (jamMY >= '18' && jam <= '23') {
+				ucapanWaktuMY = 'Selamat Malam 🌙'
+				} else {
+				ucapanWaktuMY = 'Selamat Malam 🌙'
+				}
 const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -97,7 +124,8 @@ let TaufikComel = conn
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 °♡ɞ${conn.getName(conn.user.jid)}ʚ♡°
-
+${ucapanWaktuID}(Indonesia)
+${ucapanWaktuMY}(Malaysia)
 
 *╭─━•❈«❬ Biodata user ❭»❈•━─╮*
 ┣➥ Nama : *%name*
