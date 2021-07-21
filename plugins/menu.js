@@ -96,10 +96,10 @@ let TaufikComel = conn
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
-°❀❬ ${conn.getName(conn.user.jid)} ❭❀°
+°♡ɞ${conn.getName(conn.user.jid)}ʚ♡°
 
 
-┏━━°❀❬ Biodata User ❭❀°━━┓
+╭─━•❈«❬ Biodata user ❭»❈•━─╮
 ┣➥ Nama : *%name*
 ┣➥ Level : *%level*
 ┣➥ Exp : *%exp XP*
@@ -107,13 +107,13 @@ let TaufikComel = conn
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
 ┣➥ Nomor owner bot : wa.me/${global.conn.user.jid.split`@`[0]}
-┗━━━━━━━━━━━━━━━━
-┏━━°❀❬ Information ❭❀°━━┓
+╰─━━━━━━━━━━━━━━━━━━━━─╯
+╭─━•❈«❬ Information ❭»❈•━─╮
 ┣➥ Ketik %pinv untuk melihat
 ┣   keseluruhan isi dompet anda
-┣   seperti crate, Armor dan pet
-┗━━━━━━━━━━━━━━━━
-┏━━°❀❬ Hari ini ❭❀°━━┓
+┣   seperti crate, armor dan pet
+╰─━━━━━━━━━━━━━━━━━━━─╯
+╭─━•❈«❬ Hari ini ❭»❈•━─╮
 ┣➥ Hari : *%week*
 ┣➥ Weton : *%weton*
 ┣➥ Tanggal Islam : 
@@ -123,19 +123,20 @@ let TaufikComel = conn
 ┣➥ Online : *%uptime*
 ┣➥ Total User : *%totalreg Nomor*
 ┣➥ Prefix yang anda gunakan : *'%p'*
-┗━━━━━━━━━━━━━━━━
-┏━━°❀❬ Sosial Media ❭❀°━━┓
+╰─━━━━━━━━━━━━━━━━─╯
+╭─━•❈«❬ Sosial media ❭»❈•━─╮
 ┣➥ YouTube : *${sosmed}*
 ┣➥ Instagram : *@taufikmusa07*
 ┣➥ FaceBook : *${sosmed}*
-┗━━━━━━━━━━━━━━━━
-┏━━°❀❬ Changelog ❭❀°━━┓
-┣➥ Add Fitur (360+)
-┗━━━━━━━━━━━━━━━━
+╰─━━━━━━━━━━━━━━━━━━━━─╯
+╭─━•❈«❬ Fitur ❭»❈•━─╮
+┣➥ 365+
+╰─━━━━━━━━━━━━━━━━━━━━─╯
+
 %readmore`
-    let header = conn.menu.header || '┏━━°❀❬ %category ❭❀°━━┓'
-    let body   = conn.menu.body   || '┣➥ %cmd%islimit'
-    let footer = conn.menu.footer || '┗━━━━━━━━━━━━━━━━\n'
+    let header = conn.menu.header || '╭─━•❈«❬ %category ❭»❈•━─╮'
+    let body   = conn.menu.body   || '┣ %cmd%islimit'
+    let footer = conn.menu.footer || '╰─━━━━━━━━━━━━━━━━─╯\n'
     let after  = conn.menu.after  || `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
