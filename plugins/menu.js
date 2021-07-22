@@ -8,7 +8,6 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 const jamID = moment.tz('Asia/Jakarta').format('HH')
 const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
  var ucapanWaktuID = 'Selamat Pagi 🌄'
- var ucapanWaktuMY = 'Selamat Pagi 🌄'
 				if (jamID >= '03' && jamID <= '10') {
 				ucapanWaktuID = 'Selamat Pagi 🌄'
 				} else if (jamID >= '10' && jamID <= '13') {
@@ -20,17 +19,18 @@ const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
 				} else {
 				ucapanWaktuID = 'Selamat Malam 🌙'
 				}
-                                if (jamMY >= '13' && jamMY <= '18') {
+  var ucapanWaktuMY = 'Selamat Pagi 🌄'
+				if (jamMY >= '01' && jamMY <= '10') {
 				ucapanWaktuMY = 'Selamat Pagi 🌄'
-				} else if (jamMY >= '18' && jamMY <= '23') {
-				ucapanWaktuID = 'Selamat Tengahari ☀️'
-				} else if (jamMY >= '01' && jamMY <= '11') {
-				ucapanWaktuID = 'Selamat Petang 🌅'
-				} else if (jamMY >= '12' && jamMY <= '13') {
-				ucapanWaktuMY = 'Selamat Malam 🌙'
-				} else {
+				} else if (jamMY >= '10' && jamMY <= '13') {
+				ucapanWaktuMY = 'Selamat Tengahari ☀️'
+				} else if (jamMY >= '13' && jamMY <= '18') {
+				ucapanWaktuMY = 'Selamat Petang 🌅'
+				} else if (jamMY >= '18' && jamMY <= '22') {
 				ucapanWaktuMY = 'Selamat Tengah Malam 🌙'
-				}
+				} else {
+				ucapanWaktuMY = 'Selamat Malam 🌙'
+				}        
 const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
