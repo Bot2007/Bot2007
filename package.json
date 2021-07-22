@@ -1,25 +1,25 @@
 {
-  "name": "stikerinbot",
+  "name": "Taufikbot",
   "version": "1.0.0",
-  "description": "WhatsApp Bot Ringan",
-  "main": "index.js",
+  "description": "Bot yang direcode oleh Taufik",
+  "main": "Taufikbot.js",
   "scripts": {
-    "start": "node index.js --self",
+    "start": "node Taufikbot.js --self",
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ariffb25/stikerinbot.git"
+    "url": "git+https://github.com/Bot2007/Bot2007.git"
   },
   "keywords": [
     "whatsapp-bot"
   ],
-  "author": "Ariffb",
+  "author": "Taufik",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ariffb25/stikerinbot/issues"
+    "url": "https://github.com/Bot2007/Bot2007/issues"
   },
-  "homepage": "https://github.com/ariffb25/stikerinbot",
+  "homepage": "https://github.com/Bot2007/Bot2007",
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "awesome-phonenumber": "^2.54.0",
