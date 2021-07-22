@@ -35,6 +35,7 @@
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "canvacord": "^5.2.1",
     "nekos.life": "^2.0.7",
+    "moment-timezone": "^2.29.1",
     "awesome-phonenumber": "^2.47.0",
     "brainly-scraper-v2": "^1.1.2",
     "cfonts": "^2.9.1",
