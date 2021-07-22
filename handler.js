@@ -331,8 +331,12 @@ module.exports = {
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.DATABASE.data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
+            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy* atau *${usedPrefix}shop*`, m)
             continue // Limit habis
+          }
+          if (plugin.level > _user.level) {
+            this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu baru ${_user.level} awokawok`, m)
+            continue // If the level has not been reached
           }
           let extra = {
             match,
