@@ -4,9 +4,9 @@ let handler = async (m, { conn }) => {
     } else conn.reply(m.chat, `Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`, m)
 }
 handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
-handler.tags = ['main']
+handler.tags = ['group']
 handler.command = /^(cekluput|cekexpired|kapanexpired|kapanluput)$/i
-
+handler.group = true
 module.exports = handler
 
 function msToDate(ms) {
