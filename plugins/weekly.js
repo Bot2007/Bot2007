@@ -22,6 +22,17 @@ handler.fail = null
 
 module.exports = handler
 
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
+function clockString(ms) {
+  let h = Math.floor(ms / 3600000)
+  let m = Math.floor(ms / 60000) % 60
+  let s = Math.floor(ms / 1000) % 60
+  console.log({ms,h,m,s})
+  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
+}
+
 function button(teks, user) {
     const buttons = []
     
@@ -31,10 +42,10 @@ function button(teks, user) {
     let weekly = new Date - user.lastweekly > 604800000
     console.log({claim, daily, monthly, weekly})
     
-    if (monthly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'MONTLY', buttonId: '.monthly'}, type: 1})
-    if (weekly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'WEEKLY', buttonId: '.weekly'}, type: 1})
-    if (claim) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'CLAIM', buttonId: '.claim'}, type: 1})
-    if (daily) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'DAILY', buttonId: '.daily'}, type: 1})
+    if (monthly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'MONTLY'}, type: 1})
+    if (weekly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'WEEKLY'}, type: 1})
+    if (claim) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'CLAIM'}, type: 1})
+    if (daily) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'DAILY'}, type: 1})
     if (buttons.length == 0) throw teks
     
     const buttonMessage = {
