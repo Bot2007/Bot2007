@@ -9,12 +9,11 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.caklontong[id][0])
         throw false
     }
-    let res = await fetch(global.API('zahir', '/api/kuis/caklontong', {}, 'APIKEY'))
+    let res = await fetch(global.API('zahir', '/api/kuis/caklontong', {}, 'apikey'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
     let caption = `
 ${json.result.soal}
-
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}calo untuk bantuan
 Bonus: ${poin} XP
