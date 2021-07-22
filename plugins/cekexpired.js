@@ -1,7 +1,7 @@
 let handler = async m =>
 Ok = `Maap, owner belum menetapkan expired untuk grup ini`.trim()
 if (global.DATABASE.data.chats[m.chat].expired = 0) throw Ok
-m.reply`Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`.trim())
+m.reply(`Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`.trim())
 handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
 handler.tags = ['main']
 handler.command = /^(cekluput|cekexpired|kapanexpired|kapanluput)$/i
