@@ -182,7 +182,7 @@ ${ucapanWaktuMY}(Malaysia)
     let replace = {
       '%': '%',
       p: _p, uptime,
-      owner:, global.conn.user.jid,
+      owner: global.conn.user.jid,
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
