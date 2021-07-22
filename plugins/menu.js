@@ -136,7 +136,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
 ┣➥ Nomor owner bot : 
-┣➥ wa.me/${global.conn.user.jid.split`@`[0]}
+┣  @${global.conn.user.jid.replace(/@.+/, '')}
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
 ┣➥ Ketik %pinv untuk melihat
@@ -190,7 +190,7 @@ ${ucapanWaktuMY}(Malaysia)
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-  m.reply(text.trim(), null, { contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
+  m.reply(text.trim(), null, { contextInfo: { mentionedJid: global.conn.user.jid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
