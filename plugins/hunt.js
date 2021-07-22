@@ -44,8 +44,8 @@ let handler = async (m, { conn, text }) => {
 	let player = global.DATABASE.data.users[m.sender]
 	let pname = conn.getName(m.sender)
 
-	let cdm = `${MeNit(new Date - player.Thunt)}`
-	let cds = `${DeTik(new Date - player.Thunt)}`
+	let cdm = `${MeNit(new Date - player.lasthunt)}`
+	let cds = `${DeTik(new Date - player.lasthunt)}`
 	let cd1 = Math.ceil(01 - cdm)
 	let cd2 = Math.ceil(60 - cds)
 
