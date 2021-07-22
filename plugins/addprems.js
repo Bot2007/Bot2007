@@ -12,7 +12,7 @@ let handler = async (m, { conn }) => {
     })
   
 }
-handler.help = ['addprem *@user*']
+handler.help = ['addprem *@user* (permanent)']
 handler.tags = ['owner']
 handler.command = /^(add|tambah|\+)prem$/i
 handler.rowner = true
