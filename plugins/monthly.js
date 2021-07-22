@@ -43,10 +43,10 @@ function button(teks, user) {
     let weekly = new Date - user.lastweekly > 604800000
     console.log({claim, daily, monthly, weekly})
     
-    if (monthly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'MONTLY'}, type: 1})
-    if (weekly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'WEEKLY'}, type: 1})
-    if (claim) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'CLAIM'}, type: 1})
-    if (daily) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: 'DAILY'}, type: 1})
+    if (monthly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '.monthly'}, type: 1})
+    if (weekly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '.weekly'}, type: 1})
+    if (claim) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '.claim'}, type: 1})
+    if (daily) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '.daily'}, type: 1})
     if (buttons.length == 0) throw teks
     
     const buttonMessage = {
