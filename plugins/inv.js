@@ -66,7 +66,8 @@ Common: *${common}*
 Uncommon: *${uncommon}*
 Mythic: *${mythic}*
 Legendary: *${legendary}*
-Pet: *${pet}*\n
+Pet: *${pet}*
+Total crate: *${common + uncommon + mythic + legendary + pet}* crate\n
 *Pet*
 Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level MAX' : ''}*
 Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level MAX' : ''}*
