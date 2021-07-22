@@ -1,6 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, isPrems}) => {
     const prem = 5000
     const free = 500
     let user = global.DATABASE._data.users[m.sender]
