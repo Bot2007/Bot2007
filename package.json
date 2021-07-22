@@ -1,6 +1,6 @@
 {
   "name": "Taufikbot",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "description": "Bot yang direcode oleh Taufik",
   "main": "Taufikbot.js",
   "scripts": {
