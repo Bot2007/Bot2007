@@ -8,7 +8,7 @@ let handler = async (m, { conn, isPrems}) => {
     let _timers = (86400000 - __timers)
     let timers = clockString(_timers) 
     if (new Date - user.lastdaily > 86400000) {
-        conn.reply(m.chat, `+{isPrems ? prem : free} XP`, m)
+        conn.reply(m.chat, `+${isPrems ? prem : free} XP`, m)
         global.DATABASE._data.users[m.sender].exp += isPrems ? prem : free
         global.DATABASE._data.users[m.sender].lastdaily = new Date * 1
     } else {
