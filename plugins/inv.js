@@ -26,7 +26,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let exp = global.DATABASE._data.users[who].exp
     let sampah = global.DATABASE._data.users[who].sampah
     let { max } = levelling.xpRange(level, exp, global.multiplier)
-    let name = m.fromMe ? conn.user : conn.contacts[who]
+    let name = conn.getName(who)
     let sortedmoney = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].money - a[1].money)
     let sortedlevel = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].level - a[1].level)
     let sorteddiamond = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].diamond - a[1].diamond)
@@ -48,7 +48,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let usersmythic = sortedmythic.map(v => v[0])
     let userslegendary = sortedlegendary.map(v => v[0])
     let str = `
-Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*\n
+Inventory *${name}*\n
 Health: *${healt}*
 Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*\n
 Money: *${money}*
