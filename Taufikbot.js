@@ -5,7 +5,7 @@ let fs = require('fs')
 let package = require('./package.json')
 const CFonts  = require('cfonts')
 CFonts.say('Taufik Bot', {
-  colors: ['#ff0068ff'],
+  colors: ['#0068ff'],
   font: 'block',
   align: 'center',
 })
