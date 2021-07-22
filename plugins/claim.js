@@ -17,7 +17,7 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['claim']
 handler.tags = ['rpg']
-handler.command = /^(claim|daily)$/i
+handler.command = /^(claim)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
