@@ -1,9 +1,14 @@
-console.log('Starting...')
+console.log('Bentar Taufik hensem mau mulai bot eheks')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts  = require('cfonts')
+CFonts.say('Taufik Bot', {
+  colors: ['#ff0068ff'],
+  font: 'block',
+  align: 'center',
+})
 CFonts.say('Bot\nRecode\nBy\nTaufik', {
   font: 'chrome',
   align: 'center',
