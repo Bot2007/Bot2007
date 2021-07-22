@@ -136,7 +136,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
 ┣➥ Nomor owner bot:
-┣   @%owner
+┣   ${global.conn.user.jid.map(v => '@' + v.replace(/@.+/, ''))}
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
 ┣➥ Ketik %pinv untuk melihat
