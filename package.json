@@ -1,16 +1,16 @@
 {
-  "name": "wabot-aq",
-  "version": "2.5.1",
+  "name": "Taufikbot",
+  "version": "6.0.0",
   "description": "Customizable WhatsApp Bot",
   "depecrated": false,
-  "main": "index.js",
+  "main": "Taufikbot.js",
   "directories": {
     "lib": "lib",
     "src": "src",
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node Taufikbot.js",
     "test": "node test.js"
   },
   "keywords": [
@@ -19,16 +19,16 @@
     "whatsapp",
     "js-whatsapp"
   ],
-  "homepage": "https://github.com/Nurutomo/wabot-aq",
+  "homepage": "https://github.com/Bot2007/Bot2007",
   "author": {
     "name": "Nurutomo"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nurutomo/wabot-aq.git"
+    "url": "git+https://github.com/Bot2007/Bot2007.git"
   },
   "bugs": {
-    "url": "https://github.com/Nurutomo/wabot-aq/issues"
+    "url": "https://github.com/Bot2007/Bot2007/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
