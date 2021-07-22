@@ -135,7 +135,8 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ Limit :  *%limit Limit*
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
-┣➥ Nomor owner bot : @${global.conn.user.jid.replace(/@.+/, '')}
+┣➥ Nomor owner bot : @%owner
+┣   
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
 ┣➥ Ketik %pinv untuk melihat
@@ -181,6 +182,7 @@ ${ucapanWaktuMY}(Malaysia)
     let replace = {
       '%': '%',
       p: _p, uptime,
+      owner:, global.conn.user.jid.replace(/@.+/, ''),
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
