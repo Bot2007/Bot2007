@@ -182,7 +182,7 @@ ${ucapanWaktuMY}(Malaysia)
     let replace = {
       '%': '%',
       p: _p, uptime,
-      owner: 601173093564@s.whatsapp.net.replace(/@.+/, ''),
+      owner: global.conn.user.jid.replace(/@.+/, ''),
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
@@ -191,7 +191,7 @@ ${ucapanWaktuMY}(Malaysia)
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-    m.reply(text.trim(), null, { contextInfo: { mentionedJid: m.senderr, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    m.reply(text.trim(), null, { contextInfo: { mentionedJid: global.conn.user.jid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
