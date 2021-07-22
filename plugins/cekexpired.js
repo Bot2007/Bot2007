@@ -1,4 +1,4 @@
-let handler = async (m, { conn } => {
+let handler = async (m, { conn }) => {
     if (!global.DATABASE.data.chats[m.chat].expired = 0) {
         conn.reply(m.chat, `Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`, m)
     } else conn.reply(m.chat, `Maap, owner belum menetapkan expired untuk grup ini`, m)
