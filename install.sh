@@ -1,8 +1,8 @@
-pkg install nodejs -y
-pkg install ffmpeg -y
-pkg install imagemagick -y
-npm install
+pkg i nodejs -y
+pkg i ffmpeg -y
+pkg i imagemagick -y
+npm i
 npm update
 npm i node-os-utils
 npm i -s nekos.life
-npm i 
+npm i moment-timezone
