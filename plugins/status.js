@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 let osu = require('node-os-utils')
-let handler  = async (m, { conn, usedPrefix, DevMode }) => {
+let handler  = async (m, { conn, usedPrefix }) => {
     try {
         let NotDetect = 'Not Detect'
         let old = performance.now()
@@ -11,7 +11,6 @@ let handler  = async (m, { conn, usedPrefix, DevMode }) => {
         let mem = osu.mem
         let netstat = osu.netstat
         let OS = osu.os.platform()
-        let cpuModel = cpu.model()
         let cpuPer
         let p1 = cpu.usage().then(cpuPercentage => {
             cpuPer = cpuPercentage
@@ -52,7 +51,6 @@ let handler  = async (m, { conn, usedPrefix, DevMode }) => {
   *Status Metro Bot*
 
 OS: *${OS}*
-CPU Model: *${cpuModel}*
 CPU Core: *${cpuCore} Core*
 CPU: *${cpuPer}%*
 Ram: *${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect})*
@@ -60,16 +58,13 @@ Drive: *${driveUsed} / ${driveTotal} (${drivePer})*
 Ping: *${Math.round(neww - old)} ms*
 Internet IN: *${netsIn}*
 Internet OUT: *${netsOut}*
+
+Mau liat lebih perinci? Ketik ${usedPrefix}ping / ${usedPrefix}speed
 `.trim(), m)
           console.log(OS)
     } catch (e) {
         console.log(e)
         m.reply('Error!!')
-        if (DevMode) {
-            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                conn.sendMessage(jid, 'Status.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-            }
-        }
     }
 }
 handler.help = ['', 'bot'].map(v => 'status' + v)
