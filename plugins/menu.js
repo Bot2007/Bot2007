@@ -71,6 +71,7 @@ let TaufikComel = conn
     let totalreg = Object.keys(global.DATABASE._data.users).length
     let tags = {
   'main': 'Main',
+  'about: 'About atau info Taufik Bot',
   'topup': 'Topup/Beli Limit',
   'game': 'Game',
   'rpg': 'Game RPG',
