@@ -16,9 +16,9 @@ let handler = async (m, { conn }) => {
         conn.sendMessage(m.chat, buttons, MessageType.buttonsMessage, { quoted: m })
     }
 }
-handler.help = ['claim']
+handler.help = ['daily']
 handler.tags = ['rpg']
-handler.command = /^(claim|daily)$/i
+handler.command = /^(daily)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
