@@ -136,7 +136,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
 ┣➥ Nomor owner bot
-┣   *wa.me/%owner?text=%pmenu*
+┣   *wa.me/%owner
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
 ┣➥ Ketik %pinv untuk melihat
