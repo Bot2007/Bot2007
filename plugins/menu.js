@@ -20,13 +20,13 @@ const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
 				} else {
 				ucapanWaktuID = 'Selamat Malam 🌙'
 				}
-                                if (jamMY >= '01' && jamMY <= '11') {
+                                if (jamMY >= '13' && jamMY <= '18') {
 				ucapanWaktuMY = 'Selamat Pagi 🌄'
-				} else if (jamMY >= '12' && jamMY <= '13') {
-				ucapanWaktuID = 'Selamat Tengahari ☀️'
-				} else if (jamMY >= '13' && jamMY <= '18') {
-				ucapanWaktuID = 'Selamat Petang 🌅'
 				} else if (jamMY >= '18' && jamMY <= '23') {
+				ucapanWaktuID = 'Selamat Tengahari ☀️'
+				} else if (jamMY >= '01' && jamMY <= '11') {
+				ucapanWaktuID = 'Selamat Petang 🌅'
+				} else if (jamMY >= '12' && jamMY <= '13') {
 				ucapanWaktuMY = 'Selamat Malam 🌙'
 				} else {
 				ucapanWaktuMY = 'Selamat Tengah Malam 🌙'
