@@ -136,7 +136,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ Rank : *%rank*
 ┣➥ Wang : *RM%wang*
 ┣➥ Nomor owner bot
-┣   @%owner
+┣   *wa.me/%owner?text=%pmenu*
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
 ┣➥ Ketik %pinv untuk melihat
@@ -182,7 +182,7 @@ ${ucapanWaktuMY}(Malaysia)
     let replace = {
       '%': '%',
       p: _p, uptime,
-      owner:, global.conn.user.jid.replace(/@.+/, ''),
+      owner:, global.conn.user.jid,
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
@@ -191,8 +191,7 @@ ${ucapanWaktuMY}(Malaysia)
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
-    let mentionedJid = [global.conn.user.jid]
-    m.reply(text.trim(), null, { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    m.reply(text.trim(), null, { contextInfo: { mentionedJid: m.senderr, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
