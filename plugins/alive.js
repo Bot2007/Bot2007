@@ -25,7 +25,7 @@ let handler  = async (m, { conn }) => {
 ❏ *Bio Bot* : ${ppstatus.status}\n\n*Support/Follow Me*\nhttps://instagram.com/taufikmusa07`, quoted: m, sendEphemeral: true, thumbnail: fs.readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid: [global.conn.user.jid]}})
 }
 handler.help = ['info', 'alive']
-handler.tags = ['main']
+handler.tags = ['about']
 handler.command = /^(alive|info)$/i
 handler.fail = null
 
