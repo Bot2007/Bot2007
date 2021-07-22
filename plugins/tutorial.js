@@ -1,16 +1,16 @@
 let handler  = async (m, { conn, usedPrefix }) => {
   conn.reply(m.chat, `
-╭─「 *Tutorial Main BOT_STYLE* 」
+╭─「 *Tutorial Bot* 」
 │ 
 │〘 Tutorial EPIC RPG 〙
 │• *${usedPrefix}claim*
 │   Staterpack yang bisa di klaim 
 │   12 jam sekali
 │• *${usedPrefix}mulung*
-│• *${usedPrefix}adventure*
-│• *${usedPrefix}petualang*
+│  *${usedPrefix}adventure*
+│  *${usedPrefix}petualang*
 │   Untuk mencari resource seperti 
-│   Money, Exp, dll..,dibutuhkan  
+│   Money, Exp dan dibutuhkan  
 │   minimal 80 nyawa untuk bisa 
 │   melakukannya dan, kamu tidak 
 │   dapat spam karena ada delay 5 
@@ -23,23 +23,20 @@ let handler  = async (m, { conn, usedPrefix }) => {
 │   *${usedPrefix}use potion <jumlah>*
 │   untuk menggunakan potion
 │• *${usedPrefix}shop <args>*
-│   Untuk membeli atau menjual sesuatu
+│   Untuk membeli atau menjual
+│   sesuatu
 │• *${usedPrefix}shop buy <crate> <jumlah>*
 │   Untuk membeli Crate
 │• *${usedPrefix}profile*
-│• *${usedPrefix}pp*
-│• *${usedPrefix}profil*
-│   untuk mengetahui No whatsapmu, dll
+│   untuk mengetahui profilemu
 │• *${usedPrefix}inv*
-│• *${usedPrefix}inventory*
-│• *${usedPrefix}bal*
-│   Untuk mengecek nyawa, money, dll.
+│  *${usedPrefix}inventory*
+│   Untuk mengecek nyawa dan money
 │• *${usedPrefix}judi <jumlah>*
 │   *_Jangan judi, Karena gk bakal_*
-│   *_balik modal.BENERAN GK BOHONG_*
 │  
-│*©BOT_STYLE 2020-2021*
-╰─「 *Tutorial Main BOT_STYLE* 」
+│*@taufikmusa07*
+╰─「 *Tutorial pake bot Taufik* 」
 `.trim(), m)
 }
 handler.help = ['tutorial']
