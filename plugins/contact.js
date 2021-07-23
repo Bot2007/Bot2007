@@ -15,4 +15,3 @@ handler.tags = ['']
 handler.command = /^save$/
 
 module.exports = handler
-©taufikmusa07
