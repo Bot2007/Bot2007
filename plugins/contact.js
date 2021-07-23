@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text }) => {
   if (!text) return
-  let cm = copy(m)
+  let cm = JSON.parse(JSON.stringify(m))
   let who
   if (text.includes('@0')) who = '0@s.whatsapp.net'
   else if (m.isGroup) who = cm.participant = m.mentionedJid[0]
@@ -15,8 +15,4 @@ handler.tags = ['']
 handler.command = /^save$/
 
 module.exports = handler
-
-function copy(obj) {
-  return JSON.parse(JSON.stringify(obj))
-}
 ©taufikmusa07
