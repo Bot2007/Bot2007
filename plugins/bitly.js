@@ -7,7 +7,7 @@ ${usedPrefix}bitly https://youtube.com
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  let f = await fetch(global.api('https://tobz-api.herokuapp.com', '/api/bitly?url=${url}', '&apikey=LRBOuIZYf9ozZmu1wAkf'))
+  let f = await fetch(global.API('https://tobz-api.herokuapp.com', '/api/bitly?url=${url}', '&apikey=LRBOuIZYf9ozZmu1wAkf'))
   let res = await f.json()
   let hasil = `
 nih urlnya, *${res.result}*
