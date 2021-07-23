@@ -10,9 +10,9 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   axios.get(`https://tobz-api.herokuapp.com/api/bitly?url=${url}&apikey=LRBOuIZYf9ozZmu1wAkf`).then ((res) => {
   let hasil = `
 nih urlnya, *${res.data.result}*
-Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
+  if (!res.data.result) throw res.data.error
   m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })})
 } 
 handler.help = ['bitly'].map(v => v + ' <url>')
