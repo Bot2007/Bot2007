@@ -10,7 +10,7 @@ global.APIs = { // API Prefix
   nzcha: 'http://nzcha-apii.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   fdci: 'https://api.fdci.se',
-  bsbt: 'https://bsbt-api-rest.herokuapp.com'
+  bsbt: 'https://bsbt-api-rest.herokuapp.com',
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
