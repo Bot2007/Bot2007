@@ -15,3 +15,8 @@ handler.tags = ['']
 handler.command = /^save$/
 
 module.exports = handler
+
+function copy(obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+©taufikmusa07
