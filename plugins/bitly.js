@@ -1,4 +1,4 @@
-let fetch = require('fetch')
+let fetch = require('node-fetch')
 let handler = async (m, { usedPrefix, args }) => {
   if (!args[0]) throw `
 Tidak ada url
