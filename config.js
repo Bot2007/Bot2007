@@ -10,7 +10,6 @@ global.APIs = { // API Prefix
   nzcha: 'http://nzcha-apii.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   fdci: 'https://api.fdci.se',
-  tobz: 'https://tobz-api.herokuapp.com',
   bsbt: 'https://bsbt-api-rest.herokuapp.com',
 }
 global.APIKeys = { // APIKey Here
@@ -18,7 +17,6 @@ global.APIKeys = { // APIKey Here
   'https://api.xteam.xyz': '7fa6089e6a81b5bc',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
-  'https://tobz-api.herokuapp.com': 'LRBOuIZYf9ozZmu1wAkf',
   'https://bsbt-api-rest.herokuapp.com': 'benniismael',
 }
 
