@@ -1,4 +1,4 @@
-let axios = require('axios')
+let fetch = require('fetch')
 let handler = async (m, { usedPrefix, args }) => {
   if (!args[0]) throw `
 Tidak ada url
@@ -7,13 +7,12 @@ ${usedPrefix}bitly https://youtube.com
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  axios.get(`https://tobz-api.herokuapp.com/api/bitly?url=${url}&apikey=LRBOuIZYf9ozZmu1wAkf`).then ((res) => {
+  let res = fetch(`https://tobz-api.herokuapp.com/api/bitly?url=${url}&apikey=LRBOuIZYf9ozZmu1wAkf`)
   let hasil = `
-nih urlnya, *${res.data.result}*
+nih urlnya, *${res.result}*
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
-  if (!res.data.result) throw res.data.error
-  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })})
+  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })
 } 
 handler.help = ['bitly'].map(v => v + ' <url>')
 handler.tags = ['internet']
