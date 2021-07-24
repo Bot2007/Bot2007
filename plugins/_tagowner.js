@@ -1,6 +1,6 @@
 let handler = m => m
 handler.before = m => {
-let jids = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
+let jids = [...new Set([...(m.mentionedJid || [])])]
   for (let jid of jids) {
     let user = global.DATABASE.data.users[global.conn.user.jid]
     if (!user) continue
@@ -8,3 +8,5 @@ let jids = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.send
   }
   return true
 }
+
+module.exports = handler
