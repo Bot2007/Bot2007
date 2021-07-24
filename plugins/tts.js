@@ -21,7 +21,7 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
   }
   let eo = `Teksnya mana?
     `.trim()
-    if (!text) throw eo
+    if (!args[0]) throw eo
   if (!m.quoted && m.quoted.text) throw er
 
   let res 
