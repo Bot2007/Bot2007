@@ -11,7 +11,7 @@ let handler = async (m, { conn, text }) => {
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
   let img = await q.download()
   let url = await uploadImage(img)
-  heum = await fetch(`https://lolhuman.herokuapp.com/api/editor/tosmile?apikey=oniichan&img=${url}`)
+  heum = await fetch(`https://lolhuman.herokuapp.com/api/editor/tosmile?apikey=682aeab645ed61cf137cf971&img=${url}`)
     json = await heum.buffer()
    conn.sendMessage(m.chat, heum, MessageType.image, {
     quoted: m
