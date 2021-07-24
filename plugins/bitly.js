@@ -7,7 +7,7 @@ ${usedPrefix}bitly https://youtube.com
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  axios.get(`https://tobz-api.herokuapp.com/api/bitly?url=${urls}&apikey=Tobzzz17`).then ((res) => {
+  axios.get(`https://tobz-api.herokuapp.com/api/bitly?url=${url}&apikey=Tobzzz17`).then ((res) => {
   let hasil = `
 nih urlnya, *${res.data.result}*
 Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
