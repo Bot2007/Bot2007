@@ -4,7 +4,7 @@ let handler = async (m, { text, usedPrefix }) => {
   let res = await axios.get(`http://recoders-area.caliph.repl.co/api/cuaca?kota=${text}`)
   let json = res.data
   if (json.error) throw 'Maaf kota yang kamu cari tidak tersedia'
-  let { tempat, angin, cuaca, deks, suhu, udara, kelembapan, angin } = json.respon
+  let { tempat, angin, cuaca, deks, suhu, udara, kelembapan } = json.respon
   let teks = `
 Cuaca daerah *${tempat}*
 
