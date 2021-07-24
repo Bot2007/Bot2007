@@ -4,7 +4,8 @@ Contoh penggunaan: ${usedPrefix}bitly https://youtube.com
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
 linknye = await bitly(text)
 
-m.reply(linknye)
+m.reply(m.chat, `nih linknya, ${linknye} 
+Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim(), m, { contextInfo: { mentionedJid: global.conn.user.jid } })})
 }
 handler.help = ['bitly <url>']
 handler.tags = ['internet']
