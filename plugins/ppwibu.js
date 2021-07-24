@@ -1,12 +1,13 @@
 let fetch = require('node-fetch')
-let waifu = require('waifu.pics')
+let waifu = require('nekos.life')
+let neko = new waifu()
      let handler  = async (m, { conn, args }) => {
-     kk = await waifu.fetch('sfw/neko')
-   conn.sendFile(m.chat, kk.url, 'neko.jpg', 'nekonya kak', m, false)
+     kk = await neko.sfw.avatar()
+   conn.sendFile(m.chat, kk.url, 'avatar.jpg', 'avatarnya kak', m, false)
 }
-handler.help = ['neko']
+handler.help = ['ppwibu']
 handler.tags = ['wibu']
-handler.command = /^neko$/i
+handler.command = /^ppwibu$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
