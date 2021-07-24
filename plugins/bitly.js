@@ -9,7 +9,7 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim(), m, { contextInfo: {
 }
 handler.help = ['bitly <url>']
 handler.tags = ['internet']
-handler.command = /^(bitly)$/i
+handler.command = ['bitly']
 
 module.exports = handler
 
