@@ -1,7 +1,5 @@
-let vas = require('canvacord')
 let handler = async (m, { text }) => {
 if (!text) throw 'Tidak Ada Url'
-m.reply('Creating Shortlink....')
 linknye = await bitly(text)
 
 conn.sendMessage(m.chat, linknye, 'conversation', { quoted: m, detectLinks: false })
