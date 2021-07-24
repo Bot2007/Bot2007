@@ -5,7 +5,7 @@ let txt = await res.text()
 
 let arr = txt.split('\n')
 let cita = arr[Math.floor(Math.random() * arr.length)]
-conn.sendFile(m.chat, cita, 'asupan.mp4', 'Nih kak asupan nya!!\n*Follow:* https://instagram.com/caliph91_', m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }}) 
+conn.sendFile(m.chat, cita, 'asupan.mp4', 'Nih kak asupan nya!!\n*Follow:* https://instagram.com/taufikmusa07', m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }}) 
 }
 
 handler.tags = ['fun', 'internet']
