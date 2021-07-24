@@ -5,7 +5,7 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
 linknye = await bitly(text)
 
 m.reply(m.chat, `nih linknya, ${linknye} 
-Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim(), m, { contextInfo: { mentionedJid: global.conn.user.jid } })})
+Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim(), m, { contextInfo: { mentionedJid: global.conn.user.jid } })
 }
 handler.help = ['bitly <url>']
 handler.tags = ['internet']
