@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/Bot2007/Bot2007",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.4.1",
     "clui": "^0.3.6",
     "awesome-phonenumber": "^2.54.0",
     "brainly-scraper-v2": "^2.0.3",
