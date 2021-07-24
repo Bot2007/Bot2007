@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
           console.log('Finish')
           buff = fs.readFileSync(ran)
           conn.sendMessage(m.chat, buff, MessageType.sticker, { quoted: m })
-           await sleep(3000)
+          sleep(3000)
           m.reply('*Support kak🙂*\nhttps://instagram.com/barxnl250_')
           fs.unlinkSync(media)
           fs.unlinkSync(ran)
