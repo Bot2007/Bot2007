@@ -13,7 +13,7 @@ let handler = async (m, { conn, text }) => {
   let url = await uploadImage(img)
   heum = await fetch(`https://lolhuman.herokuapp.com/api/editor/tosmile?apikey=682aeab645ed61cf137cf971&img=${url}`)
     json = await heum.buffer()
-   conn.sendMessage(m.chat, heum, MessageType.image, {
+   conn.sendMessage(m.chat, json, MessageType.image, {
     quoted: m
   })
  } catch (e) {
