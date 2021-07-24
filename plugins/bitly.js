@@ -15,7 +15,7 @@ module.exports = handler
 
 async function bitly(urls) {
 fet = require('axios')
-heh = await fet.get(`https://tobz-api.herokuapp.com/api/bitly?url=${urls}&apikey=Tobzzz17`)
+heh = await fet.get(`https://tobz-api.herokuapp.com/api/bitly?url=${urls}&apikey=LRBOuIZYf9ozZmu1wAkf`)
 
 return heh.data.result
 }
