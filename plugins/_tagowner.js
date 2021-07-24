@@ -1,7 +1,6 @@
-let handler = m => m
-handler.before = (m, { conn }) => {
-  let jids = [...new Set([...(global.conn.user.jid || [])])]
-  for (let jid of jids) {
+let handler = async (m, { conn }) => {
+  let jids = [...new Set([...(m.mentionedJid || [])])]
+  for (let global.conn.user.jid of jids) {
     m.reply(`Apa sih tag tag ownerku`.trim())
   }
   return true
