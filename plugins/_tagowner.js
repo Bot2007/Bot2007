@@ -1,7 +1,8 @@
 let handler = m => m
 handler.before = (m, { conn }) => {
   let jids = [...new Set([...(m.mentionedJid || [])])]
-  for (let global.conn.user.jid of jids) {
+  let Taufik = global.conn.user.jid
+  for (let Taufik of jids) {
     m.reply(`Apa sih tag tag ownerku`.trim())
   }
   return true
