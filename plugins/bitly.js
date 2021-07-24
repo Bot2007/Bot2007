@@ -1,8 +1,10 @@
-let handler = async (m, { text }) => {
-if (!text) throw 'Tidak Ada Url'
+let handler = async (m, { usedPrefix, text }) => {
+if (!text) throw `Tidak Ada Url
+Contoh penggunaan: ${usedPrefix}bitly https://youtube.com
+Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
 linknye = await bitly(text)
 
-conn.sendMessage(m.chat, linknye, 'conversation', { quoted: m, detectLinks: false })
+m.reply(linknye)
 }
 handler.help = ['bitly <url>']
 handler.tags = ['internet']
