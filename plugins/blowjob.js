@@ -4,8 +4,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 
 let handler  = async (m, { conn, text }) => {
-if (!DATABASE.data.chats[m.chat].nsfw && m.isGroup) throw 'Feature Nsfw Disable\nType *!enable* *nsfw* to activate this feature'
-  pp = global.API('lol', '/api/random/nsfw/blowjob', {}, 'apikey')
+pp = global.API('lol', '/api/random/nsfw/blowjob', {}, 'apikey')
                      await sticker(false, pp, 'NSFW Blowjob', author).then(gege => {
                      conn.sendMessage(m.chat, gege, 'stickerMessage', { quoted: m })
                      })
