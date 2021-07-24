@@ -1,4 +1,4 @@
-//By Akbar
+//By Taufik
 const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
 const { MessageType } = require('@adiwajshing/baileys')
@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
           console.log('Finish')
           buff = fs.readFileSync(ran)
           conn.sendMessage(m.chat, buff, MessageType.sticker, { quoted: m })
-          sleep(3000)
+           sleep(3000)
           m.reply('*Support kak🙂*\nhttps://instagram.com/barxnl250_')
           fs.unlinkSync(media)
           fs.unlinkSync(ran)
@@ -59,7 +59,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
           console.log('Finish')
           buff = fs.readFileSync(ran)
           conn.sendMessage(m.chat, buff, MessageType.sticker, { quoted: m })
-          await sleep(5000)
+          sleep(5000)
           m.reply('*Support kak🙂*\nhttps://instagram.com/barxnl250_')
           fs.unlinkSync(media)
           fs.unlinkSync(ran)
