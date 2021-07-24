@@ -1,20 +1,32 @@
-let vas = require('canvacord')
-let handler = async (m, { text }) => {
-if (!text) throw 'Tidak Ada Url'
-m.reply('Creating Shortlink....')
-linknye = await bitly(text)
+let axios = require('axios')
+let handler = async (m, { usedPrefix, args }) => {
+  if (!args[0]) throw `
+Tidak ada url
+Contoh penggunaan: 
+${usedPrefix}bitly https://youtube.com
 
-conn.sendMessage(m.chat, linknye, 'conversation', { quoted: m, detectLinks: false })
+Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
+  let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
+  let res = await axios.get(`https://tobz-api.herokuapp.com/api/bitly?url=${url}&apikey=LRBOuIZYf9ozZmu1wAkf`)
+  let hasil = `
+nih urlnya, *${res.data.result}*
+Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
+
+Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
+  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })
 }
-handler.help = ['bitly <url>']
+handler.help = ['bitly'].map(v => v + ' <url>')
 handler.tags = ['internet']
-handler.command = /^(bitly)$/i
+handler.command = ['bitly']
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
 
 module.exports = handler
-
-async function bitly(urls) {
-fet = require('axios')
-heh = await fet.get(`https://tobz-api.herokuapp.com/api/bitly?url=${urls}&apikey=Tobzzz17`)
-
-return heh.data.result
-}
