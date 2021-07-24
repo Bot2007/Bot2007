@@ -1,5 +1,5 @@
 let { MessageType } = require('@adiwajshing/baileys')
-let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
+let handler = async (m, { conn, args, usedPrefix }) => {
     if (args.length < 3) {
         return conn.reply(m.chat, `Gunakan format ${usedPrefix}transfer <type> <jumlah> <@tag>\ncontoh penggunaan: *${usedPrefix}transfer money 100 @tag*`.trim(), m)
     } else try {
@@ -19,11 +19,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].money += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Uang kamu tidak mencukupi untuk mentransfer Money sebesar ${count}`.trim(), m)
                 break
@@ -37,11 +32,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].potion += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Potion kamu tidak cukup`.trim(), m)
                 break
@@ -55,11 +45,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].sampah += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Sampah kamu tidak cukup`.trim(), m)
                 break
@@ -73,11 +58,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].diamond += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Diamond kamu kamu tidak cukup`.trim(), m)
                 break
@@ -91,11 +71,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].common += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Common crate kamu kamu tidak cukup`.trim(), m)
                 break
@@ -109,11 +84,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].uncommon += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Uncommon crate kamu kamu tidak cukup`.trim(), m)
                 break
@@ -127,11 +97,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].mythic += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Mythic crate kamu kamu tidak cukup`.trim(), m)
                 break
@@ -145,11 +110,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         global.DATABASE._data.users[m.sender].legendary += count * 1
                         m.reply('Gagal Menstransfer')
                         console.log(e)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-                            }
-                        }
                     }
                 } else conn.reply(m.chat, `Legendary crate kamu kamu tidak cukup`.trim(), m)
                 break
@@ -159,11 +119,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     } catch (e) {
         conn.reply(m.chat, `Format yang anda gunakan salah\n\nGunakan format ${usedPrefix}transfer <type> <jumlah> <@tag>\ncontoh penggunaan: *${usedPrefix}transfer money 100 @tag*`.trim(), m)
         console.log(e)
-        if (DevMode) {
-            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-            }
-        }
     }
 }
     
