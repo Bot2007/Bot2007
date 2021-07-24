@@ -21,13 +21,15 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
   }
   let eo = `Teksnya mana?
     `.trim()
-    if (!args[0]) throw eo
-  if (!m.quoted && m.quoted.text) throw er
+    if (!text) throw eo
+   if (!lang) throw er
+  if (!m.quoted && m.quoted.text) text = m.quoted.text
 
   let res 
   try { res = await tts(text, lang) }
   catch (e) {
   m.reply('Kode bahasa anda salah. Ketik ${usedPrefix}kodebahasa untuk melihat kode bahasa yang support.')
+  res = await tts(text)
   } finally {
   conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
   }
