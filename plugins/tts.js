@@ -13,6 +13,7 @@ ${usedPrefix}tts id <reply teks>
 ${usedPrefix}tts Taufik hensem (Languange is Indonesia)
 ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
     `.trim()
+  if (!args[0] && !m.quoted) throw er
   let lang = args[0]
   let text = args.slice(1).join(' ')
   if ((args[0] || '').length !== 2) {
@@ -22,7 +23,6 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
   let eo = `Teksnya mana?
     `.trim()
     if (!text && !m.quoted) throw eo
-   if (!lang) throw er
   if (!text && m.quoted && m.quoted.text) text = m.quoted.text
 
   let res 
