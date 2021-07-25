@@ -1,4 +1,5 @@
-let handler = async (m,{ conn }) => let menu = conn.prepareMessageFromContent(m.chat, {
+let handler = async (m,{ conn }) => 
+            conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
                         "title": "@taufikmusa07",
                         "description": "MENU BOT",
@@ -15,8 +16,7 @@ let handler = async (m,{ conn }) => let menu = conn.prepareMessageFromContent(m.
                             }
                         ]
                     }
-                }, {})
-            conn.relayWAMessage(menu, {waitForAck: true})
+                }, {}), {waitForAck: true})
 handler.command = /^(menubot)$/i
 
 module.exports = handler
