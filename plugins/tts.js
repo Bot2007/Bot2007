@@ -27,7 +27,7 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
   let res
   try { res = await tts(text, lang)
   conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
-} catch (e, usedPrefix) {
+} catch (e) {
     m.reply('Maap, kode bahasa anda salah. Ketik ${usedPrefix}kodebahasa untuk melihat kode bahasa yang benar.')
   }
 }
