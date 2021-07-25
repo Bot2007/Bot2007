@@ -15,8 +15,8 @@ let handler = async (m,{ conn }) =>
                                 ]
                             }
                         ]
-                    }, "quotedMessage": m
-                }, {}), {waitForAck: true})
+                    }
+                 }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
 
 module.exports = handler
