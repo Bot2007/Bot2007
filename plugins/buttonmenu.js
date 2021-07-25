@@ -9,7 +9,7 @@ let handler = async (m,{ conn }) => let menu = conn.prepareMessageFromContent(m.
                                 "rows": [
                                     {
                                         "title": `MENU BOT TAUFIK`,
-                                        "rowId": ".menubot"
+                                        "rowId": ".menu"
                                     }
                                 ]
                             }
@@ -17,6 +17,6 @@ let handler = async (m,{ conn }) => let menu = conn.prepareMessageFromContent(m.
                     }
                 }, {})
             conn.relayWAMessage(menu, {waitForAck: true})
-handler.command = /^(menu)$/i
+handler.command = /^(menubot)$/i
 
 module.exports = handler
