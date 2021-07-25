@@ -15,7 +15,7 @@ let handler = async (m,{ conn }) =>
                                 ]
                             }
                         ],
-                        "contexInfo": {
+                        "contextInfo": {
                         "stanzaId": m.key.id,
             "participant": m.sender,
             "quotedMessage": {
