@@ -11,6 +11,7 @@ global.APIs = { // API Prefix
   bg: 'http://bochil.ddns.net',
   fdci: 'https://api.fdci.se',
   bsbt: 'https://bsbt-api-rest.herokuapp.com',
+  LeysCoder: 'https://leyscoders-api.herokuapp.com',
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
@@ -18,10 +19,12 @@ global.APIKeys = { // APIKey Here
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
   'https://bsbt-api-rest.herokuapp.com': 'benniismael',
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
+
 }
 
 // Sticker WM
-global.packname = 'Sticker\ Buatan'
+global.packname = 'Sticker Buatan'
 global.author = 'Taufik'
 
 global.multiplier = 69 // The higher, The harder levelup
