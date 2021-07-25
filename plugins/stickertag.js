@@ -8,16 +8,15 @@ let handler = async (m, { conn, args, usedPrefix, command, participants }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/webp/.test(mime)) {
       let img = await q.download()
-      if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
     } 
   } catch (e) {
     m.reply('*Maap ini bukan sticker*')
   } finally {
+    if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       contextInfo: { mentionedJid: users }, quoted: m
     })
-    else throw 'Maap telah terjadi kesalahan'
   }
 }
 handler.help = ['stikertag', 'stag', 'stickertag']
