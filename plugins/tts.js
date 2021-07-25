@@ -5,13 +5,13 @@ let { spawn } = require('child_process')
 
 const defaultLang = 'id'
 let handler = async (m, { conn, usedPrefix, args }) => {
-  let er = `Format anda salah
+  let er = `*Format salah*
 
-Contoh penggunaan:
+*Contoh penggunaan:
 ${usedPrefix}tts id Taufik hensem
 ${usedPrefix}tts id <reply teks>
 ${usedPrefix}tts Taufik hensem (Languange is Indonesia)
-${usedPrefix}tts <reply teks>  (Languange is Indonesia)
+${usedPrefix}tts <reply teks>  (Languange is Indonesia)*
     `.trim()
   if (!args[0] && !m.quoted) throw er
   let lang = args[0]
@@ -20,15 +20,15 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
     lang = defaultLang
     text = args.join(' ')
   }
-  let eo = `Teksnya mana?
+  let eo = `*Teksnya mana?*
     `.trim()
     if (!text && !m.quoted) throw eo
   if (!text && m.quoted && m.quoted.text) text = m.quoted.text
   let res
   try { res = await tts(text, lang)
   conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
-} catch (e, { usedPrefix}) {
-    m.reply('Maap, kode bahasa anda salah. Ketik ${usedPrefix}kodebahasa untuk melihat kode bahasa yang benar.')
+} catch (e) {
+    m.reply('*Maap, kode bahasa anda salah. Ketik #kodebahasa untuk melihat kode bahasa yang benar.*')
   }
 }
 handler.help = ['tts <lang> <teks>', 'tts <reply teks>']
