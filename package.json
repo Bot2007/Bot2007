@@ -4,7 +4,8 @@
   "description": "Bot yang direcode oleh Taufik",
   "main": "Taufikbot.js",
   "scripts": {
-    "start": "node Taufikbot.js --self"
+    "start": "node Taufikbot.js --self",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
