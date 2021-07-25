@@ -1,8 +1,8 @@
 let handler = async (m,{ conn }) => 
             conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
-                        "title": "@taufikmusa07",
-                        "description": "MENU BOT",
+                        "title": "Hai saya Taufik Bot, Pilih di bawah ya untuk menu",
+                        "description": "©Taufikbot",
                         "buttonText": "Menu disini",
                         "listType": "SINGLE_SELECT",
                         "sections": [
@@ -10,13 +10,13 @@ let handler = async (m,{ conn }) =>
                                 "rows": [
                                     {
                                         "title": `MENU BOT TAUFIK`,
-                                        "rowId": ".menu"
+                                        "rowId": ".menubot"
                                     }
                                 ]
                             }
                         ]
                     }
                 }, {}), {waitForAck: true})
-handler.command = /^(menubot)$/i
+handler.command = /^(menu)$/i
 
 module.exports = handler
