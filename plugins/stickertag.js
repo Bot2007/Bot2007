@@ -2,6 +2,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
+  let users = participants.map(u => u.jid)
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
@@ -9,13 +10,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       let img = await q.download()
       if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
-    } else if (args[0]) {
-      if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
-      else return m.reply('URL tidak valid!')
     }
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
+      contextInfo: { mentionedJid: users }, quoted: m
     })
     else throw 'Conversion failed'
   }
