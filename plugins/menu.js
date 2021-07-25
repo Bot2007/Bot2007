@@ -212,7 +212,7 @@ ${ucapanWaktuMY}(Malaysia)
 }
 handler.help = ['menu','help']
 handler.tags = ['main']
-handler.command = /^(menu|help)$/i
+handler.command = /^(menubot)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
