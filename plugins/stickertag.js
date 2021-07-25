@@ -10,7 +10,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       let img = await q.download()
       if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
-    }
+    } 
+  } catch (e) {
+    m.reply('*Maap ini bukan sticker*')
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       contextInfo: { mentionedJid: users }, quoted: m
