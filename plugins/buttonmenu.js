@@ -15,10 +15,13 @@ let handler = async (m,{ conn }) =>
                                 ]
                             }
                         ],
+                        "contextInfo": { 
+                        "participant": m.key.remote,
                         "quotedMessage": {
                         "conversation": m
-                      }
-                    }
+                       }
+                     }
+                   }
                  }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
 
