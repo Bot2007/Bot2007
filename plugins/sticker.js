@@ -29,9 +29,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     else throw 'Conversion failed'
   }
 }
-handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'stikergif (caption|reply media)', 'stikergif <url>']
+handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'sticker (caption|reply media)', 'sticker <url>', 's (caption|reply media)', 's <url>']
 handler.tags = ['sticker']
-handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
+handler.command = /^s(tic?ker)?(wm)?$/i
 
 module.exports = handler
 
