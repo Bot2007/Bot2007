@@ -145,7 +145,8 @@ ${ucapanWaktuMY}(Malaysia)
 ┣   keseluruhan isi dompet anda
 ┣   seperti crate, armor dan pet
 ┣➥ Jika mau donasi, ketik *%pdonasi*.
-┣   Terima kasih ya atas sokongannya hehe
+┣    Terima kasih ya atas 
+┣    sokongannya hehe
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Hari ini ❭»❈•━─╮*
 ┣➥ Hari : *%week*
