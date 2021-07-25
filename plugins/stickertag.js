@@ -20,7 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     else throw 'Conversion failed'
   }
 }
-handler.help = ['stikertag (caption|reply media)', 'stikertag <url>','stickertag (caption|reply media)', 'stickertag <url>','stag (caption|reply media)', 'stag <url>']
+handler.help = ['stikertag', 'stag', 'stickertag']
 handler.tags = ['sticker']
 handler.command = ['stikertag', 'stag', 'stickertag']
 
