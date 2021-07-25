@@ -7,11 +7,11 @@ const defaultLang = 'id'
 let handler = async (m, { conn, usedPrefix, args }) => {
   let er = `*Format salah*
 
-*Contoh penggunaan:
-${usedPrefix}tts id Taufik hensem
-${usedPrefix}tts id <reply teks>
-${usedPrefix}tts Taufik hensem (Languange is Indonesia)
-${usedPrefix}tts <reply teks>  (Languange is Indonesia)*
+*Contoh penggunaan:*
+*${usedPrefix}tts id Taufik hensem*
+*${usedPrefix}tts id <reply teks>*
+*${usedPrefix}tts Taufik hensem (Languange is Indonesia)*
+*${usedPrefix}tts <reply teks>  (Languange is Indonesia)*
     `.trim()
   if (!args[0] && !m.quoted) throw er
   let lang = args[0]
