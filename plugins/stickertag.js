@@ -17,7 +17,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       contextInfo: { mentionedJid: users }, quoted: m
     })
-    else throw 'Conversion failed'
+    else throw 'Maap telah terjadi kesalahan'
   }
 }
 handler.help = ['stikertag', 'stag', 'stickertag']
