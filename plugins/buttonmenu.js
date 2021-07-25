@@ -14,7 +14,10 @@ let handler = async (m,{ conn }) =>
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "quotedMessage": {
+                        "conversation": m
+                      }
                     }
                  }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
