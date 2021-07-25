@@ -18,9 +18,7 @@ let handler = async (m,{ conn }) =>
                         "contextInfo": {
                         "stanzaId": m.key.id,
             "participant": m.sender,
-            "quotedMessage": {
-              "conversation": m
-            }
+            "quotedMessage": m.message
 }
                         
                    }
