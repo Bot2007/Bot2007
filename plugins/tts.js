@@ -26,8 +26,7 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
   if (!text && m.quoted && m.quoted.text) text = m.quoted.text
 
   let res = await tts(text, lang)
-  conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
-  if (e) throw `Kode bahasa anda salah. Ketik ${usedPrefix}kodebahasa untuk melihat kode bahasa yang support.`.trim()
+  conn.sendFile(m.chat, res, 'tts.opus', null, m, true).catch('Maap, kode bahasa anda salah. Mau liat kode bahasa yang benar, ketik .kodebahasa ya hehe ;)')
 }
 handler.help = ['tts <lang> <teks>', 'tts <reply teks>']
 handler.tags = ['tools']
