@@ -13,7 +13,7 @@ ${json.url}\n
 *Porsi:* ${json.banyak}\n\n
 *Bahan:* ${json.bahan}
 *Cara:* ${json.cara}
-`.trim(), m)
+`.trim(), m, false, { thumbnail: require('fs').readFileSync('src/TaufikBot.png') })
 }
 handler.help = ['resep <makanan>', 'masak <makanan>']
 handler.tags = ['internet']
