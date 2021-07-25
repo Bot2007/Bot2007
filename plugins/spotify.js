@@ -1,4 +1,3 @@
-// Made By github.com/TOXIC-DEVIL
 let fetch = require('node-fetch')
 let handler = async(m, { conn, text }) => {
   if (!text) throw `Masukkan judul musik!`
