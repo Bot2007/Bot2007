@@ -11,11 +11,12 @@ let spotifyinfo = `✨️ *Title:* ${title}
 🎆️ *Album:* ${album}
 🌐️ *URL*: ${url}
 💚️ *Direct URL:* ${preview_mp3}\n\n@${global.conn.user.jid.replace(/@.+/, '')}`.trim()
+ let mentionedJid = [global.conn.user.jid]
   await conn.sendFile(m.chat, thumb, '', spotifyinfo, m, null, { contextInfo: { mentionedJid }})
   await conn.sendFile(m.chat, preview_mp3, 'spotify.mp3', spotifyinfo, m)
 }
 handler.help = ['spotify <query>']
 handler.tags = ['internet']
 handler.command = /^(spotify|music)$/i
-// Made By github.com/TOXIC-DEVIL
+// Made By Taufik
 module.exports = handler
