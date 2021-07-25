@@ -14,9 +14,17 @@ let handler = async (m,{ conn }) =>
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "contexInfo": {
+                        "stanzaId": m.key.id,
+            "participant": m.sender,
+            "quotedMessage": {
+              "conversation": m
+            }
+}
+                        
                    }
-                 }, m), {waitForAck: true})
+                 }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
 
 module.exports = handler
