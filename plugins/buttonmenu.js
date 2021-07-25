@@ -14,10 +14,9 @@ let handler = async (m,{ conn }) =>
                                     }
                                 ]
                             }
-                        ],
-                        "contextInfo": m.message.contextInfo
+                        ]
                    }
-                 }, {}), {waitForAck: true})
+                 }, m), {waitForAck: true})
 handler.command = /^(menu)$/i
 
 module.exports = handler
