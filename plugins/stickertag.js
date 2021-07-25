@@ -27,7 +27,6 @@ let stiker = false
    console.log ('Error\n\n', e)
    }
 }
-    })
     else throw 'Conversion failed'
   }
 }
