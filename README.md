@@ -31,8 +31,8 @@ bash install.sh
 * Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/taufikmusa07/Taufikbot
-cd Taufikbot
+git clone https://github.com/Bot2007/Bot2007
+cd Bot2007
 npm i
 ```
 
