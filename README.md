@@ -8,6 +8,7 @@
 # Taufikbot
 
 Simple WhatsApp Bot
+
 Original script wabot-aq by [@Nurutomo](https://github.com/Nurutomo/wabot-aq)
 
 ## FOR TERMUX/UBUNTU/SSH USER
