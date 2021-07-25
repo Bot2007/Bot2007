@@ -14,9 +14,9 @@ let handler = async (m, { conn, args }) => {
     })
   }
 }
-handler.help = ['ighighlight'].map(v => v + ' <username>')
+handler.help = ['ighighlight2'].map(v => v + ' <username>')
 handler.tags = ['downloader']
 
-handler.command = /^(ighighlight?)$/i
+handler.command = ['ighighlight2']
 
 module.exports = handler
