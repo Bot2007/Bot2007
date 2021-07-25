@@ -8,6 +8,7 @@
 # Taufikbot
 
 Simple WhatsApp Bot
+Original script wabot-aq by [@Nurutomo](https://github.com/Nurutomo/wabot-aq)
 
 ## FOR TERMUX/UBUNTU/SSH USER
 
@@ -15,6 +16,7 @@ Simple WhatsApp Bot
 pkg update && pkg upgrade
 pkg install git -y
 git clone https://github.com/Bot2007/Bot2007
+mv Bot2007 Taufikbot
 cd Taufikbot
 bash install.sh
 ```
@@ -97,6 +99,7 @@ conn.logger.level = 'debug'
 
 #### Powered By : [`XTEAM`](https://api.xteam.xyz)
 
-#### Author / Creator : [`Taufik`](https://github.com/taufikmusa07)
+#### Recoded by : [`Taufik`](https://github.com/taufikmusa07)
+#### Developer : [@Nurutomo](https://github.com/Nurutomo)
 #### <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Instagram.svg" width="15px"> Instagram Creator : [`taufikmusa07`](https://instagram.com/taufikmusa07)
 #### <img src="https://i.ibb.co/dKWvR6m/You-Tube-Logo.png" width="30px"> YouTube Creator : [`TaufikYT`](https://youtube.com/channel/UCqTjI28ETQD6JtHXHi0-XZg)
