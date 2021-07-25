@@ -1,6 +1,6 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, usedPrefix, command, participants }) => {
   let stiker = false
   let users = participants.map(u => u.jid)
   try {
