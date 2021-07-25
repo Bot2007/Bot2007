@@ -1,3 +1,4 @@
+const { MessageType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
 
@@ -22,7 +23,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             .on('end', function () {
                 console.log('Finish')
                 buff = fs.readFileSync(ran)
-                conn.sendMessage(m.chat, buff, 'stickerMessage', { quoted: m })
+                conn.sendMessage(m.chat, buff, MessageType.sticker, { quoted: m })
                 fs.unlinkSync(media)
                 fs.unlinkSync(ran)
             })
@@ -48,7 +49,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             .on('end', function () {
                 console.log('Finish')
                 buff = fs.readFileSync(ran)
-                conn.sendMessage(m.chat, buff, 'stickerMessage', { quoted: m })
+                conn.sendMessage(m.chat, buff, MessageType.sticker, { quoted: m })
                 fs.unlinkSync(media)
                 fs.unlinkSync(ran)
             })
