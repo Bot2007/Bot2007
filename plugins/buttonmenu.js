@@ -14,14 +14,8 @@ let handler = async (m,{ conn }) =>
                                     }
                                 ]
                             }
-                        ],
-                        "contextInfo": {
-                        "stanzaId": m.key.id,
-            "participant": m.sender,
-            "quotedMessage": m.message
-}
-                        
-                   }
+                        ]
+                    }
                  }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
 
