@@ -126,7 +126,7 @@ let TaufikComel = conn
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
-°♡ɞ${conn.getName(conn.user.jid)}ʚ♡°
+°♡ɞ<${conn.getName(conn.user.jid)}>ʚ♡°
 ${ucapanWaktuID}(Indonesia)
 ${ucapanWaktuMY}(Malaysia)
 
@@ -141,9 +141,11 @@ ${ucapanWaktuMY}(Malaysia)
 ┣   ${'@' + global.conn.user.jid.replace(/@.+/, '')}
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
-┣➥ Ketik %pinv untuk melihat
+┣➥ Ketik *%pinv* untuk melihat
 ┣   keseluruhan isi dompet anda
 ┣   seperti crate, armor dan pet
+┣➥ Jika mau donasi, ketik *%pdonasi*.
+┣   Terima kasih ya atas sokongannya hehe
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Hari ini ❭»❈•━─╮*
 ┣➥ Hari : *%week*
@@ -162,7 +164,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ FaceBook : *${sosmed}*
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Fitur ❭»❈•━─╮*
-┣➥ 390+
+┣➥ 400+
 *╰─━━━━━━━━━━━━─╯*
 
 %readmore`
