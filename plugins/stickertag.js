@@ -1,37 +1,31 @@
 const { MessageType } = require('@adiwajshing/baileys')
-const { sticker: TES } = require('../lib/sticker')
-const util = require('util')
-const fs = require('fs')
-let handler = async (m, { conn, participants, args }) => {
-let stiker = false
-     await m.reply(global.wait)
+const { sticker } = require('../lib/sticker')
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+  let stiker = false
   try {
-	let q = { message: { [m.quoted.mtype]: m.quoted }}
-	if (!m.quoted) return m.reply('Tag Stickernya!')
-  //if (m.quoted != /sticker/.test(m.quoted.mtype)) return m.reply('Sticker Aja Ya')
-	if (/sticker/.test(m.quoted.mtype)) {
-    let stick = await conn.downloadM(q)
-    if (!stick) throw "Sticker Tidak Ditemukan!"
-	let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
-	stiker = await TES(stick, false, global.packname, global.author)
-	conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-              contextInfo: { 
-                     mentionedJid: users
-               }
-          })
-       } else {
-	    m.reply('_Khusus Sticker Aja Ya_')
-      }
-   } catch (e) {
-   	m.reply('```Error```')
-   console.log ('Error\n\n', e)
-   }
-}
+    let q = m.quoted ? m.quoted : m
+    let mime = (q.msg || q).mimetype || ''
+    if (/webp/.test(mime)) {
+      let img = await q.download()
+      if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
+      stiker = await sticker(img, false, global.packname, global.author)
+    } else if (args[0]) {
+      if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
+      else return m.reply('URL tidak valid!')
+    }
+  } finally {
+    if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+      quoted: m
+    })
     else throw 'Conversion failed'
   }
 }
-handler.help = ['stag <reply sticker>', 'stickertag <replay sticker>', 'stikertag <reply sticker>']
+handler.help = ['stikertag (caption|reply media)', 'stikertag <url>','stickertag (caption|reply media)', 'stickertag <url>','stag (caption|reply media)', 'stag <url>']
 handler.tags = ['sticker']
-handler.command = /^(s(tag|tickertag|tikertag))$/
-handler.group = true
+handler.command = ['stikertag', 'stag', 'stickertag']
+
 module.exports = handler
+
+const isUrl = (text) => {
+  return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
+}
