@@ -3,7 +3,7 @@ const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-    gokil = `balas gif/video dengan caption ${usedPrefix + command}`
+    gokil = `balas gif/video dengan caption ${usedPrefix + command}`.trim()
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
