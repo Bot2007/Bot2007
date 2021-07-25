@@ -20,9 +20,9 @@ ${caption}
   for (let { data: url, type } of data)
     conn.sendFile(m.chat, url, 'ig' + (type == 'video' ? '.mp4' : '.jpg'), text, m)
 }
-handler.help = ['ig'].map(v => v + ' <url>')
+handler.help = ['ig2'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^(ig(dl)?)$/i
+handler.command = ['ig2']
 
 module.exports = handler
