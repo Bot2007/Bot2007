@@ -25,13 +25,11 @@ ${usedPrefix}tts <reply teks>  (Languange is Indonesia)
     if (!text && !m.quoted) throw eo
   if (!text && m.quoted && m.quoted.text) text = m.quoted.text
 
-  let res 
-  try { res = await tts(text, lang) }
-  catch (e) {
-  m.reply('Kode bahasa anda salah. Ketik .kodebahasa untuk melihat kode bahasa yang support.')
-  } finally {
+  if (let res = await tts(text, lang)){
   conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
-  } 
+  } catch (e) {
+  m.reply('Kode bahasa anda salah. Ketik .kodebahasa untuk melihat kode bahasa yang support.')
+  }
 }
 handler.help = ['tts <lang> <teks>', 'tts <reply teks>']
 handler.tags = ['tools']
