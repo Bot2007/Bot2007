@@ -8,7 +8,7 @@ let handler = async (m,{ conn }) => let menu = conn.prepareMessageFromContent(m.
                             {
                                 "rows": [
                                     {
-                                        "title": `MENU BO TAUFIK`,
+                                        "title": `MENU BOT TAUFIK`,
                                         "rowId": ".menubot"
                                     }
                                 ]
