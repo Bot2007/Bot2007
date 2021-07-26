@@ -7,7 +7,7 @@ ${usedPrefix}bitly https://youtube.com
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  let res = await fetch(global.API('xteam', '/game/tebakgambar', {}, 'APIKEY'))
+  let res = await fetch(global.API('xteam', '/shorturl/bitly?url=${url}', {}, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
     if (!json.status) throw 'Maap, Limit Apikey Taufik abis.'
