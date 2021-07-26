@@ -10,18 +10,17 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   let res = await fetch(global.API('xteam', '/game/tebakgambar', {}, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
-    if (!json.status) throw 'Maap, Limit Apikey Taufik abis.\nSilahkan tunggu keesokannya ya.\nSementara mau nunggu, main aja versi free apikey dengan mengetik ${usedPrefix}tebakgambar2'
+    if (!json.status) throw 'Maap, Limit Apikey Taufik abis.'
     if (!json.result) throw 'Link Invalid'
     let hasil = `
 nih urlnya, *${json.result.id}*
 Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
-  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })})
-}
-handler.help = ['tinyurl'].map(v => v + ' <url>')
+  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })}
+handler.help = ['bitly'].map(v => v + ' <url>')
 handler.tags = ['internet']
-handler.command = ['tinyurl']
+handler.command = ['bitly']
 handler.owner = false
 handler.mods = false
 handler.premium = false
