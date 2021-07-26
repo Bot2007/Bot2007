@@ -9,8 +9,9 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
     let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
     let res = await fetch(global.API('xteam', '/shorturl/bitly?url=${url}', {}, 'APIKEY'))
     if (res.status !== 200) throw 'Link Invalid'
+    let json = res.json()
     let hasil = `
-nih urlnya, *${res.result.link}*
+nih urlnya, *${json.result}*
 Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
