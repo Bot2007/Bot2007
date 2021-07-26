@@ -197,10 +197,9 @@ ${ucapanWaktuMY}(Malaysia)
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     let mentionedJid = [global.conn.user.jid]
-    conn.send2Button(m.chat, text.trim(), 'made with ❤️ by ariffb', 'OWNER', '.owner', 'DONASI', '.donasi', null,  { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    m.reply(text.trim(), null,  { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
-                  "mediaType": "VIDEO",
                   "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
                   "mediaUrl": "https://instagram.com/taufikmusa07",
                   "thumbnail": ""
