@@ -1,5 +1,5 @@
 let fetch = require('node-fetch')
-let handler = async (m, { usedPrefix, args }) => {
+let handler = async (m, { usedPrefix, args }) =>
   if (!args[0]) throw `
 Tidak ada url
 Contoh penggunaan: 
@@ -11,11 +11,11 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
     if (res.status !== 200) throw 'Link Invalid'
     let json = res.json()
     let hasil = `
-nih urlnya, *${json}*
+nih urlnya, *${json.result}*
 Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
-  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })}
+  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })
 handler.help = ['bitly'].map(v => v + ' <url>')
 handler.tags = ['internet']
 handler.command = ['bitly']
