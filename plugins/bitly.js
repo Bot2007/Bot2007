@@ -10,7 +10,6 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
   let res = await fetch(global.API('xteam', '/shorturl/bitly?url=${url}', {}, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
-    if (!json.status) throw 'Maap, Limit Apikey Taufik abis.'
     if (!json.result) throw 'Link Invalid'
     let hasil = `
 nih urlnya, *${json.result.id}*
