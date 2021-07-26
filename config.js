@@ -15,7 +15,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.xteam.xyz': '7fa6089e6a81b5bc',
+  'https://api.xteam.xyz': 'MIMINETBOT',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
   'https://bsbt-api-rest.herokuapp.com': 'benniismael',
