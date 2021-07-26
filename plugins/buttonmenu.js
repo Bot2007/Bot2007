@@ -1,6 +1,8 @@
 let handler = async (m,{ conn }) => 
             conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
-                    "listMessage":  {
+                    "ephemeralMessage": {
+          "message": {
+"listMessage":  {
                         "title": "Hai saya Taufik Bot, Pilih di bawah ya untuk menu",
                         "description": "©Taufikbot",
                         "buttonText": "Menu disini",
@@ -16,7 +18,7 @@ let handler = async (m,{ conn }) =>
                             }
                         ]
                     }
-                 }, {}), {waitForAck: true})
+                 } } }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
 
 module.exports = handler
