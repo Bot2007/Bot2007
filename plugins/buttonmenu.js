@@ -20,8 +20,6 @@ let handler = async (m,{ conn }) =>
 }
                     }
                  }, {}), {waitForAck: true})
-await conn.send2Button(m.chat, 'Wkwkwkw donasi la plis atau hubungi ownerku', 'made with ❤️ by taufikmusa07', 'OWNER', '.owner', 'DONASI', '.donasi')
-
 handler.command = /^(menu)$/i
 
 module.exports = handler
