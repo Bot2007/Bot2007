@@ -205,7 +205,7 @@ ${ucapanWaktuMY}(Malaysia)
                   "mediaUrl": "https://instagram.com/taufikmusa07",
                   "thumbnail": ""
                 } }, quoted: ftoko})
-    await conn.send2Button(m.chat, 'Taufik encem', 'made with ❤️ by taufikmusa07', 'OWNER', '.owner', 'DONASI', '.donasi')
+    await conn.send2Button(m.chat, text.trim(), 'made with ❤️ by taufikmusa07', 'OWNER', '.owner', 'DONASI', '.donasi')
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
