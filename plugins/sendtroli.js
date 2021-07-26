@@ -1,4 +1,3 @@
-// By Caliph
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 let who
 if (text) who = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
