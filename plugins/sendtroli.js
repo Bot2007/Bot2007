@@ -1,7 +1,10 @@
 // By Caliph
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 if (!text) throw `Format Salah!!\nContoh : ${usedPrefix + command} +62 812-1365-7325`
-conn.sendMessage(text.replace(/[^0-9]/g, '') + '@s.whatsapp.net', 'Hai Kak', 'conversation', {
+let who
+if (text) who = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+else who = m.chat
+conn.sendMessage(who, 'Hai Kak', 'conversation', {
  quoted: {
   key: {
   remoteJid: 'status@broadcast',
