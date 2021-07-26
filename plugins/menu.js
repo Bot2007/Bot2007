@@ -197,7 +197,7 @@ ${ucapanWaktuMY}(Malaysia)
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     let mentionedJid = [global.conn.user.jid]
-    m.reply(text.trim(), null,  { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    conn.send2Button(m.chat, text.trim(), 'made with ❤️ by ariffb', 'OWNER', '.owner', 'DONASI', '.donasi', null,  { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
@@ -205,6 +205,7 @@ ${ucapanWaktuMY}(Malaysia)
                   "mediaUrl": "https://instagram.com/taufikmusa07",
                   "thumbnail": ""
                 } }, quoted: ftoko})
+
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
