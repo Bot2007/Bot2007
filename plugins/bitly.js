@@ -6,10 +6,9 @@ Contoh penggunaan:
 ${usedPrefix}bitly https://youtube.com
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
-  let res = await fetch(global.API('xteam', '/shorturl/bitly?url=https://youtube.com', {}, 'APIKEY'))
+  let res = await fetch(global.API('xteam', '/shorturl/bitly?url=${url}', {}, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
-    if (!json.result) throw 'Link Invalid'
     let hasil = `
 nih urlnya, *${json.result.id}*
 Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
