@@ -1,6 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let fetch = require('node-fetch')
-let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
+let handler = async (m, { conn, args, usedPrefix }) => {
     try {
         if (!args || !args[0] || args.length < 1) return m.reply('Judul lagunya apa om?')
         let res = await fetch(global.API('bg', '/lirik', { 
