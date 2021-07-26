@@ -11,7 +11,7 @@ Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
     if (res.status !== 200) throw 'Link Invalid'
     let json = res.json()
     let hasil = `
-nih urlnya, *${json.result}*
+nih urlnya, *${json}*
 Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
 
 Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
