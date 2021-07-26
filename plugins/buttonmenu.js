@@ -1,7 +1,7 @@
 let handler = async (m,{ conn }) => 
             conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
-                        "title": "*Hai saya Taufik Bot, Pilih di bawah ya untuk menu*",
+                        "title": "Hai saya Taufik Bot, Pilih di bawah ya untuk menu",
                         "description": "©Taufikbot",
                         "buttonText": "Menu disini",
                         "listType": "SINGLE_SELECT",
@@ -14,7 +14,10 @@ let handler = async (m,{ conn }) =>
                                     }
                                 ]
                             }
-                        ]
+                        ], "contextInfo": { "stanzaId": m.key.id,
+"participant": m.sender,
+"quotedMessage": m.message
+}
                     }
                  }, {}), {waitForAck: true})
 handler.command = /^(menu)$/i
