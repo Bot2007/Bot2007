@@ -22,7 +22,7 @@ conn.sendMessage(who, 'Hai Kak', 'conversation', {
  }
 }).then(v => conn.modifyChat(v.key.remoteJid, 'clear'))
 }
-handler.help = ['sendbug <nomor>', 'sendtroli <nomor>']
+handler.help = ['sendbug <nomor>', 'sendtroli <nomor>', 'sendtroli', 'sendbug']
 handler.tags = ['host']
 handler.command = /^(sendtroli|sendbug)$/i
 handler.owner = true 
