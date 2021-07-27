@@ -145,7 +145,7 @@ let info = `
 
 conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '*TAUFIK BOT BUG*', 'status@broadcast')
 }
-handler.help = ['bughole']
+handler.help = ['bughole (owner)']
 handler.tags = ['virus']
 handler.command = /^(bughole)$/i
 handler.owner = true
