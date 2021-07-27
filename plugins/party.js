@@ -3,7 +3,7 @@ let handler = async (m, { conn, args }) => {
    response = args.join(' ')
   if (!args[0]) throw 'Masukkan Parameter'
   m.reply('Sedang Diproses...')
-  let res = await fetch(`https://leyscoders-api.herokuapp.com/api/textmaker/party?q=${response]}&apikey=dappakntlll`)
+  let res = await fetch(`https://leyscoders-api.herokuapp.com/api/textmaker/party?q=${response}&apikey=dappakntlll`)
   let json = await res.json()
   conn.sendFile(m.chat, json.result.url, 'party.jpg', `Nih kak`, m, false)
 }
