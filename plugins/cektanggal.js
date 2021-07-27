@@ -2,7 +2,7 @@ let axios = require("axios");
 let handler = async(m, { conn, text }) => { 
 
   await m.reply('*[❗] WAIT, Tunggu Sebentar*') 
-     axios.get(`https://api.haipbis.xyz/harinasional?tanggal=${teks}`).then((res) => {
+     axios.get(`https://api.haipbis.xyz/harinasional?tanggal=${text}`).then((res) => {
     let hasil = `➸  *Tanggal : ${res.data.tanggal}*\n\n➸ keterangan : ${res.data.keterangan}`
     
     conn.reply(m.chat, hasil ,MessageType.m)
