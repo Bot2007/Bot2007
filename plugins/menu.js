@@ -74,6 +74,7 @@ let TaufikComel = conn
   'about': 'Info Taufik Bot',
   'topup': 'Topup/Beli Limit',
   'game': 'Game',
+  'virus': 'Virus(Owner Only)',
   'rpg': 'Game RPG',
   'wibu': 'Wibu',
   'sange': 'NSFW',
@@ -165,7 +166,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ FaceBook : *${sosmed}*
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Fitur ❭»❈•━─╮*
-┣➥ 400+
+┣➥ 460+
 *╰─━━━━━━━━━━━━─╯*
 
 %readmore`
