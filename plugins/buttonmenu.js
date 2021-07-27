@@ -1,4 +1,4 @@
-let handler = async (m,{ conn }) => 
+let handler = async (m,{ conn }) => {
             conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
                         "title": "Hai saya Taufik Bot, Pilih di bawah ya untuk menu",
@@ -20,6 +20,8 @@ let handler = async (m,{ conn }) =>
 }
                     }
                  }, {}), {waitForAck: true})
+
+    conn.send2Button(m.chat, `Hehe ownerku di bawah ya tq`.trim(), 'made with ❤️ by Taufik', 'OWNER', '.owner', 'DONASI', '.donasi')}
 handler.command = /^(menu)$/i
 
 module.exports = handler
