@@ -74,7 +74,7 @@ let TaufikComel = conn
   'about': 'Info Taufik Bot',
   'topup': 'Topup/Beli Limit',
   'game': 'Game',
-  'virus': 'Virus(Owner Only)',
+  'virus': 'Virus',
   'rpg': 'Game RPG',
   'wibu': 'Wibu',
   'sange': 'NSFW',
