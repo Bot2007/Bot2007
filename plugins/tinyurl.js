@@ -1,32 +1,13 @@
-let axios = require('axios')
-let handler = async (m, { usedPrefix, args }) => {
-  if (!args[0]) throw `
-Tidak ada url
-Contoh penggunaan: 
-${usedPrefix}tinyurl https://youtube.com
-
-Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
-  let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  axios.get(`https://tinyurl.com/api-create.php?url=${url}`).then ((res) => {
-  let hasil = `
-nih urlnya, *${res.data}*
-Noted: jika nggak bisa masuk ke urlnya, mungkin errorya ;)
-
-Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim()
-  m.reply(m.chat, hasil, m, { contextInfo: { mentionedJid: global.conn.user.jid } })})
+let fetch = require('node-fetch')
+let handler = async (m, { text }) => {
+  if (!text) throw 'Linknya mana'
+  let res = await fetch(global.API('xteam', '/shorturl/tinyurl', { url: text }, 'APIKEY'))
+  let json = await res.json()
+  if (json.status) m.reply(json.result + '\n' + `Credit: @${global.conn.user.jid.replace(/@.+/, '')}`.trim(), null, { contextInfo: { mentionedJid: global.conn.user.jid } })})
+  else throw 'Link invalid'
 }
 handler.help = ['tinyurl'].map(v => v + ' <url>')
-handler.tags = ['internet']
-handler.command = ['tinyurl']
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
+handler.tags = ['tools']
+handler.command = /^tinyurl$/i
 
 module.exports = handler
