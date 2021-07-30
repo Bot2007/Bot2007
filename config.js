@@ -13,6 +13,7 @@ global.APIs = { // API Prefix
   fdci: 'https://api.fdci.se',
   bsbt: 'https://bsbt-api-rest.herokuapp.com',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
+  hardianto: 'https://hardianto-chan.herokuapp.com',
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
@@ -21,7 +22,8 @@ global.APIKeys = { // APIKey Here
   'https://api.zeks.xyz': 'apivinz',
   'https://bsbt-api-rest.herokuapp.com': 'benniismael',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
-
+  'https://hardianto-chan.herokuapp.com': 'hardianto',
+  'https://neoxr-api.herokuapp.com': 'yntkts',
 }
 
 // Sticker WM
