@@ -22,9 +22,9 @@ let handler = async (m, { conn, args }) => {
 ${txt}
   `.trim(), m)
 }
-handler.help = ['tiktok2'].map(v => v + ' <url>')
+handler.help = ['tiktok'].map(v => v + ' <url> (with detail)')
 handler.tags = ['downloader']
 
-handler.command = ['tiktok2']
+handler.command = ['tiktok']
 
 module.exports = handler
