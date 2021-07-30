@@ -16,12 +16,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *Diterbitkan:* ${json.publish}
 *Link:* ${json.mp3}
 
-*© stikerin*`.trim()
+*@taufikmusa07*`.trim()
         conn.sendFile(m.chat, json.img, 'error.jpg', pesan, m, false, { thumbnail: Buffer.alloc(0) })
         conn.sendFile(m.chat, json.mp3, 'error.mp3', '', m, false, { mimetype: 'audio/mp4' })
     })
 }
-handler.help = ['joox'].map(v => v + ' <judul>')
+handler.help = ['joox'].map(v => v + ' <judul> (more than 30 seconds)')
 handler.tags = ['downloader']
 handler.command = ['joox']
 handler.limit = true
