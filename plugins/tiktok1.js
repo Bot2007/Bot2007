@@ -18,9 +18,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   await conn.sendVideo(m.chat, json.wm, '© stikerin', m, { thumbnail: Buffer.alloc(0) })
 
 }
-handler.help = ['tiktok'].map(v => v + ' <url>')
+handler.help = ['tiktok2'].map(v => v + ' <url> (without detail)')
 handler.tags = ['downloader']
-handler.command = /^(tiktok)$/i
+handler.command = ['tiktok2']
 
 handler.limit = true
 
