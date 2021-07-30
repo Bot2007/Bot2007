@@ -21,7 +21,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         conn.sendFile(m.chat, json.mp3, 'error.mp3', '', m, false, { mimetype: 'audio/mp4' })
     })
 }
-handler.help = ['joox'].map(v => v + ' <judul> (more than 30 seconds)')
+handler.help = ['joox'].map(v => v + ' <title> (more than 30 seconds)')
 handler.tags = ['downloader']
 handler.command = ['joox']
 handler.limit = true
