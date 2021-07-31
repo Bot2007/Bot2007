@@ -62,7 +62,7 @@ Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRan
         conn.reply(m.chat, 'Error', m)
     }
 }
-handler.help = ['adventure', 'petualang', 'berpetualang', 'mulung', 'work']
+handler.help = ['adventure', 'petualang', 'berpetualang', 'mulung']
 handler.tags = ['rpg']
 handler.command = /^(adventure|(ber)?petualang(ang)?|mulung|work)$/i
 
