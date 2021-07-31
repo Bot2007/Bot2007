@@ -13,7 +13,7 @@ conn.mining = conn.mining ? conn.mining : {}
    delete conn.mining[m.chat]
   }, 5 * 1000)
 }
-handler.help = ['kerja', 'nguli', 'work']
+handler.help = ['kerja', 'nguli', 'work'].map(v => v + ' [premium] (Limit)')
 handler.tags = ['xp']
 handler.command = /^(kerja|nguli|work)/i
 handler.owner = false
