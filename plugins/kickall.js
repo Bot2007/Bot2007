@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, participants }) => {
-         let member = participants.map(u => u.jid)
+         let users = participants.map(u => u.jid)
        let using = users.filter(u => !(u == isOwner || u.includes(conn.user.jid)))
                 for (let member of using) {
                 if (member.endsWith('@s.whatsapp.net')) 
