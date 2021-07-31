@@ -5,13 +5,13 @@ let handler = async (m, { conn, text }) => {
 let total = Math.floor(Math.random() * 99999);
 let json = { exp: total }
 conn.mining = conn.mining ? conn.mining : {}
- if (conn.mining[m.chat]) throw '*Jangan Spam, Coldown 5 detik!!!!*'
+ if (conn.mining[m.chat]) throw '*Jangan Spam, Coldown 1 menit!!!!*'
   conn.reply(m.chat, `Selamat Anda Mendapatkan\n*+${json.exp}* Uang(xp)`, m)
   conn.mining[m.chat] = true 
    global.DATABASE._data.users[m.sender].exp += json.exp * 1
    setTimeout(() => { 
    delete conn.mining[m.chat]
-  }, 5 * 1000)
+  }, 60 * 1000)
 }
 handler.help = ['kerja', 'nguli', 'work'].map(v => v + ' [premium] (Limit)')
 handler.tags = ['xp']
