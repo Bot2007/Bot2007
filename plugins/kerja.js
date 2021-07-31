@@ -2,7 +2,7 @@
 let fs = require('fs')
 let delay = require('delay')
 let handler = async (m, { conn, text }) => {
-let total = Math.floor(Math.random() * 999999);
+let total = Math.floor(Math.random() * 99999);
 let json = { exp: total }
 conn.mining = conn.mining ? conn.mining : {}
  if (conn.mining[m.chat]) throw '*Jangan Spam, Coldown 5 detik!!!!*'
