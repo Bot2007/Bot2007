@@ -11,8 +11,7 @@ let handler = async (m, { text }) => {
   conn.sendFile(m.chat, json.thumbnail.genius, '', `
 *${json.title}*
 _${json.author}_\n
-${json.lyrics}\n\n
-${json.links.genius}
+${json.lyrics}
 `, m)
 }
 handler.help = ['lirik'].map(v => v + ' <Apa>')
