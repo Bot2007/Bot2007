@@ -12,7 +12,7 @@ let json = parse[random]
 }
 handler.help = ['miningxp [premium]']
 handler.tags = ['xp']
-handler.command = /^miningxp/i
+handler.command = ['miningxp','mining']
 handler.owner = false
 handler.mods = false
 handler.premium = true
@@ -23,6 +23,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.limit = true
+handler.limit = false
 
 module.exports = handler
