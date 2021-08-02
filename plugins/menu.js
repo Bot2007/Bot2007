@@ -143,15 +143,16 @@ ${ucapanWaktuMY}(Malaysia)
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Information ❭»❈•━─╮*
 ┣➥ Ketik *%pinv* untuk melihat
-┣   keseluruhan isi dompet anda
-┣   seperti crate, armor dan pet
+┣    keseluruhan isi dompet anda
+┣    seperti crate, armor dan pet
 ┣➥ Jika mau donasi, ketik *%pdonasi*.
 ┣    Terima kasih ya atas 
 ┣    sokongannya hehe
 ┣➥ Maaf ya jika banyak error kerna
-┣   masih dalam tahap pembangunan.
-┣   Donasi gw biar gw semangat 
-┣   mengedit nya hehe
+┣    masih dalam tahap 
+┣    pembangunan.
+┣    Donasi gw biar gw semangat 
+┣    mengedit nya hehe
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Hari ini ❭»❈•━─╮*
 ┣➥ Hari : *%week*
