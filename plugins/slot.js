@@ -7,7 +7,7 @@ let handler = async(m, { conn, text }) => {
     conn.reply(m.chat, hasil, m)
 	})
 }
-handler.help = ['slot'].map(v => v + ' [premium] (Limit)')
+handler.help = ['slot'].map(v => v + ' [premium]')
 handler.tags = ['game']
 handler.command = /^(slot)$/i
 handler.owner = false
