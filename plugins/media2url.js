@@ -4,13 +4,14 @@ const uploadImage = require('../lib/uploadImage')
  let handler  = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
       let mime = (q.msg || q)
+      if (!q.msg || !q) throw 
       let img = await mime.download()
       if (!img) throw 'balas foto/video dengan caption *${usedPrefix + command}*'
       try {
       urlfile = await uploadImage(img)
       m.reply(urlfile)
       } catch (e) {
-      m.reply(`Conversion Failed`)
+      m.reply(`Hanya foto/video aja yang bisa dijadikan url`)
      }
 }
 handler.help = ['img2url','video2url']
