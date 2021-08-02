@@ -14,11 +14,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                     })
                     .catch((error) => {
                         console.error(error)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Server_Minecraft.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + error + '*', MessageType.text)
-                            }
-                        }
                         m.reply(`Server *${_data[0]} : ${_data[1]}* Offline`)
                     })
                     break
@@ -30,11 +25,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                     })
                     .catch((error) => {
                         console.error(error)
-                        if (DevMode) {
-                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                                conn.sendMessage(jid, 'Server_Minecraft.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + error + '*', MessageType.text)
-                            }
-                        }
                         m.reply(`Server *${args[1]}* Offline`)
                     })
                     break
@@ -44,11 +34,6 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     } catch (e) {
         conn.reply(m.chat, `Gunakan format ${usedPrefix}server <bedrock | java> <ip> <port>\ncontoh penggunaan: *${usedPrefix}server bedrock play.nethergames.org 19132*`.trim(), m)
         console.log(e)
-        if (DevMode) {
-            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                conn.sendMessage(jid, 'Server_Minecraft.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-            }
-        }
     }
 }
     
