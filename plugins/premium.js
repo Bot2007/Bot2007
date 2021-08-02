@@ -15,7 +15,7 @@ let handler = async m => m.reply(`
 │• 50K / VIP (Permanen)
 │
 │ > Pembayaran :
-│• https://saweria.co/RC047
+│• https://saweria.co/taufikmusa07
 ╰────
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['premium']
