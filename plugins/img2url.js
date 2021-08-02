@@ -3,9 +3,15 @@ const uploadImage = require('../lib/uploadImage')
 
  let handler  = async (m, { conn }) => {
   let q = m.quoted ? m.quoted : m
+      let mime = (q.msg || q).mimetype || ''
+    if (/image/.test(mime)) {
       let img = await q.download()
-      if (!img) throw 'Foto/Video tidak ditemukan'
-      try {
+      if (!img) throw 'Foto tidak ditemukan'
+      } else 
+    if (/video/.test(mime)) {
+      let img = await q.download()
+      if (!img) throw 'Video tidak ditemukan'
+      } try {
       urlfile = await uploadImage(img)
       m.reply(urlfile)
       } catch (e) {
