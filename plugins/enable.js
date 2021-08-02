@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let chat = global.DATABASE.data.chats[m.chat]
-  let st = global.DATABASE.data.users[m.sender]
+  let user = global.DATABASE.data.users[m.sender]
   let type = (args[0] || '').toLowerCase()
   let isAll = false
   let isUser = false
