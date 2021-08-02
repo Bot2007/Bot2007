@@ -7,12 +7,12 @@ let handler = async(m, { conn, text }) => {
     conn.reply(m.chat, hasil, m)
 	})
 }
-handler.help = ['slot'].map(v => v + ' ')
+handler.help = ['slot'].map(v => v + ' (premium because need apikey)')
 handler.tags = ['game']
 handler.command = /^(slot)$/i
 handler.owner = false
 handler.mods = false
-handler.premium = false
+handler.premium = true
 handler.group = false
 handler.private = false
 
