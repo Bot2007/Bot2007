@@ -36,7 +36,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
 │• *${usedPrefix}judi <jumlah>*
 │   *_Jangan judi, Karena gk bakal_*
 │  
-│*@taufikmusa07*
+│ *@taufikmusa07*
 ╰─「 *Tutorial pake bot Taufik* 」
 `.trim(), m)
 }
