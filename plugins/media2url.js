@@ -3,7 +3,7 @@ const uploadImage = require('../lib/uploadImage')
 
  let handler  = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
-      let img = await q.msg.download()
+      let img = await q.download()
       if (!img) throw 'balas foto/video dengan caption *${usedPrefix + command}*'
       try {
       urlfile = await uploadImage(img)
