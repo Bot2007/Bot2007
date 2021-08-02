@@ -9,12 +9,12 @@ const uploadImage = require('../lib/uploadImage')
       urlfile = await uploadImage(img)
       m.reply(urlfile)
       } catch (e) {
-      m.reply(`${e}`)
+      m.reply(`Conversion Failed`)
      }
 }
-handler.help = ['img2url']
-handler.tags = ['quotes']
-handler.command = /^(img2url)$/i
+handler.help = ['img2url','video2url']
+handler.tags = ['tools']
+handler.command = /^((img|video)2url)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
