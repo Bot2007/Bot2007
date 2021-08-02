@@ -1,8 +1,8 @@
 const uploadImage = require('../lib/uploadImage')
 
 
- let handler  = async (m, { conn, usedPrefix, command }) => {
-      if (!m.quoted) { m.reply('balas foto/video dengan perintah *${usedPrefix + command}*') }
+ let handler  = async (m, { conn }) => {
+      if (!m.quoted) throw 'Balas foto/video nya'
       let img = await m.quoted.download()
       try {
       urlfile = await uploadImage(img)
