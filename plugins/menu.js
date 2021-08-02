@@ -166,7 +166,7 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ FaceBook : *${sosmed}*
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Fitur ❭»❈•━─╮*
-┣➥ 460+
+┣➥ 500+
 *╰─━━━━━━━━━━━━─╯*
 
 %readmore`
