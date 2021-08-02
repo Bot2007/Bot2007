@@ -37,9 +37,9 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     }
 }
     
-handler.help = ['server <type> <ip> <port>']
+handler.help = ['minecraftserver <type> <ip> <port>']
 handler.tags = ['internet']
-handler.command = /^(server)$/i
+handler.command = /^(minecraftserver)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
