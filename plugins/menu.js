@@ -148,6 +148,10 @@ ${ucapanWaktuMY}(Malaysia)
 ┣➥ Jika mau donasi, ketik *%pdonasi*.
 ┣    Terima kasih ya atas 
 ┣    sokongannya hehe
+┣➥ Maaf ya jika banyak error kerna
+┣   masih dalam tahap pembangunan.
+┣   Donasi gw biar gw semangat 
+┣   mengedit nya hehe
 *╰─━━━━━━━━━━━━━━━━─╯*
 *╭─━•❈«❬ Hari ini ❭»❈•━─╮*
 ┣➥ Hari : *%week*
