@@ -8,6 +8,6 @@ let handler = async(m, { conn }) => {
 }
 handler.help = ['waifu']
 handler.tags = ['internet']
-handler.command = /^(waifu)$/i
+handler.command = ['waifu']
 //MADE IN ERPAN 1140 BERKOLABORASI DENGAN BTS
 module.exports = handler
