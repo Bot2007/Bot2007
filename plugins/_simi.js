@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 let handler = m => m
 
 handler.before = async (m) => {
-    let chat = global.db.data.chats[m.chat]
+    let chat = global.DATABASE.data.chats[m.chat]
     if (chat.simi && !chat.isBanned && !m.isGroup) {
         if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return
         if (!m.text) return
