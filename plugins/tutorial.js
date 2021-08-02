@@ -37,7 +37,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
 │   *_Jangan judi, Karena gk bakal_*
 │  
 │ *@taufikmusa07*
-╰─「 *Tutorial pake bot Taufik* 」
+╰─「 *TAUFIK BOT* 」
 `.trim(), m)
 }
 handler.help = ['tutorial']
