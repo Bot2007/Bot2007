@@ -4,7 +4,7 @@ const uploadImage = require('../lib/uploadImage')
  let handler  = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
       let mime = (q.msg || q)
-      let img = await mime.download()
+      let img = await mime.download().catch('Foto/Video tidak ditemukan')
       if (!img) throw 'balas foto/video dengan caption *${usedPrefix + command}*'
       try {
       urlfile = await uploadImage(img)
