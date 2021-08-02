@@ -31,7 +31,8 @@ let handler  = async (m, { conn, usedPrefix }) => {
 │   untuk mengetahui profilemu
 │• *${usedPrefix}inv*
 │  *${usedPrefix}inventory*
-│   Untuk mengecek nyawa dan money
+│   Untuk mengecek nyawa,
+│   money dan lain-lain
 │• *${usedPrefix}judi <jumlah>*
 │   *_Jangan judi, Karena gk bakal_*
 │  
@@ -50,7 +51,7 @@ handler.private = false
 
 handler.admin = false
 handler.botAdmin = false
-
+handler.exp = 350
 handler.fail = null
 
 module.exports = handler
