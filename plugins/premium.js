@@ -10,9 +10,9 @@ let handler = async m => m.reply(`
 │• Diberikan Kode Gift Seminggu!
 │
 │ > Harga :
-│• 10K / Bulan (4 Minguu)
-│• 30K / Tahun (12 Bulan)
-│• 50K / VIP (Permanen)
+│• 20K / Bulan (4 Minggu)
+│• 50K / Tahun (12 Bulan)
+│• 100K / VIP (Permanen)
 │
 │ > Pembayaran :
 │• https://saweria.co/taufikmusa07
