@@ -9,6 +9,7 @@ handler.before = async (m) => {
         let res = await fetch('https://fdciabdul.tech/api/ayla/?pesan=' + encodeURIComponent(m.text))
         let json = await res.json()
         if (json.jawab == 'Aku tidak mengerti apa yang kamu katakan.Tolong ajari aku.') await m.reply('siminya blom diajarin jadi gatau t_t custom pesannya di https://simsimi.com/teach')
+        if (json.jawab == ':( nanti enable simi lagi ya kak (stikerin bot)') await m.reply(':( nanti enable simi lagi ya kak (Taufik Bot)')
         else await m.reply(`*Taufik Bot:* ${json.jawab.replace(/ayla/i, 'taufikmusa07')}`)
         return !0
     }
