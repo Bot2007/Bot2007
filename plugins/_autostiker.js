@@ -8,33 +8,28 @@ let handler = m => m
 handler.before = async function (m) {
     let chat = global.DATABASE.data.chats[m.chat]
     if (chat.stiker && !chat.isBanned && !m.fromMe && !m.isBaileys) {
-        // try {
-        let q = m
         let stiker = false
-        let mime = (q.msg || q).mimetype || ''
-        if (/webp/.test(mime)) return
-        if (/image/.test(mime)) {
-            let img = await q.download()
-            let link = await uploadImage(img)
-            if (!img) return
-            stiker = await sticker(0, link, global.packname, global.author)
-        } else if (/video/.test(mime)) {
-            if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
-            let img = await q.download()
-            let link = await uploadFile(img)
-            if (!img) return
-            stiker = await sticker(0, link, global.packname, global.author)
-        } else if (m.text) {
-            if (isUrl(m.text)) stiker = await sticker(false, m.text.split` `[0], global.packname, global.author)
-            else return
-        }
-        if (stiker) await this.sendMessage(m.chat, stiker, MessageType.sticker, {
-            quoted: m
-        })
-        // } finally {
-        //     if (stiker) {
-        //     }
-        // }
+    try {
+    let q = m
+    let mime = (q.msg || q).mimetype || ''
+    if (/image/.test(mime)) {
+      let img = await q.download()
+      if (!img) throw `balas gambar dengan caption *${usedPrefix + command}*`
+      stiker = await sticker(img, false, global.packname, global.author)
+    } else if (/video/.test(mime)) {
+      if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
+      let img = await q.download()
+      if (!img) throw `balas video/gif dengan caption *${usedPrefix + command}*`
+      stiker = await sticker(img, false, global.packname, global.author)
+    } else if (args[0]) {
+      if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
+      else return m.reply('URL tidak valid!')
+    }
+  } finally {
+    if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+      quoted: m
+    })
+         }
     }
     return true
 }
