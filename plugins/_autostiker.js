@@ -7,7 +7,7 @@ let handler = m => m
 
 handler.before = async function (m) {
     let chat = global.DATABASE.data.chats[m.chat]
-    if (chat.autosticker && !chat.isBanned && !m.fromMe && !m.isBaileys) {
+    if (chat.stiker && !chat.isBanned && !m.fromMe && !m.isBaileys) {
         // try {
         let q = m
         let stiker = false
@@ -28,7 +28,7 @@ handler.before = async function (m) {
             if (isUrl(m.text)) stiker = await sticker(false, m.text.split` `[0], global.packname, global.author)
             else return
         }
-        if (stiker) await this.sendMessage(m.chat, stiker, 'stickerMessage', {
+        if (stiker) await this.sendMessage(m.chat, stiker, MessageType.sticker, {
             quoted: m
         })
         // } finally {
