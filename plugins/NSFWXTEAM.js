@@ -1,6 +1,5 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command }) => {
-  m.reply('Sedang Diproses...')
   let res = `https://api.xteam.xyz/randomimage/${command}?APIKEY=${global.APIKeys.'https://api.xteam.xyz'}`
   conn.sendFile(m.chat, res, 'nsfw.jpg', `tobat woi`, m, false)
 }
