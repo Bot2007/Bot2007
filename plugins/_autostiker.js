@@ -1,8 +1,5 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
-const uploadFile = require('../lib/uploadFile')
-const uploadImage = require('../lib/uploadImage')
-let { webp2png } = require('../lib/webp2mp4')
 let handler = m => m
 
 handler.before = async function (m) {
