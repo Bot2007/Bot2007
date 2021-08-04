@@ -3,8 +3,8 @@ let handler = async (m,{ conn }) => {
                     "listMessage":  {
                         "title": "",
                         "description": "Hai, saya Taufik Bot, Pilih di bawah ya untuk menu",
+                        "jpegThumbnail": 
                         "footerText": "Jangan lupa Donasi ya hehe❤",
-              
                         "buttonText": "Menu disini",
                         "listType": "SINGLE_SELECT",
                         "sections": [
