@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command }) => {
-  let res = `https://api.xteam.xyz/randomimage/${command}?APIKEY=${global.APIKeys.'https://api.xteam.xyz'}`
+  let res = global.API('xteam', '/randomimage/${command}', 'APIKEY')
   conn.sendFile(m.chat, res, 'nsfw.jpg', `tobat woi`, m, false)
 }
 handler.help = ['ass','panties','pussy','nsfwneko','mstrb','jahy','hentai','cuckold','tentacles','thighs','uniform','wpnsfwmobile']
