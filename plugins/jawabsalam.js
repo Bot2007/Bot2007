@@ -1,5 +1,5 @@
 let handler  = async (m, { conn }) => { 
-  m.reply('Waalaikumsalam')
+  if (!m.fromMe) m.reply('Waalaikumsalam')
   conn.chatRead(m.chat)
 }
 handler.customPrefix = /aslm|assalam/i
