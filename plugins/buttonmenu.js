@@ -3,7 +3,7 @@ let handler = async (m,{ conn }) => {
                     "listMessage":  {
                         "title": "",
                         "description": "Hai, saya Taufik Bot, Pilih di bawah ya untuk menu",
-                        "jpegThumbnail": 
+                        "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
                         "footerText": "Jangan lupa Donasi ya hehe❤",
                         "buttonText": "Menu disini",
                         "listType": "SINGLE_SELECT",
