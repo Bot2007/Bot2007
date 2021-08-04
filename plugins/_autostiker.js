@@ -8,8 +8,7 @@ let handler = m => m
 handler.before = async function (m) {
     let chat = global.DATABASE.data.chats[m.chat]
     if (chat.stiker && !chat.isBanned && !m.fromMe && !m.isBaileys) {
-        let stiker = false
-    try {
+        try {
     let q = m
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
