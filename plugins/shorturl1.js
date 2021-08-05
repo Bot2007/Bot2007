@@ -6,5 +6,7 @@ let handler = async (m, { text, command }) => {
   if (json.status) m.reply(json.result + '\n' + `Credit: Taufik`.trim())
   else throw 'Link invalid'
 }
+handler.help = ['tinyurl','shorturlat'].map(v => v + ' <url>')
+handler.tags = ['shorturl']
 handler.command = /^(tinyurl|shorturlat)$/i
 module.exports = handler
