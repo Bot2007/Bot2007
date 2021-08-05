@@ -23,7 +23,6 @@ handler2.command = /^(tinyurl|shorturlat)$/i
 
 module.exports = handler2
 
-let fetch = require('node-fetch')
 let handler = async (m, { text, command }) => {
   let [NAMA, TEKS] = text.split` `
   if (!text) throw 'Linknya mana\nContoh penggunaan:\n .customcuttly linkyoutube|https://youtube.com'
