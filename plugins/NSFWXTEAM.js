@@ -1,5 +1,5 @@
 let handler = async (m, { conn, command }) => {
-  let res = global.API('xteam', '/randomimage/${command}', {}, 'APIKEY')
+  let res = global.API('xteam', '/randomimage/' + command, {}, 'APIKEY')
   conn.sendFile(m.chat, res, 'nsfw.jpg', `tobat woi`, m, false)
 }
 handler.help = ['ass','panties','pussy','nsfwneko','mstrb','jahy','hentai','cuckold','tentacles','thighs','uniform','wpnsfwmobile', 'hentaigif']
