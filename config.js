@@ -14,6 +14,7 @@ global.APIs = { // API Prefix
   bsbt: 'https://bsbt-api-rest.herokuapp.com',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   hardianto: 'https://hardianto-chan.herokuapp.com',
+  bx: 'https://bx-hunter.herokuapp.com',
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
@@ -24,6 +25,8 @@ global.APIKeys = { // APIKey Here
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://hardianto-chan.herokuapp.com': 'hardianto',
   'https://neoxr-api.herokuapp.com': 'yntkts',
+  'https://bx-hunter.herokuapp.com': 'Ikyy69',
+
 }
 
 // Sticker WM
