@@ -1,7 +1,7 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix }) => {
     let who
-    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+    if (m.isGroup) who = m.mentionedJid[0]
     else who = m.sender
     let healt = global.DATABASE._data.users[who].healt
     let wang = global.DATABASE._data.users[who].wang
