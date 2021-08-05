@@ -10,22 +10,20 @@ handler.before = async function (m) {
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
       let img = await q.download()
-      if (!img) throw `balas gambar dengan caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (/video/.test(mime)) {
       if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
       let img = await q.download()
-      if (!img) throw `balas video/gif dengan caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (args[0]) {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
-      else return m.reply('URL tidak valid!')
+      else return false
     }
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else continue
+    else return false
          }
     }
     return true
