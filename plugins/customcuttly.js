@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
   let res = await fetch(global.API('xteam', '/shorturl/customcuttly', { url: TEKS, nama: NAMA }, 'APIKEY'))
   let json = await res.json()
   if (json.status = true) return m.reply(json.result + '\n' + `Credit: Taufik`.trim())
-  if (json.status = false) m.reply(json.result + '\n' + `Credit: Taufik`.trim())
+  if (json.status = false) m.reply(json.result.shortLink + '\n' + `Credit: Taufik`.trim())
 }
 handler.help = ['customcuttly'].map(v => v + ' <url>|<nama yang mau dicustom>')
 handler.tags = ['shorturl']
