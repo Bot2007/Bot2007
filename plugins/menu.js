@@ -192,11 +192,9 @@ ${ucapanWaktuMY}(Malaysia)
     let replace = {
       '%': '%',
       p: _p, uptime,
-      owner: global.conn.user.jid.replace(/@.+/, ''),
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
-      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       exp, level, limit, wang, rank, name, dateIslamic, weton, week, date, time, totalreg,
       readmore: readMore
     }
