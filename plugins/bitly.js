@@ -7,7 +7,7 @@ let handler = async (m, { text }) => {
   else throw 'Link invalid'
 }
 handler.help = ['bitly'].map(v => v + ' <url>')
-handler.tags = ['tools']
+handler.tags = ['shorturl']
 handler.command = /^bitly$/i
 // Made By Taufik
 module.exports = handler
