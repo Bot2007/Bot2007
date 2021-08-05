@@ -37,7 +37,7 @@ handler3.command = /^customcuttly$/i
 
 module.exports = handler3
 
-let handler = async (m, { text, command }) => {
+let handler4 = async (m, { text, command }) => {
   if (!text) throw 'Linknya mana'
   let res = await fetch(global.API('xteam', '/shorturl/${command}', { url: text }, 'APIKEY'))
   let json = await res.json()
