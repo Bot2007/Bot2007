@@ -3,7 +3,7 @@ let handler = async (m, { text, command }) => {
   if (!text) throw 'Linknya mana'
   let res = await fetch(global.API('xteam', '/shorturl/' + command, { url: text }, 'APIKEY'))
   let json = await res.json()
-  if (json.result.shorturl = https://s.id/undefined) throw (Format link salah\nContoh link: https://youtube.com
+  if (json.result.shorturl = "https://s.id/undefined") throw 'Format link salah\nContoh link: https://youtube.com'
   if (json.status) m.reply(json.result.shorturl + '\n' + `Credit: Taufik`.trim())
   else throw 'Link invalid'
 }
