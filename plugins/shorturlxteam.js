@@ -1,4 +1,5 @@
 let fetch = require('node-fetch')
+
 let handler = async (m, { text }) => {
   if (!text) throw 'Linknya mana'
   let res = await fetch(global.API('xteam', '/shorturl/bitly', { url: text }, 'APIKEY'))
