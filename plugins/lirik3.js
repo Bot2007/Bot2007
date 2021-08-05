@@ -1,7 +1,7 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukan parameter, Contoh *#lirik my love*', m)
+    if (!text) return conn.reply(m.chat, 'Masukan parameter, Contoh *#lirik3 my love*', m)
 
   await m.reply('Sedang di proses kak:b')
 	axios.get(`https://recoders-area.caliph.repl.co/api/lirik?q=${text}`).then ((res) => {
