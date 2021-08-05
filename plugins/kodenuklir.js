@@ -1,6 +1,5 @@
-let handler  = async (m, { conn, usedPrefix: _p }) => {
-  conn.reply(m.chat, `
-	「 KODE NUKLIR 」
+let handler  = async m => {
+  m.reply(`「 KODE NUKLIR 」
 
 Code Nuklear [Doujin Hentai Genre NTR] (Netorare)
 
@@ -490,7 +489,7 @@ https://nhentai.net/g/207432/ Watashi no Onii-chan 4,5
 https://nhentai.net/g/247574/ Watashi no Onii-chan Extra
 
 「 TOBAT WOE 」
-`.trim(), m)
+`.trim())
 }
 handler.help = ['kodenuklir']
 handler.tags = ['sange']
