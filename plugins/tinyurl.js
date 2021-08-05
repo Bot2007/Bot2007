@@ -7,7 +7,7 @@ let handler = async (m, { text }) => {
   else throw 'Link invalid'
 }
 handler.help = ['tinyurl'].map(v => v + ' <url>')
-handler.tags = ['tools']
+handler.tags = ['short']
 handler.command = /^tinyurl$/i
 
 module.exports = handler
