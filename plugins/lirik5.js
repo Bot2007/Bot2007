@@ -15,6 +15,6 @@ ${json.result.lirik}
 }
 handler.help = ['lirik4'].map(v => v + ' <teks>')
 handler.tags = ['internet']
-handler.command = /^(lirik|lyrics|lyric)?(4)$/i
+handler.command = /^(lirik|lyrics|lyric)4$/i
 
 module.exports = handler
