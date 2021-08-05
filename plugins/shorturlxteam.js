@@ -24,7 +24,7 @@ handler2.command = /^(tinyurl|shorturlat)$/i
 
 module.exports = handler2
 
-let handler = async (m, { text, command }) => {
+let handler3 = async (m, { text, command }) => {
   let [NAMA, TEKS] = text.split` `
   if (!text) throw 'Linknya mana\nContoh penggunaan:\n .customcuttly linkyoutube|https://youtube.com'
   if (!TEKS) throw 'Format salah\nContoh penggunaan:\n .customcuttly linkyoutube|https://youtube.com'
