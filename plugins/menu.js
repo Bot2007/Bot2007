@@ -77,6 +77,7 @@ let TaufikComel = conn
   'audio': 'Audio',
   'virus': 'Virus',
   'rpg': 'Game RPG',
+  'shorturl': 'Shorturl(Xteam)',
   'wibu': 'Wibu',
   'sange': 'NSFW',
   'image': 'Gambar',
