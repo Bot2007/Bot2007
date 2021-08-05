@@ -13,8 +13,8 @@ let handler = async (m, { text }) => {
 ${json.result.lirik}
 `.trim())
 }
-handler.help = ['lirik4'].map(v => v + ' <teks>')
+handler.help = ['lirik5'].map(v => v + ' <teks>')
 handler.tags = ['internet']
-handler.command = /^(lirik|lyrics|lyric)4$/i
+handler.command = /^(lirik|lyrics|lyric)5$/i
 
 module.exports = handler
