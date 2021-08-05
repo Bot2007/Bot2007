@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
   if (json.status) m.reply(json.result.link + '\n' + `Credit: Taufik`.trim())
   else throw 'Link invalid'
 }
-handler.help = ['bitly','tinyurl','shorturlat','customgg'].map(v => v + ' <url>')
+handler.help = ['bitly','tinyurl','shorturlat','customgg <nama yang mau dicustom>'].map(v => v + ' <url>')
 handler.tags = ['shorturl']
 handler.command = /^bitly$/i
 // Made By Taufik
@@ -25,8 +25,10 @@ module.exports = handler2
 
 let fetch = require('node-fetch')
 let handler = async (m, { text, command }) => {
-  if (!text) throw 'Linknya mana'
-  let res = await fetch(global.API('xteam', '/shorturl/gg', { url: text, nama: text }, 'APIKEY'))
+  let [NAMA, TEKS] = text.split` `
+  if (!text) throw 'Linknya mana\nContoh penggunaan:\n.customgg Taufik|https://youtube.com'
+  if (!NAMA) throw 'Nama URL yang mau dicustom nya mana?'
+  let res = await fetch(global.API('xteam', '/shorturl/gg', { url: TEKS, nama: NAMA }, 'APIKEY'))
   let json = await res.json()
   if (json.status) m.reply(json.result + '\n' + `Credit: Taufik`.trim())
   else throw 'Link invalid'
