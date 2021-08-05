@@ -17,6 +17,6 @@ let handler = async (m, { usedPrefix, command }) => {
 }
 handler.help = ['ocr']
 handler.tags = ['tools']
-handler.command = /^ocr$/i
+handler.command = /^ocr|takecaption$/i
 handler.limit = true
 module.exports = handler
