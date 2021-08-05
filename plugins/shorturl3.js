@@ -11,4 +11,3 @@ handler.tags = ['shorturl']
 handler.command = /^(sid|cuttly)$/i
 // Made By Taufik
 module.exports = handler
-© 
