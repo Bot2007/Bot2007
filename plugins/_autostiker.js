@@ -25,7 +25,7 @@ handler.before = async function (m) {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else return
+    else continue
          }
     }
     return true
