@@ -26,13 +26,13 @@ module.exports = handler2
 let fetch = require('node-fetch')
 let handler = async (m, { text, command }) => {
   let [NAMA, TEKS] = text.split` `
-  if (!text) throw 'Linknya mana\nContoh penggunaan:\n.customgg Taufik|https://youtube.com'
-  if (!NAMA) throw 'Nama URL yang mau dicustom nya mana?'
-  let res = await fetch(global.API('xteam', '/shorturl/gg', { url: TEKS, nama: NAMA }, 'APIKEY'))
+  if (!text) throw 'Linknya mana\nContoh penggunaan:\n .customcuttly linkyoutube|https://youtube.com'
+  if (!TEKS) throw 'Format salah\nContoh penggunaan:\n .customcuttly linkyoutube|https://youtube.com'
+  let res = await fetch(global.API('xteam', '/shorturl/${command}', { url: TEKS, nama: NAMA }, 'APIKEY'))
   let json = await res.json()
   if (json.status) m.reply(json.result + '\n' + `Credit: Taufik`.trim())
   else throw 'Link invalid'
 }
-handler3.command = /^customgg$/i
+handler3.command = /^customcuttly$/i
 
 module.exports = handler3
