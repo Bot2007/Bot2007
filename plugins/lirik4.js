@@ -9,6 +9,6 @@ let handler = async (m, { text, usedPrefix, command }) => {
 }
 handler.help = ['lirik'].map(v => v + ' <teks>')
 handler.tags = ['internet']
-handler.command = /^(lirik|lyrics?)$/i
+handler.command = /^(lirik4)$/i
 
 module.exports = handler
