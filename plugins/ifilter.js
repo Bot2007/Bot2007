@@ -40,14 +40,13 @@ xpro2
 _note:_
 masukan parameter dengan benar!
 Jika error berarti lagi error:v'
-//  let [teks, teks2] = text.split('|')
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
   if (!mime) throw 'Tidak ada foto'
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
   let img = await q.download()
   let url = await uploadImage(img)
-  heum = await fetch(global.API('lol', `/api/filter/${text}`, { img: url }, 'apikey'))
+  heum = await fetch(global.API('lol', `/api/filter/` + text, { img: url }, 'apikey'))
   json = await heum.buffer()
    conn.sendMessage(m.chat, heum, MessageType.image, {
     quoted: m, caption: `*Filter: ${text}*\nFollow instagram instagram.com/caliph_71`
