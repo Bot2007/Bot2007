@@ -52,7 +52,7 @@ Jika error berarti lagi error:v`.trim()
     quoted: m, caption: `*Filter: ${text}*\nFollow instagram instagram.com/caliph_71`
   })
  } catch (e) {
-   m.reply(`Error`}
+   m.reply(`Error`)
 }
 handler.help = ['ifilter']
 handler.tags = ['tools']
