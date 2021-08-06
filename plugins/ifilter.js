@@ -4,9 +4,9 @@ const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
  try {
- if (!text) throw 'masukin filternya!!
+ if (!text) throw `masukin filternya!!
 
-Cara penggunaan!!\n reply image atau send image dengan caption *#ifilter lofi*
+Cara penggunaan!! reply image atau send image dengan caption *#ifilter lofi*
 
 [ *List Filter* ]
 
@@ -39,7 +39,7 @@ xpro2
 
 _note:_
 masukan parameter dengan benar!
-Jika error berarti lagi error:v'
+Jika error berarti lagi error:v`.trim()
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
   if (!mime) throw 'Tidak ada foto'
