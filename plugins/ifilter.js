@@ -3,23 +3,10 @@ let fetch = require('node-fetch')
 const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
-  m.reply('*Sedang di proses, Mohon tunggu sebentar kak:p*')
  try {
- if (!text) throw 'masukin filternya!!'
-//  let [teks, teks2] = text.split('|')
-  let q = m.quoted ? m.quoted : m
-  let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw 'Tidak ada foto'
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
-  let img = await q.download()
-  let url = await uploadImage(img)
-  heum = await fetch(global.API('lol', `/api/filter/${text}`, { img: url }, 'apikey'))
-  json = await heum.buffer()
-   conn.sendMessage(m.chat, heum, MessageType.image, {
-    quoted: m, caption: `*Filter: ${text}*\nFollow instagram instagram.com/caliph_71`
-  })
- } catch (e) {
-   m.reply(`Cara penggunaan!!\n reply image atau send image dengan caption *#ifilter lofi*
+ if (!text) throw 'masukin filternya!!
+
+Cara penggunaan!!\n reply image atau send image dengan caption *#ifilter lofi*
 
 [ *List Filter* ]
 
@@ -52,8 +39,21 @@ xpro2
 
 _note:_
 masukan parameter dengan benar!
-Jika error berarti lagi error:v`)
-  }
+Jika error berarti lagi error:v'
+//  let [teks, teks2] = text.split('|')
+  let q = m.quoted ? m.quoted : m
+  let mime = (q.msg || q).mimetype || ''
+  if (!mime) throw 'Tidak ada foto'
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
+  let img = await q.download()
+  let url = await uploadImage(img)
+  heum = await fetch(global.API('lol', `/api/filter/${text}`, { img: url }, 'apikey'))
+  json = await heum.buffer()
+   conn.sendMessage(m.chat, heum, MessageType.image, {
+    quoted: m, caption: `*Filter: ${text}*\nFollow instagram instagram.com/caliph_71`
+  })
+ } catch (e) {
+   m.reply(`Error`}
 }
 handler.help = ['ifilter']
 handler.tags = ['tools']
