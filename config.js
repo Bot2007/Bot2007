@@ -3,6 +3,7 @@ global.mods = ['601173093564'] // Want some help?
 global.prems = ['601173093564'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
+  lol: 'https://lolhuman.herokuapp.com',
   nrtm: 'https://nurutomo.herokuapp.com',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
   neoxr: 'https://neoxr-api.herokuapp.com',
@@ -19,6 +20,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
+  'https://lolhuman.herokuapp.com': '3780192c4cdc5e3ec5d5900b',
   'https://api.xteam.xyz': '7fa6089e6a81b5bc',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'apivinz',
