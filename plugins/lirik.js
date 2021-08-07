@@ -19,8 +19,8 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     }
 }
     
-handler.help = ['lirik2', 'lyrics2'].map(v => ' [title] [artist]')
+handler.help = ['lirik', 'lyrics'].map(v => ' [title] [artist]')
 handler.tags = ['internet']
-handler.command = /^(l(irik2|yrics2))$/i
+handler.command = /^(l(irik|yrics))$/i
 
 module.exports = handler
