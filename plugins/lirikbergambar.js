@@ -14,8 +14,8 @@ _${json.author}_\n
 ${json.lyrics}
 `, m)
 }
-handler.help = ['lirik'].map(v => v + ' <Apa>')
+handler.help = ['lirikbergambar', lyricwithgambar].map(v => v + ' <Apa>')
 handler.tags = ['internet']
-handler.command = /^(lirik|lyrics|lyric)$/i
+handler.command = /^((lirikbergambar)|(lyrics|lyric)withgambar)$/i
 
 module.exports = handler
