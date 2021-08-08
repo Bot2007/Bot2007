@@ -14,7 +14,6 @@ global.APIs = { // API Prefix
   nzcha: 'http://nzcha-apii.herokuapp.com',
   bg: 'http://bochil.ddns.net',
   fdci: 'https://api.fdci.se',
-  zekais: 'http://zekais-api.herokuapp.com',
   bsbt: 'https://bsbt-api-rest.herokuapp.com',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   hardianto: 'https://hardianto-chan.herokuapp.com',
