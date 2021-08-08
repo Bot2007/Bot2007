@@ -24,7 +24,7 @@ Bonus: ${poin} XP`.trim(), m),
         }, timeout)
     ]
 }
-handler.help = ['tekateki2 (Without Apikey)']
+handler.help = ['tekateki2 (Tanpa Apikey)']
 handler.tags = ['game']
 handler.command = ['tekateki2']
 
