@@ -24,7 +24,7 @@ Bonus: ${poin} XP`.trim(), m),
         }, timeout)
     ]
 }
-handler.help = ['tebaklirik2 (Without Apikey)']
+handler.help = ['tebaklirik2 (Tanpa Apikey)']
 handler.tags = ['game']
 handler.command = ['tebaklirik2']
 
