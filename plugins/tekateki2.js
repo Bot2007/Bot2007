@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         throw false
     }
     let res = JSON.parse(fs.readFileSync(`./src/tekateki.json`))
-    let json = tebaklirik[Math.floor(Math.random() * res.length)]
+    let json = res[Math.floor(Math.random() * res.length)]
     conn.tekateki2[id] = [
         await conn.reply(m.chat, `${json.pertanyaan}
 Timeout: *${(timeout / 1000).toFixed(2)} detik*
