@@ -19,7 +19,7 @@ Ketik *${usedPrefix}teli2* untuk hint
 Bonus: ${poin} XP`.trim(), m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebaklirik2[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, tebaklirik2[id][0])
+            if (conn.tebaklirik2[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.tebaklirik2[id][0])
             delete conn.tebaklirik2[id]
         }, timeout)
     ]
