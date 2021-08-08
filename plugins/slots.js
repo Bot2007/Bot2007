@@ -78,7 +78,7 @@ ${spins7}|${spins8}|${spins9}
         delete conn.slots[m.chat]
     }
 }
-handler.help = ['slots', 'jackpot'].map(v => v + ' (Tanpa Apikey)')
+handler.help = ['slots', 'jackpot']
 handler.tags = ['game']
 handler.command = /^slots?|jac?kpot$/i
 
