@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.tekateki2[id] = [
         await conn.reply(m.chat, `${json.pertanyaan}
 Timeout: *${(timeout / 1000).toFixed(2)} detik*
-Ketik *${usedPrefix}teki2* untuk hint
+Ketik *${usedPrefix}tete2* untuk hint
 Bonus: ${poin} XP`.trim(), m),
         json, poin,
         setTimeout(() => {
