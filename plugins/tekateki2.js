@@ -1,3 +1,4 @@
+let fs = require('fs')
 let fetch = require('node-fetch')
 
 let timeout = 120000
