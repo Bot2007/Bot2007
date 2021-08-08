@@ -14,7 +14,7 @@ _${json.author}_\n
 ${json.lyrics}
 `, m)
 }
-handler.help = ['lirikbergambar', lyricwithgambar].map(v => v + ' <Apa>')
+handler.help = ['lirikbergambar', 'lyricwithgambar'].map(v => v + ' <Apa>')
 handler.tags = ['internet']
 handler.command = /^((lirikbergambar)|(lyrics|lyric)withgambar)$/i
 
