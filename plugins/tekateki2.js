@@ -19,7 +19,7 @@ Ketik *${usedPrefix}tete2* untuk hint
 Bonus: ${poin} XP`.trim(), m),
         json, poin,
         setTimeout(() => {
-            if (conn.tekateki2[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, tekateki2[id][0])
+            if (conn.tekateki2[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.tekateki2[id][0])
             delete conn.tekateki2[id]
         }, timeout)
     ]
