@@ -182,6 +182,7 @@ module.exports = {
           if (!('antiLink' in chat)) chat.antiLink = false
           if (!('simi' in chat)) chat.simi = false
           if (!isNumber(chat.expired)) chat.expired = 0
+          if (!isNumber(chat.premium)) chat.premium = 0
         } else global.DATABASE.data.chats[m.chat] = {
           isBanned: false,
           welcome: false,
@@ -195,6 +196,7 @@ module.exports = {
           antiLink: false,
           simi: false,
           expired: 0,
+          premium: 0,
         }
       } catch (e) {
         console.error(e)
