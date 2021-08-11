@@ -9,11 +9,7 @@ conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
               "displayName": "Taufik",
               "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;Taufik(Bot);;;\nFN:Taufik(Bot)\nitem1.TEL;waid=601173093564:+60 11-7309 3564\nitem1.X-ABLabel:Telefon\nEND:VCARD"
             }
-          ],
-                        "contextInfo": { "stanzaId": m.key.id,
-"participant": m.sender,
-"quotedMessage": m.message
-}, quoted: fkon
+          ], quoted: fkon
                     }
                  }, {}), {waitForAck: true}).then((res) => m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: res}))
 }
