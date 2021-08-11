@@ -3,7 +3,7 @@ let handler  = async (m, { from, conn }) => {
 const fkon = { key: { id: m.key.id, fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast`, }, message: { "contactMessage": { "displayName": `Taufik Owner/Botku`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;Taufik,;;;\nFN:Taufik Bot,\nitem1.TEL;waid=601173093564:601173093564\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, "jpegThumbnail": fs.readFileSync('./src/TaufikBot.png')}}}
   let Yoko = conn.prepareMessageFromContent(m.chat, {
                     "contactsArrayMessage": {
-          "displayName": "‎Ini ownerku ya tolol",
+          "displayName": "‎Ini ownerku ya",
           "contacts": [
             {
               "displayName": "Taufik(Owner)",
@@ -15,9 +15,9 @@ const fkon = { key: { id: m.key.id, fromMe: false, participant: `0@s.whatsapp.ne
             }
           ]
                     }
-                 }, { quoted: fkon })
+                 }, { quoted: fkon, thumbnail: require('fs').readFileSync('./src/TaufikBot.png') })
           conn.relayWAMessage(Yoko, {waitForAck: true})
-          m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: Yoko})
+          m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: Yoko, thumbnail: require('fs').readFileSync('./src/TaufikBot.png')})
 }
 handler.help = ['owner', 'creator']
 handler.tags = ['info']
