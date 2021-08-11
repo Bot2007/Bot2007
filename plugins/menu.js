@@ -202,14 +202,13 @@ ${ucapanWaktuMY}(Malaysia)
     let mentionedJid = [global.conn.user.jid]
     conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "extendedTextMessage": {
-          "text": text,
+          "text": "${text}",
           "matchedText": "https://youtu.be/dQw4w9WgXcQ",
           "canonicalUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
           "description": "Rick Astley's official music video for “Never Gonna Give You Up” Subscribe to the official Rick Astley YouTube channel: https://RickAstley.lnk.to/YTSubIDFoll...",
           "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
           "previewType": "VIDEO",
-          "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
-                 }}, { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
+          "jpegThumbnail": "" }}, { thumbnail: , contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
