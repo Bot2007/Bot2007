@@ -208,7 +208,7 @@ ${ucapanWaktuMY}(Malaysia)
           "title": "TAUFIK BOT",
           "previewType": "NONE",
           "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
-                 }}, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
+                 }}, { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
