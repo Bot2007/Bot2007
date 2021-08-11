@@ -203,10 +203,11 @@ ${ucapanWaktuMY}(Malaysia)
     conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "extendedTextMessage": {
           "text": text,
-          "matchedText": "https://instagram.com/taufikmusa07",
-          "description": "MENU BOT",
-          "title": "TAUFIK BOT",
-          "previewType": "NONE",
+          "matchedText": "https://youtu.be/dQw4w9WgXcQ",
+          "canonicalUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "description": "Rick Astley's official music video for “Never Gonna Give You Up” Subscribe to the official Rick Astley YouTube channel: https://RickAstley.lnk.to/YTSubIDFoll...",
+          "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+          "previewType": "VIDEO",
           "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
                  }}, { contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
 } catch (e) {
