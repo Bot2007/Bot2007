@@ -208,7 +208,7 @@ ${ucapanWaktuMY}(Malaysia)
           "description": "Rick Astley's official music video for “Never Gonna Give You Up” Subscribe to the official Rick Astley YouTube channel: https://RickAstley.lnk.to/YTSubIDFoll...",
           "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
           "previewType": "VIDEO",
-          "jpegThumbnail": "" }}, { thumbnail: fs.readFileSync('./src/TaufikBot.png') , contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
+          "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg" }}, { thumbnail: fs.readFileSync('./src/TaufikBot.png') , contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
