@@ -1,6 +1,6 @@
 let fetch = require('node-fetch');
 let ftype = require('file-type');
-let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
+let { mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
 const moment = require('moment-timezone')
@@ -200,15 +200,16 @@ ${ucapanWaktuMY}(Malaysia)
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     let mentionedJid = [global.conn.user.jid]
-    conn.sendMessage(m.chat, {
+    conn.prepareMessageFromContent(m.chat, {
+                    "extendedTextMessage": {
           "text": text.trim(),
           "matchedText": "https://youtu.be/dQw4w9WgXcQ",
           "canonicalUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
           "description": "MENU BOT",
           "title": "TAUFIK BOT",
           "previewType": "VIDEO",
-          "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg" }, MessageType.extendedText, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko})
-
+          "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
+                 }}, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
