@@ -203,6 +203,7 @@ ${ucapanWaktuMY}(Malaysia)
     m.reply(text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
+                  "mediaType": "VIDEO",
                   "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
                   "mediaUrl": "https://youtu.be/dQw4w9WgXcQ",
                   "thumbnail": ""
