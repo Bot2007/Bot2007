@@ -13,9 +13,9 @@ const fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid:
                         "contextInfo": { "stanzaId": m.key.id,
 "participant": m.sender,
 "quotedMessage": m.message
-}, quoted: fkon
+}
                     }
-                 }, {})
+                 }, { quoted: fkon })
           conn.relayWAMessage(Yoko, {waitForAck: true})
           m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: Yoko})
 }
