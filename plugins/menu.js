@@ -200,15 +200,15 @@ ${ucapanWaktuMY}(Malaysia)
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     let mentionedJid = [global.conn.user.jid]
-    conn.prepareMessageFromContent(m.chat, {
+    conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "extendedTextMessage": {
           "text": text,
           "matchedText": "https://instagram.com/taufikmusa07",
           "description": "MENU BOT",
           "title": "TAUFIK BOT",
           "previewType": "NONE",
-          "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
-                 }}, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko})
+          "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
+                 }}, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko}), {waitForAck: true})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
     throw e
