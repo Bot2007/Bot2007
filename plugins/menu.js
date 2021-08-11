@@ -203,12 +203,11 @@ ${ucapanWaktuMY}(Malaysia)
     conn.prepareMessageFromContent(m.chat, {
                     "extendedTextMessage": {
           "text": text,
-          "matchedText": "https://youtu.be/dQw4w9WgXcQ",
-          "canonicalUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "matchedText": "https://instagram.com/taufikmusa07",
           "description": "MENU BOT",
           "title": "TAUFIK BOT",
-          "previewType": "VIDEO",
-          "jpegThumbnail": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
+          "previewType": "NONE",
+          "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg"
                  }}, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
