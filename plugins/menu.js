@@ -200,7 +200,7 @@ ${ucapanWaktuMY}(Malaysia)
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     let mentionedJid = [global.conn.user.jid]
-    m.reply(text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "matchedText": "https://bit.ly/35L1whO",
+    m.reply(text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true }, "matchedText": "https://instagram.com/taufikmusa07",
           "description": "MENU BOT",
           "title": "TAUFIK BOT",
           "previewType": "NONE", quoted: ftoko})
