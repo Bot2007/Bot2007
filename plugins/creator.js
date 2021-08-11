@@ -11,7 +11,7 @@ const fkon = { key: { id: m.key.id, fromMe: false, participant: `0@s.whatsapp.ne
             }
           ]
                     }
-                 }, { quoted: fkon, thumbnail: require('fs').readFileSync('./src/TaufikBot.png') })
+                 }, { quoted: fkon })
           conn.relayWAMessage(Yoko, {waitForAck: true})
           m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: Yoko, thumbnail: require('fs').readFileSync('./src/TaufikBot.png')})
 }
