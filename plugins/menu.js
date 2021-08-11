@@ -205,8 +205,7 @@ ${ucapanWaktuMY}(Malaysia)
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
                   "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
-                  "mediaUrl": "https://youtu.be/dQw4w9WgXcQ",
-                  "thumbnail": ""
+                  "mediaUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
                 } }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
