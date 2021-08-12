@@ -98,12 +98,10 @@ conn.logger.level = 'debug'
 
 ---------
 
- ```[![Taufik](https://avatars.githubusercontent.com/u/87221182?s=120&v=4)](https://github.com/Bot2007)
-
-[Taufik](https://github.com/Bot2007)
- ```
-  PEMBIKIN BOT INI
-
+ [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) | [![Ariffb](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25)
+----|----
+[Nurutomo](https://github.com/Nurutomo) | [Ariffb](https://github.com/ariffb25)
+ Penulis / Pencipta | Penulis ulang
 ---------
 
 #### Powered By : [`XTEAM`](https://api.xteam.xyz)
