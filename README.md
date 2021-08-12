@@ -98,8 +98,7 @@ conn.logger.level = 'debug'
 
 ---------
 
- [![Taufik](https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg)](https://github.com/Bot2007)
-----|----
+ [![Taufik](https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg?size=50)](https://github.com/Bot2007)
 [Taufik](https://github.com/Bot2007)
  Owner Bot
 
