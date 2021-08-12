@@ -12,12 +12,12 @@ let handler  = async (m, _2) => {
     let f = {
       exports: {}
     }
-    let exec = new (async () => {}).constructor('print', 'm', 'participants', 'handler', 'require', 'conn', 'Array', 'process', 'args', 'groupMetadata', 'module', 'exports', 'argument', _text)
+    let exec = new (async () => {}).constructor('print', 'm', '_2', 'from', 'participants', 'handler', 'require', 'conn', 'Array', 'process', 'args', 'groupMetadata', 'module', 'exports', 'argument', _text)
     _return = await exec.call(conn, (...args) => {
       if (--i < 1) return
       console.log(...args)
       return conn.reply(m.chat, util.format(...args), m)
-    }, m, participants, handler, require, conn, CustomArray, process, args, groupMetadata, f, f.exports, [conn, _2])
+    }, m, _2, from, participants, handler, require, conn, CustomArray, process, args, groupMetadata, f, f.exports, [conn, _2])
   } catch (e) {
     let err = await syntaxerror(_text, 'Execution Function', {
       allowReturnOutsideFunction: true,
