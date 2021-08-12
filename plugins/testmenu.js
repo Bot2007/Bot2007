@@ -76,9 +76,7 @@ let TaufikComel = conn
       _text += footer + '\n'
     }
     _text += after
-    text = before + header + body + footer + after
-    let mentionedJid = [global.conn.user.jid]
-    m.reply(text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    m.reply(_text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
@@ -93,7 +91,7 @@ let TaufikComel = conn
 handler.help = ['testmenu']
 handler.tags = ['main']
 handler.command = /^(testmenu)$/i
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = false
