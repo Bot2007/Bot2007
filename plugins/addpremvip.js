@@ -12,8 +12,8 @@ let handler = async (m, { conn }) => {
     })
   
 }
-handler.help = ['addpremvip *@user* (permanent)']
+handler.help = ['addprem','addpremium', 'addprems'].map(v => v + 'vip')
 handler.tags = ['owner']
-handler.command = /^(add|tambah|\+)premvip$/i
+handler.command = /^(add|tambah|\+)(prem|prems|premium)vip$/i
 handler.rowner = true
 module.exports = handler
