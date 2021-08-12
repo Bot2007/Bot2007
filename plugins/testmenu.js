@@ -61,14 +61,12 @@ let TaufikComel = conn
         if (menu.tags && menu.tags.includes(tag))
           if (menu.help) groups[tag].push(menu)
     }
-    let before = ``
     let header = '*╭─━•❈«❬ %category ❭»❈•━─╮*'
     let body   = '┣ %cmd%islimit'
     let footer = '*╰─━━━━━━━━━━━━*\n'
     let after  = `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
-    let _text = before + '\n'
     for (let tag in groups) {
-      _text += header.replace(/%category/g, tags[tag]) + '\n'
+      _text = header.replace(/%category/g, tags[tag]) + '\n'
       for (let menu of groups[tag]) {
         for (let help of menu.help)
           _text += body.replace(/%cmd/g, menu.prefix ? help : usedPrefix + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
