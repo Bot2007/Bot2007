@@ -98,10 +98,10 @@ conn.logger.level = 'debug'
 
 ---------
 
- [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
-----
-[Nurutomo](https://github.com/Nurutomo)
- Penulis / Pencipta
+ [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) |
+----|
+[Nurutomo](https://github.com/Nurutomo) |
+ Penulis / Pencipta |
 ---------
 
 #### Powered By : [`XTEAM`](https://api.xteam.xyz)
