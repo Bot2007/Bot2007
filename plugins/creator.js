@@ -7,8 +7,8 @@ const fkon = { key: { id: m.key.id, fromMe: false, participant: `0@s.whatsapp.ne
           "contacts": [
             {
               "displayName": "Taufik(Owner)",
-              "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;Taufik(Owner);;;\nFN:Taufik(Owner)\n'ORG:+60 11 3666 0069\nTITLE:+60 11 3666 0069\nitem1.TEL;waid=601136660069:+60 11-3666 0069\nitem1.X-ABLabel:Telefon\nitem2.EMAIL;type=INTERNET:Taufik Bot\nitem2.X-ABLabel:Kerja\nEND:VCARD"
-            },{},{},{},{},{},{},{},{},{},{}
+              "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;Taufik(Owner);;;\nFN:Taufik(Owner)\nORG:+60 11-7309 3564\nTITLE:+60 11-7309 3564\nitem1.TEL;waid=601173093564:+60 11-7309 3564\nitem1.X-ABLabel:Nomor gw di atas ya hehe\nitem2.EMAIL;type=INTERNET:taufikmusa07@gmail.com\nitem2.X-ABLabel:Email gw di atas ya hehe\nEND:VCARD"
+            }
           ]
                     }
                  }, { quoted: fkon })
