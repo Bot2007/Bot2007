@@ -7,7 +7,7 @@ const fkon = { key: { id: m.key.id, fromMe: false, participant: `0@s.whatsapp.ne
           "contacts": [
             {
               "displayName": "Taufik(Owner)",
-              "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;Taufik(Owner);;;\nFN:Taufik(Owner)\nitem1.TEL;waid=601173093564:+60 11-7309 3564\nitem1.X-ABLabel:Owner dan bot gw di atas ya hehe. Tq\nEND:VCARD"
+              "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;Taufik(Owner);;;\nFN:Taufik(Owner)\n'ORG:+60 11 3666 0069\nTITLE:+60 11 3666 0069\nitem1.TEL;waid=601136660069:+60 11-3666 0069\nitem1.X-ABLabel:Telefon\nitem2.EMAIL;type=INTERNET:Taufik Bot\nitem2.X-ABLabel:Kerja\nEND:VCARD"
             },{},{},{},{},{},{},{},{},{},{}
           ]
                     }
