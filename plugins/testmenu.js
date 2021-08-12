@@ -66,6 +66,7 @@ let TaufikComel = conn
     let body   = '┣ %cmd%islimit'
     let footer = '*╰─━━━━━━━━━━━━*\n'
     let after  = `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
+    let _text = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
       for (let menu of groups[tag]) {
