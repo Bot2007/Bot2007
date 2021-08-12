@@ -64,7 +64,7 @@ let TaufikComel = conn
     let header = '*╭─━•❈«❬ %category ❭»❈•━─╮*'
     let body   = '┣ %cmd%islimit'
     let footer = '*╰─━━━━━━━━━━━━*\n'
-    let after  = `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
+    let after  = ``
     let _text = '' 
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
