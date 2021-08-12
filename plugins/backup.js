@@ -3,7 +3,7 @@ let fs = require('fs')
 let handler  = async (m, { conn }) => {
     try {
         let d = new Date
-        let date = d.toLocaleDateString('id', {
+        let date = d.toLocaleDateString('ms', {
               day: 'numeric',
               month: 'long',
               year: 'numeric'
