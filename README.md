@@ -98,9 +98,13 @@ conn.logger.level = 'debug'
 
 ---------
 
-#### Powered By : [`XTEAM`](https://api.xteam.xyz)
+ [![Taufik](https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg)](https://github.com/Bot2007)
+----|----
+[Taufik](https://github.com/Bot2007)
+ Owner Bot
 
-#### Recoded by : [`Taufik`](https://github.com/taufikmusa07)
-#### Developer : [@Nurutomo](https://github.com/Nurutomo)
+---------
+
+#### Powered By : [`XTEAM`](https://api.xteam.xyz)
 #### <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Instagram.svg" width="15px"> Instagram Creator : [`taufikmusa07`](https://instagram.com/taufikmusa07)
 #### <img src="https://i.ibb.co/dKWvR6m/You-Tube-Logo.png" width="30px"> YouTube Creator : [`TaufikYT`](https://youtube.com/channel/UCqTjI28ETQD6JtHXHi0-XZg)
