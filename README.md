@@ -98,10 +98,10 @@ conn.logger.level = 'debug'
 
 ---------
 
- [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) |
+ [![Nurutomo](https://github.com/Bot2007.png?size=120)](https://github.com/Nurutomo) |
 ----|
-[Nurutomo](https://github.com/Nurutomo) |
- Penulis / Pencipta |
+[Taufik](https://github.com/Bot2007) |
+ Pembikin script bot ini |
 ---------
 
 #### Powered By : [`XTEAM`](https://api.xteam.xyz)
