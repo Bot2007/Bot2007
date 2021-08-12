@@ -11,9 +11,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     m.reply(`Berhasil menetapkan hari kadaluarsa premium untuk ${conn.getName(m.chat)} selama ${hari} hari ${jam} jam ${menit} menit ${detik} detik.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].premium - now)}`).then(() => { global.prems.push(`${m.chat.split`@`[0]}`)
  })
 }
-handler.help = ['expiredpremium hari|jam|menit|detik']
+handler.help = ['addprem','addpremium', 'addprems'].map(v => v + ' <hari|jam|meniti|detik>')
 handler.tags = ['owner']
-handler.command = /^(expiredpremium)$/i
+handler.command = /^(add|tambah|\+)(prem|prems|premium)$/i
 handler.owner = true
 handler.private = true
 module.exports = handler
