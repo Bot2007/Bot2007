@@ -1,0 +1,105 @@
+let fs = require ('fs')
+let handler  = async (m, { conn }) => {       
+const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
+let TaufikComel = conn
+  try {
+    let tags = {
+  'main': 'Main',
+  'about': 'Info Taufik Bot',
+  'topup': 'Topup/Beli Limit',
+  'game': 'Game',
+  'audio': 'Audio',
+  'virus': 'Virus',
+  'rpg': 'Game RPG',
+  'shorturl': 'Shorturl(Xteam)',
+  'wibu': 'Wibu',
+  'sange': 'NSFW',
+  'image': 'Gambar',
+  'xp': 'Exp & Limit',
+  'sticker': 'Sticker',
+  'anime': 'Anime',
+  'kerang': 'Kerang Ajaib',
+  'expression': 'Perasaan',
+  'quotes': 'Quotes',
+  'admin': 'Admin',
+  'group': 'Group',
+  'premium': 'Premium',
+  'internet': 'Internet',
+  'anonymous': 'Anonymous Chat',
+  'nulis': 'MagerNulis & Logo',
+  'creator': 'Creator',
+  'downloader': 'Downloader',
+  'tools': 'Tools',
+  'fun': 'Fun',
+  'database': 'Database',
+  'vote': 'Voting',
+  'absen': 'Absen',
+  'quran': 'Al Quran',
+  'islam': 'Islam',
+  'owner': 'Owner',
+  'host': 'Host',
+  'advanced': 'Advanced',
+  'info': 'Info',
+  '': 'No Category',
+    }
+    for (let plugin of Object.values(global.plugins))
+      if (plugin && 'tags' in plugin)
+        for (let tag of plugin.tags)
+          if (!tag in  tags) tags[tag] = tag
+    let help = Object.values(global.plugins).map(plugin => {
+      return {
+        help: plugin.help,
+        tags: plugin.tags,
+        prefix: 'customPrefix' in plugin,
+        limit: plugin.limit
+      }
+    })
+    let groups = {}
+    for (let tag in tags) {
+      groups[tag] = []
+      for (let menu of help)
+        if (menu.tags && menu.tags.includes(tag))
+          if (menu.help) groups[tag].push(menu)
+    }
+    let before = ``
+    let header = '*╭─━•❈«❬ %category ❭»❈•━─╮*'
+    let body   = '┣ %cmd%islimit'
+    let footer = '*╰─━━━━━━━━━━━━*\n'
+    let after  = `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
+    for (let tag in groups) {
+      _text += header.replace(/%category/g, tags[tag]) + '\n'
+      for (let menu of groups[tag]) {
+        for (let help of menu.help)
+          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
+      }
+      _text += footer + '\n'
+    }
+    _text += after
+    text = before + header + body + footer + after
+    let mentionedJid = [global.conn.user.jid]
+    m.reply(text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+                  "title": "Taufik Bot",
+                  "body": "MENU TAUFIK BOT",
+                  "mediaType": "VIDEO",
+                  "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
+                  "mediaUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                } }, quoted: ftoko})
+} catch (e) {
+  TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
+    throw e
+  }
+}
+handler.help = ['testmenu']
+handler.tags = ['main']
+handler.command = /^(testmenu)$/i
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
+module.exports = handler
