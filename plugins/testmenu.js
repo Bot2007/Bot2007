@@ -1,5 +1,5 @@
 let fs = require ('fs')
-let handler  = async (m, { conn }) => {       
+let handler  = async (m, { conn, usedPrefix }) => {       
 const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   try {
@@ -71,7 +71,7 @@ let TaufikComel = conn
       _text += header.replace(/%category/g, tags[tag]) + '\n'
       for (let menu of groups[tag]) {
         for (let help of menu.help)
-          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
+          _text += body.replace(/%cmd/g, menu.prefix ? help : usedPrefix + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
       }
       _text += footer + '\n'
     }
