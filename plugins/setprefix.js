@@ -1,8 +1,8 @@
 let handler = async(m, { conn, text }) => {
   if (!text) return { 
-  global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+  global.prefix = '/^[‎xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]/'
   m.reply(`Prefix berhasil direset`) }
-  global.prefix = new RegExp('^[' + (text || global.opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+  global.prefix = text
   await m.reply(`Prefix telah ditukar ke *${text}*`)
 }
 handler.help = ['setprefix'].map(v => v + ' [prefix]')
