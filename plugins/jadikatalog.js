@@ -5,7 +5,7 @@ let handler  = async (m, { conn, text, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m 
   let mime = (q.msg || q).mimetype || ''
   try {
-  if (/image|video/.test(mime)) {
+  if (/image|webp/.test(mime)) {
     let img = await q.download()
     if (!img) throw 'Foto/Sticker tidak ditemukan'
     let pi = conn.prepareMessageFromContent(m.chat, {
@@ -27,7 +27,10 @@ let handler  = async (m, { conn, text, usedPrefix, command }) => {
       }, {})
     conn.relayWAMessage(pi, m)
     m.reply('Nih katalog ya om', null, { quoted: pi })
-  } else m.reply('FOTO NYA MANA OM?')
+  } else m.reply('FOTO ATAU STICKERNYA MANA OM?')
+  }  catch (e) {
+    m.reply('*Hanya foto ama sticker aja bisa dijadikan katalog.*')
+  }
 }
 
 handler.help = ['video','image'].map(v => v + '2katalog')
