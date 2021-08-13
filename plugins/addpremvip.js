@@ -4,9 +4,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
     else who = m.chat
     if (!who) throw 'Siapa yang mau dijadikan premium?'
-    if (global.prems.includes(m.mentionedJid[0].split`@`[0]) && m.isGroup) throw '${conn.getName(who)} sudah premium vip!'
-    if (global.prems.includes(m.chat.split`@`[0]) && global.DATABASE.data.chats[m.chat].premium = 0 && m.isPrivate) throw '${conn.getName(who)} sudah premium vip!'
-    if (global.prems.includes(m.chat.split`@`[0]) && global.DATABASE.data.chats[m.chat].premium > 0 && m.isPrivate) throw '${conn.getName(who)} melanggani premium berluput. Ketik ${usedPrefix}cekpremium untuk melihat kapan premium ${conn.getName(who)} luput.'
+    if (global.prems.includes(m.mentionedJid[0].split`@`[0]) && global.DATABASE.data.chats[m.chat].premium = 0) throw '${conn.getName(who)} sudah premium vip!'
+    if (global.prems.includes(m.mentionedJid[0].split`@`[0]) && global.DATABASE.data.chats[m.chat].premium > 0) throw '${conn.getName(who)} melanggani premium berluput. Ketik ${usedPrefix}cekpremium untuk melihat kapan premium ${conn.getName(who)} luput.'
     global.prems.push(`${who.split`@`[0]}`)
     conn.reply(m.chat, `Hai, @${who.split`@`[0]}. Kamu sudah premium!`, m, {
         contextInfo: {
