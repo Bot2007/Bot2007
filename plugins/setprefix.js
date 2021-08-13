@@ -1,7 +1,8 @@
 let handler = async(m, { conn, text }) => {
-  if (!text) return { 
+  if (!text) { 
   global.prefix = '/^[‎xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]/'
-  m.reply(`Prefix berhasil direset`) }
+  m.reply(`Prefix berhasil direset`)
+  return }
   global.prefix = text
   await m.reply(`Prefix telah ditukar ke *${text}*`)
 }
