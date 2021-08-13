@@ -1,4 +1,5 @@
 let handler = async(m, { conn, text, command }) => {
+  if (!text) throw 'Prefixnya mana?'
   let prefix = /^[‎xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]/
   if (/^resetprefix$/i.test(command)) { 
   global.prefix = prefix
