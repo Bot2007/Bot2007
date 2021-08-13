@@ -33,9 +33,9 @@ let handler  = async (m, { conn, text, usedPrefix, command }) => {
   }
 }
 
-handler.help = ['video','image'].map(v => v + '2katalog')
+handler.help = ['sticker','image'].map(v => v + '2katalog')
 handler.tags = ['tools']
-handler.command = /^(video|image)(2katalog)$/i
+handler.command = /^(sticker|image)(2katalog)$/i
 handler.owner = true
 handler.fail = null
 handler.exp = 2
