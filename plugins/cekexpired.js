@@ -1,11 +1,11 @@
 let handler = async (m, { conn }) => {
     if (global.DATABASE.data.chats[m.chat].expired - new Date < 1000) {
-        conn.reply(m.chat, `Maap, owner belum menetapkan expired untuk grup ini`, m)
-    } else conn.reply(m.chat, `Expired pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`, m)
+        conn.reply(m.chat, `Maap, owner belum menetapkan kadarluarsa untuk grup ini`, m)
+    } else conn.reply(m.chat, `Kadarluarsa pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`, m)
 }
-handler.help = ['cekluput','cekexpired','kapanexpired','kapanluput']
+handler.help = ['cekkadarluarsa','cekexpired','kapanexpired','kapankadarluasa']
 handler.tags = ['group']
-handler.command = /^(cekluput|cekexpired|kapanexpired|kapanluput)$/i
+handler.command = /^(cek|kapan)(kadarluarsa|expired)$/i
 handler.group = true
 module.exports = handler
 
