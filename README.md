@@ -98,7 +98,7 @@ conn.logger.level = 'debug'
 
 ---------
 
- [![Nurutomo](https://github.com/Bot2007.png?size=120)](https://github.com/Nurutomo) |
+ [![Nurutomo](https://github.com/Bot2007.png?size=120)](https://github.com/Bot2007) |
 ----|
 [Taufik](https://github.com/Bot2007) |
  Pembikin script bot ini |
