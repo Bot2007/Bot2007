@@ -511,6 +511,7 @@ Untuk mematikan fitur ini, ketik
       await this.blockUser(from, 'add')
       user.call = 0
     }
+  }
 }
 global.dfail = (type, m, conn) => {
   let msg = {
