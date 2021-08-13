@@ -11,7 +11,7 @@ let handler = async(m, { conn, text, usedPrefix, command}) => {
 }
 handler.help = ['quotemaker2 <teks | wm>']
 handler.tags = ['nulis']
-handler.command = /^q(uote)?maker?2$/i
+handler.command = ['quotemaker2']
 handler.limit = true
 //MadeByLeviBot
 module.exports = handler
