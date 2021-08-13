@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     var now = new Date() * 1
     if (now < global.DATABASE.data.chats[m.chat].premium) global.DATABASE.data.chats[m.chat].premium += jumlahHari
     else global.DATABASE.data.chats[m.chat].premium = now + jumlahHari + jumlahJam + jumlahMenit + jumlahDetik
-    m.reply(`Berhasil menetapkan hari kadaluarsa premium untuk ${conn.getName(m.chat)} selama ${hari} hari ${jam} jam ${menit} menit ${detik} detik.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].premium - now)}`).then(() => { global.prems.push(`${m.chat.split`@`[0]}`)
+    m.reply(`Berhasil menetapkan kadarluarsa premium untuk ${conn.getName(m.chat)} selama ${hari} hari ${jam} jam ${menit} menit ${detik} detik.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].premium - now)}`).then(() => { global.prems.push(`${m.chat.split`@`[0]}`)
  })
 }
 handler.help = ['addprem','addpremium', 'addprems'].map(v => v + ' <hari|jam|meniti|detik>')
