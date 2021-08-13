@@ -1,17 +1,10 @@
-/*
-JUST EXPERIMENT
-Tqto Nayla
-Plug by damzz
-recode by BochilGaming
-*/
-let split = '|'
-let handler  = async (m, { conn, text, usedPrefix }) => {
-  let lmao = 'emror?'
-  let [txt, ...text2] = text.replace(lmao, '').trimStart().split(split)
+let handler  = async (m, { conn, text, usedPrefix, command }) => {
+  let [txt, text2] = text.split('|')
   if (!txt) throw 'Masukan Judul dan Deskripsi nya'
-  if (!text2) throw `Contoh : ${usedPrefix}jadikatalog SLAYER?|INI BUKAN SELAYER BANG:>`
+  if (!text2) throw `Contoh : ${usedPrefix + command} SLAYER?|INI BUKAN SELAYER BANG:>`
   let q = m.quoted ? m.quoted : m 
   let mime = (q.msg || q).mimetype || ''
+  try {
   if (/image|video/.test(mime)) {
     let img = await q.download()
     if (!img) throw 'Foto/Sticker tidak ditemukan'
@@ -24,21 +17,22 @@ let handler  = async (m, { conn, text, usedPrefix }) => {
             }, 
 	    "title": `${txt}`, 
 	    "description": `${text2}`, 
-	    "currencyCode": "IDR", 
-            "priceAmount": "50000", 
-	    "retailerId": "games-wabot", 
+	    "currencyCode": "MYR", 
+            "priceAmount": "999999999999", 
+	    "retailerId": "Katalog buatlo", 
 	    "productImageCount": 1 
 	  }, 
 	  "businessOwnerJid": conn.user.jid
 	}
       }, {})
     conn.relayWAMessage(pi, m)
+    m.reply('Nih katalog ya om', null, { quoted: pi })
   } else m.reply('FOTO NYA MANA OM?')
 }
 
-handler.help = ['jadikatalog']
+handler.help = ['video','image'].map(v => v + '2katalog')
 handler.tags = ['tools']
-handler.command = /^(jadikatalog)$/i
+handler.command = /^(video|image)(2katalog)$/i
 handler.owner = true
 handler.fail = null
 handler.exp = 2
