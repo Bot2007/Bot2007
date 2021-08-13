@@ -100,6 +100,7 @@ module.exports = {
                 if (!isNumber(user.age)) user.age = -1
                 if (!isNumber(user.regTime)) user.regTime = -1
             }
+            if (!isNumber(user.call)) user.call = 0
             if (!('autolevelup' in user)) user.autolevelup = false
         } else global.DATABASE._data.users[m.sender] = {
             healt: 100,
@@ -164,6 +165,7 @@ module.exports = {
             name: this.getName(m.sender),
             age: -1,
             regTime: -1,
+            call: 0,
             autolevelup: false,
         }
 
@@ -503,10 +505,13 @@ Untuk mematikan fitur ini, ketik
           return
         break
     }
-    await this.sendMessage(from, 'Maaf, karena anda menelfon bot. anda diblokir otomatis', MessageType.extendedText)
-    await this.blockUser(from, 'add')
+    user.call += 1
+    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
+    if (user.call == 5) {
+      await this.blockUser(from, 'add')
+      user.call = 0
+    }
   }
-}
 
 global.dfail = (type, m, conn) => {
   let msg = {
