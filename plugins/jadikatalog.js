@@ -1,5 +1,5 @@
 let handler  = async (m, { conn, text, usedPrefix, command }) => {
-  let [txt, text2] = text.split('|')
+  let [txt, text2] = text.split`|`
   if (!txt) throw 'Masukan Judul dan Deskripsi nya'
   if (!text2) throw `Contoh : ${usedPrefix + command} SLAYER?|INI BUKAN SELAYER BANG:>`
   let q = m.quoted ? m.quoted : m 
@@ -24,7 +24,7 @@ let handler  = async (m, { conn, text, usedPrefix, command }) => {
 	  }, 
 	  "businessOwnerJid": conn.user.jid
 	}
-      }, {})
+      }, { quoted: m })
     conn.relayWAMessage(pi, m)
     m.reply('Nih katalog ya om', null, { quoted: pi })
   } else m.reply('FOTO ATAU STICKERNYA MANA OM?')
