@@ -1,6 +1,7 @@
 let handler = async(m, { conn, text, command }) => {
+  let prefix = /^[‎xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]/
   if (/^resetprefix$/i.test(command)) { 
-  global.prefix = /^[‎xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]/
+  global.prefix = prefix
   m.reply(`Prefix berhasil direset`)
   return }
   global.prefix = new RegExp('^[' + text + ']')
@@ -8,8 +9,8 @@ let handler = async(m, { conn, text, command }) => {
 }
 handler.help = ['setprefix [prefix]', 'resetprefix']
 handler.tags = ['owner']
-handler.command = /^(setprefix)$/i
-
+handler.command = /^(set|reset)prefix$/i
+handler.customPrefix = prefix
 handler.rowner = true
 
 module.exports = handler
