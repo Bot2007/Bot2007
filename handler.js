@@ -498,7 +498,7 @@ Untuk mematikan fitur ini, ketik
     let { from } = json[2][0][1]
     let users = global.DATABASE.data.users
     let user = users[from] || {}
-    if (user.Banneduser) return
+    if (user.whitelist) return
     switch (this.callWhitelistMode) {
       case 'mycontact':
         if (from in this.contacts && 'short' in this.contacts[from])
