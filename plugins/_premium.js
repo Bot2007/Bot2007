@@ -5,7 +5,7 @@ handler.before = async (m, { conn }) => {
             let index = global.prems.findIndex(v => (v.replace(/[^0-9]/g, '') + '@s.whatsapp.net') === (m.chat.replace(/[^0-9]/g, '') + '@s.whatsapp.net'))
             global.prems.splice(index, 1)
             let mentionedJid = [m.chat]
-            m.reply(`Masa premium @${m.chat.split`@`[0]} sudah berakhir\n*Chat owner jika ingin premium lagi*`.trim(), null, { contextInfo: { mentionedJid }}).then(() => {
+            conn.reply(m.chat, `Masa premium @${m.chat.split`@`[0]} sudah berakhir\n*Chat owner jika ingin premium lagi*`.trim(), null, null, { contextInfo: { mentionedJid }}).then(() => {
                         global.DATABASE.data.chats[m.chat].premium = 0
                     })
         }
