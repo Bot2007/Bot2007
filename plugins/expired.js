@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     var now = new Date() * 1
     if (now < global.DATABASE.data.chats[m.chat].expired) global.DATABASE.data.chats[m.chat].expired += jumlahHari
     else global.DATABASE.data.chats[m.chat].expired = now + jumlahHari + jumlahJam + jumlahMenit + jumlahDetik
-    m.reply(`Berhasil menetapkan hari kadarluarsa untuk ${conn.getName(m.chat)} selama ${hari} hari ${jam} jam ${menit} menit ${detik} detik.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
+    m.reply(`Berhasil menetapkan kadarluarsa untuk ${conn.getName(m.chat)} selama ${hari} hari ${jam} jam ${menit} menit ${detik} detik.\n\nHitung Mundur : ${msToDate(global.DATABASE.data.chats[m.chat].expired - now)}`)
 }
 handler.help = ['expired','kadarluarsa'].map(v => v + ' hari|jam|menit|detik')
 handler.tags = ['owner']
