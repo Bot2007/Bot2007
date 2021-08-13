@@ -505,14 +505,10 @@ Untuk mematikan fitur ini, ketik
           return
         break
     }
-    user.call += 1
-    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
-    if (user.call == 5) {
-      await this.blockUser(from, 'add')
-      user.call = 0
-    }
+    await this.sendMessage(from, 'Maaf, karena anda menelfon bot. anda diblokir otomatis', MessageType.extendedText)
+    await this.blockUser(from, 'add')
   }
-
+}
 global.dfail = (type, m, conn) => {
   let msg = {
     rowner: 'Perintah ini hanya dapat digunakan oleh *Taufik Bot yang hensem*',
