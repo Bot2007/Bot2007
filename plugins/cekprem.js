@@ -3,9 +3,9 @@ let handler = async (m, { conn }) => {
         conn.reply(m.chat, `Maap, anda adalah premium vip`, m)
     } else conn.reply(m.chat, `Kadarluarsa premium anda berakhir pada ${msToDate(global.DATABASE.data.chats[m.chat].premium - new Date * 1)} lagi`, m)
 }
-handler.help = ['cek','kapankadarluarsa'].map(v => v + 'premium')
+handler.help = ['cekprem','kapanprem','cekprems','kapanprems','cekpremium','kapanpremium']
 handler.tags = ['premium']
-handler.command = /^(cek|kapankadarluarsa)premium$/i
+handler.command = /^(cek|kapan)(prem|prems|premium)$/i
 handler.private = true
 handler.premium = true
 module.exports = handler
