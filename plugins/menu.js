@@ -1,6 +1,3 @@
-let fetch = require('node-fetch');
-let ftype = require('file-type');
-let { mentionedJid } = require('@adiwajshing/baileys')
 let fs = require ('fs')
 let path = require('path')
 const moment = require('moment-timezone')
