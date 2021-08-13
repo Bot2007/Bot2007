@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
     if (global.DATABASE.data.chats[m.chat].premium - new Date < 1000) {
         conn.reply(m.chat, `Maap, anda adalah premium vip`, m)
-    } else conn.reply(m.chat, `Kadarluarsa premium anda pada ${msToDate(global.DATABASE.data.chats[m.chat].premium - new Date * 1)}`, m)
+    } else conn.reply(m.chat, `Kadarluarsa premium anda berakhir pada ${msToDate(global.DATABASE.data.chats[m.chat].premium - new Date * 1)} lagi`, m)
 }
 handler.help = ['cek','kapankadarluarsa'].map(v => v + 'premium')
 handler.tags = ['premium']
