@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
     if (global.DATABASE.data.chats[m.chat].expired - new Date < 1000) {
         conn.reply(m.chat, `Maap, owner belum menetapkan kadarluarsa untuk grup ini`, m)
-    } else conn.reply(m.chat, `Kadarluarsa pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)}`, m)
+    } else conn.reply(m.chat, `Kadarluarsa grup ini berakhir pada ${msToDate(global.DATABASE.data.chats[m.chat].expired - new Date * 1)} lagi`, m)
 }
 handler.help = ['cekkadarluarsa','cekexpired','kapanexpired','kapankadarluasa']
 handler.tags = ['group']
