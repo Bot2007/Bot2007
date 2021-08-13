@@ -5,7 +5,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     else who = m.chat
     if (!who) throw 'Siapa yang mau dijadikan premium?'
     if (global.prems.includes(who.split`@`[0]) && global.DATABASE.data.chats[m.chat].premium == 0) return m.reply(`${conn.getName(who)} sudah premium vip!`.trim())
-    if (global.prems.includes(who.split`@`[0]) && global.DATABASE.data.chats[m.chat].premium >= 0) return m.reply(`${conn.getName(who)} melanggani premium berkadarluasa. Ketik ${usedPrefix}cekpremium untuk melihat kapan premium kadarluasa ${conn.getName(who)} tamat.`.trim())
+    if (global.prems.includes(who.split`@`[0]) && global.DATABASE.data.chats[m.chat].premium >= 0) return m.reply(`${conn.getName(who)} melanggani premium berkadarluasa. 
+Ketik ${usedPrefix}cekpremium untuk melihat kapan premium 
+kadarluasa ${conn.getName(who)} berakhir.`.trim())
     global.prems.push(`${who.split`@`[0]}`)
     conn.reply(m.chat, `Hai, @${who.split`@`[0]}. Kamu sudah premium!`, m, {
         contextInfo: {
