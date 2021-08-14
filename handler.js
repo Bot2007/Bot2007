@@ -527,8 +527,6 @@ global.dfail = (type, m, conn) => {
   }[type]
   if (msg) return m.reply(msg, null, { thumbnail: fs.readFileSync('./src/TaufikBot.png')})
 }
-
-let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
