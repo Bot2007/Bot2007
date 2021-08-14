@@ -1,4 +1,5 @@
 let util = require('util')
+let fs = require('fs')
 let simple = require('./lib/simple')
 let { MessageType } = require('@adiwajshing/baileys')
 const isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -389,7 +390,7 @@ module.exports = {
                 console.error(e)
               }
             }
-            if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
+            if (m.limit) m.reply(+ m.limit + ' Limit terpakai', null, { thumbnail: fs.readFileSync('./src/TaufikBot.png')})
           }
           break
         }
@@ -524,7 +525,7 @@ global.dfail = (type, m, conn) => {
     botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
     unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
   }[type]
-  if (msg) return m.reply(msg, null, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png')})
+  if (msg) return m.reply(msg, null, { thumbnail: fs.readFileSync('./src/TaufikBot.png')})
 }
 
 let fs = require('fs')
