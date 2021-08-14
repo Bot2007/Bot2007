@@ -1,10 +1,10 @@
 let handler = async(m, { conn, text, command }) => {
-  if (!text) throw 'Prefixnya mana?'
   let prefix = /^[‎xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]/
   if (/^resetprefix$/i.test(command)) { 
   global.prefix = prefix
   m.reply(`Prefix berhasil direset`)
   return }
+  if (!text) throw 'Prefixnya mana?'
   global.prefix = new RegExp('^[' + text + ']')
   await m.reply(`Prefix telah ditukar ke *${text}*`)
 }
