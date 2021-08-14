@@ -1,7 +1,6 @@
 let util = require('util')
 let simple = require('./lib/simple')
 let { MessageType } = require('@adiwajshing/baileys')
-
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(resolve, ms))
 module.exports = {
@@ -525,7 +524,7 @@ global.dfail = (type, m, conn) => {
     botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
     unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
   }[type]
-  if (msg) return m.reply(msg)
+  if (msg) return m.reply(msg, null, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png')})
 }
 
 let fs = require('fs')
