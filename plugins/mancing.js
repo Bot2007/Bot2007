@@ -3,6 +3,7 @@ let handler = async (m, { conn }) => {
     let _timers = (500000 - __timers)
     let timers = clockString(_timers) 
     let user = global.DATABASE._data.users[m.sender]
+    if (new Date - global.DATABASE._data.users[m.sender].lastfishing < 500000) return m.reply('*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Sejenak Sekitar ${timers}*\n*Untuk Bisa Melanjutkan Memancing Lagi*')
     if (new Date - global.DATABASE._data.users[m.sender].lastfishing > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
 let randomaku2 = `${Math.floor(Math.random() * 10)}`
@@ -86,12 +87,11 @@ setTimeout(() => {
                      m.reply('_Sedang Memancing..._')
                      }, 0) 
   user.lastfishing = new Date * 1
-    } else m.reply('*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Sejenak Sekitar ${timers}*\n*Untuk Bisa Melanjutkan Memancing Lagi*')
+    }
 }
 handler.help = ['mancing','fishing']
 handler.tags = ['rpg']
 handler.command = /^(mancing|fishing)$/i
-handler.register = true
 
 module.exports = handler
 function clockString(ms) {
