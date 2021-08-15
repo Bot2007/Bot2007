@@ -1,7 +1,8 @@
 let handler = async (m, { conn }) => { 
     let __timers = (new Date - global.DATABASE._data.users[m.sender].lastfishing)
     let _timers = (500000 - __timers)
-    let timers = clockString(_timers)
+    let yoko = clockString(_timers)
+    const time = `*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Sejenak Sekitar ${yoko}*\n*Untuk Bisa Melanjutkan Memancing Lagi*`.trim()
     let user = global.DATABASE._data.users[m.sender]
     if (new Date - global.DATABASE._data.users[m.sender].lastfishing > 500000) {
 let randomaku1 = `${Math.floor(Math.random() * 10)}`
@@ -86,7 +87,7 @@ setTimeout(() => {
                      m.reply('_Sedang Memancing..._')
                      }, 0) 
   user.lastfishing = new Date * 1
-    } else conn.sendMessage(m.chat, '*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Sejenak Sekitar ${timers}*\n*Untuk Bisa Melanjutkan Memancing Lagi*', m)
+    } else m.reply(time)
 }
 handler.help = ['mancing','fishing']
 handler.tags = ['rpg']
