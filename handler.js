@@ -1,5 +1,6 @@
 let util = require('util')
 let fs = require('fs')
+let fetch = require('node-fetch')
 let simple = require('./lib/simple')
 let { MessageType } = require('@adiwajshing/baileys')
 const isNumber = x => typeof x === 'number' && !isNaN(x)
