@@ -40,8 +40,15 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 *Source:* ${vid.url}
 *Server y2mate:* ${usedServer}
 `.trim(), m, false,  {
-  ..._thumb,
   asDocument: chat.useDocument
+  contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+                  "title": "${title}",
+                  "body": "Filesize: ${filesizeF}",
+                  "mediaType": "VIDEO",
+                  "thumbnailUrl": "${thumb}",
+                  "thumbnail": "",
+                  "sourceUrl": "${vid.url}"
+                } }
 })
 }
 handler.help = ['play', 'play2'].map(v => v + ' <pencarian>')
