@@ -28,6 +28,16 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
 catch (e) { }
+let _fakeurl = { contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
+                  "title": title,
+                  "body": "Filesize: " + filesizeF,
+                  "mediaType": "VIDEO",
+                  "thumbnailUrl": thumb,
+                  "thumbnail": "",
+                  "sourceUrl": vid.url
+                } } }
+try { if (isVideo) _fakeurl = {} }
+catch (e) { }
 if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(command)), `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
@@ -36,14 +46,7 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 `.trim(), m, false,  {
   ..._thumb
   asDocument: chat.useDocument,
-  contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
-                  "title": title,
-                  "body": "Filesize: " + filesizeF,
-                  "mediaType": "VIDEO",
-                  "thumbnailUrl": thumb,
-                  "thumbnail": "",
-                  "sourceUrl": vid.url
-                } }
+  ..._fakeurl
 })
 }
 handler.help = ['play', 'play2'].map(v => v + ' <pencarian>')
