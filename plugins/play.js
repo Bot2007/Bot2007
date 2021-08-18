@@ -34,6 +34,7 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 *Source:* ${vid.url}
 *Server y2mate:* ${usedServer}
 `.trim(), m, false,  {
+  ..._thumb
   asDocument: chat.useDocument,
   contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": title,
