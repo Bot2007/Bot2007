@@ -41,7 +41,7 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 *Server y2mate:* ${usedServer}
 `.trim(), m, false,  {
   asDocument: chat.useDocument,
-  contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+  contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "${title}",
                   "body": "Filesize: ${filesizeF}",
                   "mediaType": "VIDEO",
