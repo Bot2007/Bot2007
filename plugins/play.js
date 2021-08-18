@@ -42,12 +42,12 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 `.trim(), m, false,  {
   asDocument: chat.useDocument,
   contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
-                  "title": "${title}",
-                  "body": "Filesize: ${filesizeF}",
+                  "title": title,
+                  "body": filesizeF,
                   "mediaType": "VIDEO",
-                  "thumbnailUrl": "${thumb}",
+                  "thumbnailUrl": thumb,
                   "thumbnail": "",
-                  "sourceUrl": "${vid.url}"
+                  "sourceUrl": vid.url
                 } }
 })
 }
