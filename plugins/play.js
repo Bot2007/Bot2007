@@ -44,7 +44,7 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 *Source:* ${vid.url}
 *Server y2mate:* ${usedServer}
 `.trim(), m, false,  {
-  ..._thumb
+  ..._thumb,
   asDocument: chat.useDocument,
   ..._fakeurl
 })
