@@ -546,6 +546,9 @@ global.dfail = (type, m, conn) => {
   }[type]
   if (msg) return m.reply(msg, null, { thumbnail: global.fakethumb })
 }
+
+global.fakethumb = await (await require('node-fetch')('https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg')).buffer()
+
 let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
