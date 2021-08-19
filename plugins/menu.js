@@ -28,7 +28,7 @@ const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
 				} else {
 				ucapanWaktuMY = 'Selamat Malam 🌙'
 				}        
-const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
+const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": global.fakethumb}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let sosmed = 'TaufikYT'
@@ -197,7 +197,7 @@ ${ucapanWaktuMY}(Malaysia)
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     let mentionedJid = [global.conn.user.jid]
-    m.reply(text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    m.reply(text.trim(), null,  { thumbnail: global.fakethumb, contextInfo: { mentionedJid, forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
