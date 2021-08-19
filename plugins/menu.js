@@ -2,7 +2,6 @@ let fs = require ('fs')
 let path = require('path')
 const moment = require('moment-timezone')
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-global.fakethumb = await (await require('node-fetch')('https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg')).buffer()
 const jamID = moment.tz('Asia/Jakarta').format('HH')
 const jamMY = moment.tz('Asia/Kuala_Lumpur').format('HH')
  var ucapanWaktuID = 'Selamat Pagi 🌄'
