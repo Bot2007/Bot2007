@@ -1,6 +1,5 @@
 let fs = require ('fs')
 let handler  = async (m, { conn, usedPrefix }) => {       
-const ftoko = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./src/TaufikBot.png`)}, "title": "𝐌𝐄𝐍𝐔 𝐓𝐀𝐔𝐅𝐈𝐊 𝐁𝐎𝐓", "description": "Taufik Bot", "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}
 let TaufikComel = conn
   try {
     let tags = {
@@ -75,12 +74,12 @@ let TaufikComel = conn
       _text += footer + '\n'
     }
     _text += after
-    m.reply(_text.trim(), null,  { thumbnail: require('fs').readFileSync('./src/TaufikBot.png'), contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
+    m.reply(_text.trim(), null,  { thumbnail: global.fakethumb, contextInfo: { forwardingScore: 508, isForwarded: true, "externalAdReply": {
                   "title": "Taufik Bot",
                   "body": "MENU TAUFIK BOT",
                   "mediaType": "VIDEO",
                   "thumbnailUrl": "https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg",
-                  "mediaUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                  "sourceUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
                 } }, quoted: ftoko})
 } catch (e) {
   TaufikComel.reply(m.chat, 'Menu Sedang Erorr!', m)
