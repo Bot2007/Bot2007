@@ -22,7 +22,7 @@ let handler  = async (m, { conn }) => {
 ❏ *Browser* : ${conn.browserDescription[1]}
 ❏ *Uptime Bot* : ${clockString(process.uptime() * 1000)}
 ❏ *Host Number* : @${global.conn.user.jid.split('@')[0]}
-❏ *Bio Bot* : ${ppstatus.status}\n\n*Support/Follow Me*\nhttps://instagram.com/taufikmusa07`, quoted: m, sendEphemeral: true, thumbnail: fs.readFileSync('./src/TaufikBot.png'), contextInfo: { mentionedJid: [global.conn.user.jid]}})
+❏ *Bio Bot* : ${ppstatus.status}\n\n*Support/Follow Me*\nhttps://instagram.com/taufikmusa07`, quoted: m, sendEphemeral: true, thumbnail: global.fakethumb, contextInfo: { mentionedJid: [global.conn.user.jid]}})
 }
 handler.help = ['info', 'alive']
 handler.tags = ['about']
