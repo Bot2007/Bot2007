@@ -194,10 +194,6 @@ fs.watch(path.join(__dirname, 'plugins'), global.reload)
 global.reloadHandler()
 process.on('exit', () => global.DATABASE.save())
 
-// Fake thumbnail
-global.image = 'https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg'
-global.fakethumb = (await fetch(global.image)).buffer()
-
 // Quick Test
 async function _quickTest() {
   let test = await Promise.all([
