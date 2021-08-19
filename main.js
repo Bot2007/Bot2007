@@ -10,7 +10,7 @@ let Readline = require('readline')
 let cp = require('child_process')
 let path = require('path')
 let fs = require('fs')
-
+let fetch = require('node-fetch')
 let rl = Readline.createInterface(process.stdin, process.stdout)
 let WAConnection = simple.WAConnection(_WAConnection)
 
@@ -194,7 +194,8 @@ fs.watch(path.join(__dirname, 'plugins'), global.reload)
 global.reloadHandler()
 process.on('exit', () => global.DATABASE.save())
 
-
+// Fake thumbnail
+global.fakethumb = (await require('node-fetch')('https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg')).buffer()
 
 // Quick Test
 async function _quickTest() {
