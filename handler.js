@@ -366,11 +366,11 @@ module.exports = {
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.DATABASE.data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy* atau *${usedPrefix}shop*`, m)
+            this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy* atau *${usedPrefix}shop*`, m, null, { thumbnail: global.fakethumb })
             continue // Limit habis
           }
           if (plugin.level > _user.level) {
-            this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu baru ${_user.level} awokawok`, m)
+            this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu baru ${_user.level} awokawok`, m, null, { thumbnail: global.fakethumb })
             continue // If the level has not been reached
           }
           let extra = {
@@ -544,7 +544,7 @@ global.dfail = (type, m, conn) => {
     botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
     unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
   }[type]
-  if (msg) return m.reply(msg, null, { thumbnail: fs.readFileSync('./src/TaufikBot.png')})
+  if (msg) return m.reply(msg, null, { thumbnail: global.fakethumb })
 }
 let chalk = require('chalk')
 let file = require.resolve(__filename)
