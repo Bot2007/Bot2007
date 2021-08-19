@@ -13,7 +13,7 @@ const fkon = { key: { id: m.key.id, fromMe: false, participant: `0@s.whatsapp.ne
                     }
                  }, { quoted: fkon })
           conn.relayWAMessage(Yoko, {waitForAck: true})
-          m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: Yoko, thumbnail: require('fs').readFileSync('./src/TaufikBot.png')})
+          m.reply(`Ini ownerku yang tercinta`.trim(), null, { contextInfo: { mentionedJid: m.sender }, quoted: Yoko, thumbnail: global.fakethumb })
 }
 handler.help = ['owner', 'creator']
 handler.tags = ['info']
