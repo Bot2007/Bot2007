@@ -22,7 +22,7 @@ let handler = async (m,{ conn }) => {
 "quotedMessage": m.message
 }
                     }
-                 }, { thumbnail: require('fs').readFileSync('./src/TaufikBot.png') }), {waitForAck: true})
+                 }, { thumbnail: global.fakethumb }), {waitForAck: true})
 
     conn.send2Button(m.chat, `Hehe ownerku di bawah ya tq`.trim(), 'made with ❤️ by Taufik', 'OWNER', '.owner', 'DONASI', '.donasi')}
 handler.command = /^(menu|help)$/i
