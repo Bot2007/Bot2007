@@ -415,7 +415,7 @@ module.exports = {
                 console.error(e)
               }
             }
-            if (m.limit) m.reply(+ m.limit + ' Limit terpakai', null, { thumbnail: fs.readFileSync('./src/TaufikBot.png')})
+            if (m.limit) m.reply(+ m.limit + ' Limit terpakai', null, { thumbnail: global.fakethumb })
           }
           break
         }
