@@ -16,13 +16,9 @@ let handler = async (m,{ conn }) => {
                                     }
                                 ]
                             }
-                        ],
-                        "contextInfo": { "stanzaId": m.key.id,
-"participant": m.sender,
-"quotedMessage": m.message
-}
+                        ]
                     }
-                 }, { thumbnail: global.fakethumb }), {waitForAck: true})
+                 }, { quoted: m }), {waitForAck: true})
 
     conn.send2Button(m.chat, `Hehe ownerku di bawah ya tq`.trim(), 'made with ❤️ by Taufik', 'OWNER', '.owner', 'DONASI', '.donasi')}
 handler.command = /^(menu|help)$/i
