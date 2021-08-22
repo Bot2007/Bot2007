@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async (m, { text }) => {
   if (!text) throw 'Apikey lu mana'
-  let res = await fetch('https://api.xteam.xyz/cekey?APIKEY=${text}')
+  let res = await fetch('https://api.xteam.xyz/cekey?APIKEY=' + text)
   let json = await res.json()
   if (json.status) m.reply(`
   IP = ${json.response.ip}
