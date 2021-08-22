@@ -10,7 +10,8 @@ let handler = async (m, { text }) => {
   Email pendaftar apikey = ${json.response.email}
   Total hit = ${json.response.totalhit}
   Premium = ${json.response.premium == false ? "Tidak" : "Ya"}
-  ${json.response.expired == "maaf anda bukan user premium X-Team" ? "" : json.response.expired}`.trim())
+  
+  ${json.response.expired}`.trim())
   else throw 'Apikey invalid'
 }
 handler.help = ['cekapikeyxteam'].map(v => v + ' <apikey>')
