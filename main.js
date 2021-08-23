@@ -154,6 +154,11 @@ global.reloadHandler = function () {
   return true
 }
 
+// FakeThumb
+async global.fakethumb => {
+await (await require('node-fetch')('https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg')).buffer()
+}
+
 // Plugin Loader
 let pluginFolder = path.join(__dirname, 'plugins')
 let pluginFilter = filename => /\.js$/.test(filename)
