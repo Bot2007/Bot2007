@@ -155,9 +155,9 @@ global.reloadHandler = function () {
 }
 
 // FakeThumb
-async m => {
-let taufik = await require('node-fetch')('https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg')
-global.fakethumb = await taufik.buffer()
+global.fakethumb = async => {
+Taufik = await await require('node-fetch')('https://i.ibb.co/0tbBShq/IMG-20210705-WA0886.jpg').buffer()
+return [Taufik]
 }
 
 // Plugin Loader
