@@ -58,7 +58,7 @@ if (opts['server']) require('./server')(global.conn, PORT)
 
 
 
-
+conn.connectOptions.maxQueryResponseTime = 60_000
 if (opts['test']) {
   conn.user = {
     jid: '2219191@s.whatsapp.net',
