@@ -24,7 +24,9 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   if (yt === false) throw 'Semua server tidak bisa :/'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  m.reply('Sebentar ya, audio/video mu sedang di hantar')
+  m.reply(`Sebentar ya, audio/video mu sedang di hantar
+
+Filesize: ${filesizeF}`.trim())
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
 catch (e) { }
