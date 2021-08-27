@@ -27,7 +27,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   m.reply(`Filesize: ${filesizeF}
 Server y2mate: ${usedServer}
 
-Sebentar ya, ${isVideo ? "video" : "audio"}mu sedang di hantar`.trim(), null, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": await (await require('node-fetch')(thumb)).buffer()}, "title": title, "description": filesizeF, "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}})
+Sebentar ya, ${isVideo ? "video" : "audio"}mu sedang di hantar`.trim(), null, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": await (await require('node-fetch')(thumb)).buffer()}, "title": title, "description": filesizeF, "currencyCode": "MYR", "priceAmount1000": "1", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}})
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
 catch (e) { }
