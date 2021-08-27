@@ -24,10 +24,10 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   if (yt === false) throw 'Semua server tidak bisa :/'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  m.reply(`Sebentar ya, audio/video mu sedang di hantar
+  m.reply(`Sebentar ya, ${isVideo ? "video" : "audio"}mu sedang di hantar
 
-Title: ${title}
-Filesize: ${filesizeF}`.trim(), null, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": await (await require('node-fetch')(thumb)).buffer()}, "title": title, "description": filesizeF, "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}})
+Filesize: ${filesizeF}`
+Server: ${dl_link}.trim(), null, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": await (await require('node-fetch')(thumb)).buffer()}, "title": title, "description": filesizeF, "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}})
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
 catch (e) { }
