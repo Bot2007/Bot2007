@@ -25,7 +25,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
   m.reply(`Filesize: ${filesizeF}
-Server: ${server}
+Server y2mate: ${usedServer}
 
 Sebentar ya, ${isVideo ? "video" : "audio"}mu sedang di hantar`.trim(), null, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: `status@broadcast` }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": await (await require('node-fetch')(thumb)).buffer()}, "title": title, "description": filesizeF, "currencyCode": "MYR", "priceAmount1000": "999999999", "retailerId": "TaufikBot", "productImageCount": 1}, "businessOwnerJid": `601173093564@s.whatsapp.net`}}}})
 let _thumb = {}
@@ -43,8 +43,6 @@ try { if (isVideo) _fakeurl = {} }
 catch (e) { }
 if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(command)), `
 *Title:* ${title}
-*Filesize:* ${filesizeF}
-*Source:* ${vid.url}
 *Server y2mate:* ${usedServer}
 `.trim(), m, false,  {
   ..._thumb,
