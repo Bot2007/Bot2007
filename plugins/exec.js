@@ -16,7 +16,7 @@ let handler  = async (m, _2) => {
     _return = await exec.call(conn, (...args) => {
       if (--i < 1) return
       console.log(...args)
-      return conn.reply(m.chat, util.format(...args), m)
+      return conn.reply(m.chat, ...args, m)
     }, m, participants, handler, require, conn, CustomArray, process, args, groupMetadata, f, f.exports, [conn, _2])
   } catch (e) {
     let err = await syntaxerror(_text, 'Execution Function', {
