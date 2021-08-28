@@ -63,6 +63,7 @@
       "name": "Owner Bot Encem",
       "age": 14,
       "regTime": -1,
+      "owner": true,
       "autolevelup": false
      }
   },
