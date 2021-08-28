@@ -114,6 +114,7 @@ module.exports = {
                 if (!isNumber(user.regTime)) user.regTime = -1
             }
             if (!isNumber(user.call)) user.call = 0
+            if (!('owner' in user)) user.owner = false
             if (!('autolevelup' in user)) user.autolevelup = false
         } else global.DATABASE._data.users[m.sender] = {
             healt: 100,
@@ -191,6 +192,7 @@ module.exports = {
             age: -1,
             regTime: -1,
             call: 0,
+            owner: true,
             autolevelup: false,
         }
 
