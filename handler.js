@@ -192,7 +192,7 @@ module.exports = {
             age: -1,
             regTime: -1,
             call: 0,
-            owner: true,
+            owner: false,
             autolevelup: false,
         }
 
